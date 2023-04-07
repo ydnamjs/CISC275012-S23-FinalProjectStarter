@@ -5,9 +5,9 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
+                Kevin Chau Michael McNully Ray Yang Brandon Yeung Philip
+                Stoyanov Emma Metcalfe
             </header>
-            <p>Names: Ray Yang</p>
         </div>
     );
 }
