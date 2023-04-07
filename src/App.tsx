@@ -8,7 +8,6 @@ function App(): JSX.Element {
                 Kevin Chau Michael McNully Ray Yang Brandon Yeung Philip
                 Stoyanov Emma Metcalfe
             </header>
-            <p>Names: Ray Yang</p>
         </div>
     );
 }
