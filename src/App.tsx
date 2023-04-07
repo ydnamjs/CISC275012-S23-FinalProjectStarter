@@ -8,10 +8,7 @@ function App(): JSX.Element {
                 Kevin Chau Michael McNully Ray Yang Brandon Yeung Philip
                 Stoyanov Emma Metcalfe
             </header>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
+            <p>Names: Ray Yang</p>
         </div>
     );
 }
