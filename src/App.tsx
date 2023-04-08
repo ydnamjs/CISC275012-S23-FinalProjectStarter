@@ -8,7 +8,7 @@ function App(): JSX.Element {
                 UD CISC275 with React Hooks and TypeScript
             </header>
             <header className="App-header">
-                Zachary Witte, ZhongYiJiang, Sean Hennessey
+                Zachary Witte, ZhongYiJiang, Sean Hennessey, Yuhan Lin
             </header>
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
