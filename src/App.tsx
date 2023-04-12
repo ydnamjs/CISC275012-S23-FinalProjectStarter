@@ -25,6 +25,7 @@ function App(): JSX.Element {
                 <Container>
                     <Row>
                         <Col>
+                            <Col>Shirt One.</Col>
                             <img
                                 src={shirt1}
                                 height={200}
@@ -35,6 +36,7 @@ function App(): JSX.Element {
                             <Button>Add to Cart</Button>
                         </Col>
                         <Col>
+                            <Col>Shirt two.</Col>
                             <img
                                 src={shirt2}
                                 height={200}
@@ -51,6 +53,7 @@ function App(): JSX.Element {
                 <Container>
                     <Row>
                         <Col>
+                            <Col>Sweatshirt 1</Col>
                             <img
                                 src={sweatshirt1}
                                 height={200}
@@ -61,6 +64,7 @@ function App(): JSX.Element {
                             <Button>Add to Cart</Button>
                         </Col>
                         <Col>
+                            <Col>Sweatshirt 2</Col>
                             <img
                                 src={sweatshirt2}
                                 height={200}
