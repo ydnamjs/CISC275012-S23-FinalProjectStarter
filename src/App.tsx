@@ -12,8 +12,8 @@ function App(): JSX.Element {
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
-                <Button onClick={true}>Shirts</Button>
-                <Button onClick={true}>Sweatshirts</Button>
+                <Button>Shirts</Button>
+                <Button>Sweatshirts</Button>
             </p>
         </div>
     );
