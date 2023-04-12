@@ -1,5 +1,13 @@
 import React from "react";
+<<<<<<< HEAD
 import { Button } from "react-bootstrap";
+=======
+import { Button, Col, Container, Row } from "react-bootstrap";
+import shirt1 from "./images/shirt1.png";
+import shirt2 from "./images/shirt2.png";
+import sweatshirt1 from "./images/sweatshirt1.png";
+import sweatshirt2 from "./images/sweatshirt2.png";
+>>>>>>> ab5dd64be535764959a5a9d0dc9a417c60101710
 import "./App.css";
 
 function App(): JSX.Element {
@@ -21,6 +29,58 @@ function App(): JSX.Element {
                     <Button>Sweatshirts</Button>
                 </div>
             </p>
+            <div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <img
+                                src={shirt1}
+                                height={200}
+                                width={200}
+                                alt={"Shirt 1"}
+                            ></img>
+                            <p>Price: $2.00</p>
+                            <Button>Add to Cart</Button>
+                        </Col>
+                        <Col>
+                            <img
+                                src={shirt2}
+                                height={200}
+                                width={200}
+                                alt={"Shirt 2"}
+                            ></img>
+                            <p>Price: $20.00</p>
+                            <Button>Add to Cart</Button>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+            <div>
+                <Container>
+                    <Row>
+                        <Col>
+                            <img
+                                src={sweatshirt1}
+                                height={200}
+                                width={200}
+                                alt={"Sweatshirt 1"}
+                            ></img>
+                            <p>Price: $200.00</p>
+                            <Button>Add to Cart</Button>
+                        </Col>
+                        <Col>
+                            <img
+                                src={sweatshirt2}
+                                height={200}
+                                width={200}
+                                alt={"Sweatshirt 2"}
+                            ></img>
+                            <p>Price: $2000.00</p>
+                            <Button>Add to Cart</Button>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </div>
     );
 }
