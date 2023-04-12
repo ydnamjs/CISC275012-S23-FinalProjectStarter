@@ -15,3 +15,4 @@ Main Barrier: Not able to find the needed size/color/cut based on available prod
 Main Goal: Find a shirt type with a variety of sizes in the same cut and color
 
 Main Barrier: Not able to find the same shirt in the sizes needed
+
