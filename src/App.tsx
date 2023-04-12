@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import "./App.css";
 
 function App(): JSX.Element {
@@ -11,6 +12,8 @@ function App(): JSX.Element {
             <p>
                 Edit <code>src/App.tsx</code> and save. This page will
                 automatically reload.
+                <Button onClick={true}>Shirts</Button>
+                <Button onClick={true}>Sweatshirts</Button>
             </p>
         </div>
     );
