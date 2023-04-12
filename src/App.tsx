@@ -1,6 +1,5 @@
 import React from "react";
-import { Button } from "react-bootstrap";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import shirt1 from "./images/shirt1.png";
 import shirt2 from "./images/shirt2.png";
 import sweatshirt1 from "./images/sweatshirt1.png";
