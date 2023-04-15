@@ -1,14 +1,13 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import image from "./image/image.png";
+import gpro from "./image/gpro.png";
 import "./App.css";
 
 function App(): JSX.Element {
     return (
         <div className="App">
-            <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
-            </header>
+            <header className="App-header">The Marketplace</header>
             <br></br>
             <br></br>
             <div>
@@ -17,13 +16,13 @@ function App(): JSX.Element {
                     <Row>
                         <Col>
                             <img
-                                src={image}
+                                src={gpro}
                                 height={200}
                                 width={200}
-                                alt={"Item 1"}
+                                alt={"gpro"}
                             ></img>
-                            <Col>Item 1</Col>
-                            <p>Price: $1.00</p>
+                            <Col>Logitech G Pro Superlight</Col>
+                            <p>Price: $150.00</p>
                             <Button>Add to Cart</Button>
                         </Col>
                         <Col>
