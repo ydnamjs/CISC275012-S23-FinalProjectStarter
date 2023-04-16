@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import image from "./image/image.png";
+// import image from "./image/image.png";
 import gpro from "./image/gpro.png";
 import book from "./image/book.png";
 import controller from "./image/controller.png";
