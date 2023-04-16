@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import image from "./image/image.png";
 import gpro from "./image/gpro.png";
 import book from "./image/book.png";
+import controller from "./image/controller.png";
 import "./App.css";
 
 function App(): JSX.Element {
@@ -52,13 +53,13 @@ function App(): JSX.Element {
                         </Col>
                         <Col>
                             <img
-                                src={image}
+                                src={controller}
                                 height={200}
                                 width={200}
-                                alt={"Item 4"}
+                                alt={"Controller"}
                             ></img>
-                            <Col>Item 4</Col>
-                            <p>Price: $1.00</p>
+                            <Col>Nintendo Switch Pro Controller</Col>
+                            <p>Price: $74.99</p>
                             <Button>Add to Cart</Button>
                         </Col>
                     </Row>
