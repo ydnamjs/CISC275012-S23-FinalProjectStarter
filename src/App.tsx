@@ -2,12 +2,13 @@ import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import image from "./image/image.png";
 import gpro from "./image/gpro.png";
+import book from "./image/book.png";
 import "./App.css";
 
 function App(): JSX.Element {
     return (
         <div className="App">
-            <header className="App-header">The Marketplace</header>
+            <header className="App-header">SecondSail</header>
             <br></br>
             <br></br>
             <div>
@@ -40,13 +41,13 @@ function App(): JSX.Element {
                         </Col>
                         <Col>
                             <img
-                                src={image}
+                                src={book}
                                 height={200}
                                 width={200}
-                                alt={"Item 3"}
+                                alt={"book"}
                             ></img>
-                            <Col>Item 3</Col>
-                            <p>Price: $1.00</p>
+                            <Col>Used Python Textbook</Col>
+                            <p>Price: $15.00</p>
                             <Button>Add to Cart</Button>
                         </Col>
                         <Col>
