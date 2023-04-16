@@ -27,13 +27,15 @@ function App(): JSX.Element {
                         </Col>
                         <Col>
                             <img
-                                src={image}
+                                src={
+                                    "https://mma.prnewswire.com/media/2005357/Sony_WH_CH520_headphone.jpg?w=200"
+                                }
                                 height={200}
                                 width={200}
-                                alt={"Item 2"}
+                                alt={"Pair of Sony Headphones"}
                             ></img>
-                            <Col>Item 2</Col>
-                            <p>Price: $1.00</p>
+                            <Col>Sony Headphones</Col>
+                            <p>Price: $60.00</p>
                             <Button>Add to Cart</Button>
                         </Col>
                         <Col>
