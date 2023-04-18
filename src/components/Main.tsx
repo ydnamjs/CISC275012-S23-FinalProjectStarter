@@ -1,7 +1,6 @@
 import React from "react";
 import "./Main.css";
 import runners from "../assets/runners.png";
-import { Button } from "react-bootstrap";
 
 const FrontPage = () => {
     return (
