@@ -9,6 +9,14 @@ function App(): JSX.Element {
                 Stoyanov Emma Metcalfe
             </header>
         </div>
+        <div>Log In (Button)</div>
+        <div>Log Out (Button)</div>
+        <div>Men's Clothing (Category)</div>
+        <div>Women's Clothing (Category)</div>
+        <div>Accessories (Category)</div>
+        <div>Tops (Category)</div>
+        <div>Bottoms (Category)</div>
+        <div>Filter (Button)</div>
     );
 }
 
