@@ -3,12 +3,20 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Test from "./Test";
 
 ReactDOM.render(
     <React.StrictMode>
         <App />
     </React.StrictMode>,
     document.getElementById("root")
+);
+
+ReactDOM.render(
+    <React.StrictMode>
+        <Test />
+    </React.StrictMode>,
+    document.getElementById("test")
 );
 
 // If you want to start measuring performance in your app, pass a function
