@@ -9,21 +9,22 @@
     height: 100vh;
     object-fit: cover;
 }
-.text {
-    padding-left: 750px;
-    padding-bottom: 750px;
+.image1 .text {
     color: white;
-    font-size: 10vw;
     position: relative;
-    transform: translate(-50%, -50%);
-    text-shadow: 0 0 10 black;
+    top: 100%;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -750%);
+    font-size: 50px;
+    text-align: center;
 }
 .description {
-    padding-left: 750px;
-    padding-bottom: 750px;
-    color: white;
-    font-size: 10vw;
     position: relative;
-    transform: translate(-50%, -50%);
-    text-shadow: 0 0 10 black;
+    color: white;
+    transform: translate(43%, -1900%);
+}
+.image1 .shop-now {
+    color: white;
+    text-align: center;
 }
