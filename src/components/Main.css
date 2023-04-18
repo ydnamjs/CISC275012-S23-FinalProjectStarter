@@ -4,27 +4,26 @@
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 .image1 img {
-    padding-top: 100px;
-    width: 1920px;
-    height: 1080px;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
 }
 .text {
+    padding-left: 750px;
+    padding-bottom: 750px;
     color: white;
-    font-size: 150px;
-    position: absolute;
-    top: 70%;
-    left: 75%;
+    font-size: 10vw;
+    position: relative;
     transform: translate(-50%, -50%);
     text-shadow: 0 0 10 black;
 }
 .description {
+    padding-left: 750px;
+    padding-bottom: 750px;
     color: white;
-    font-size: 45px;
-    white-space: nowrap;
-    position: absolute;
-    top: 80%;
-    left: 60%;
-
+    font-size: 10vw;
+    position: relative;
+    transform: translate(-50%, -50%);
     text-shadow: 0 0 10 black;
 }
