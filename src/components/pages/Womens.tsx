@@ -1,12 +1,12 @@
 import React from "react";
 import NavBar from "../Navbar";
 
-const MenTops = () => {
+const Womens = () => {
     return (
         <div>
             <NavBar />
-            Men Top
+            Womens clothing
         </div>
     );
 };
-export default MenTops;
+export default Womens;
