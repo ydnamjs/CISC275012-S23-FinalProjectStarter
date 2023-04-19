@@ -24,11 +24,14 @@ const Product: React.FC<ProductProps> = ({
             <p className="productDesc">{description}</p>
             <p className="productPrice">Price: ${price}</p>
             <ul>
-                {sizes.map((size) => (
-                    <li className="productSize" key={size}>
-                        {size}
-                    </li>
-                ))}
+                {sizes.map(
+                    (size) => (
+                        <li className="productSize" key={size}>
+                            {size}
+                        </li>
+                    )
+                    // eslint-disable-next-line prettier/prettier
+                )}
             </ul>
         </div>
     );
