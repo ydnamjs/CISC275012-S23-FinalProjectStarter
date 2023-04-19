@@ -10,7 +10,7 @@ function App(): JSX.Element {
         <div>
             <Router>
                 <Routes>
-                    <Route path="/*" element={<FrontPage />} />
+                    <Route path="/" element={<FrontPage />} />
                     <Route path="/men" element={<MenTops />} />
                     <Route path="/women" element={<MenShorts />} />
                 </Routes>
