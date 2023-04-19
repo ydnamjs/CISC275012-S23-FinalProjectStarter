@@ -1,7 +1,7 @@
 import React from "react";
 import FrontPage from "./components/Main";
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import MenTops from "./components/pages/MenTops";
 import MenShorts from "./components/pages/MenShorts";
 import MenPants from "./components/pages/MenPants";
