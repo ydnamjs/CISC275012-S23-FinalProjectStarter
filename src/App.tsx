@@ -1,7 +1,7 @@
 import React from "react";
 import FrontPage from "./components/Main";
 import "./App.css";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import MenTops from "./components/pages/MenTops";
 import MenShorts from "./components/pages/MenShorts";
 import MenPants from "./components/pages/MenPants";
@@ -16,9 +16,9 @@ import WomenOuter from "./components/pages/WomenOuterwear";
 function App(): JSX.Element {
     return (
         <div>
-            <Router>
+            <HashRouter>
                 <Routes>
-                    <Route path="/homepage" element={<FrontPage />} />
+                    <Route path="/" element={<FrontPage />} />
                     <Route path="/mentops" element={<MenTops />} />
                     <Route path="/menshorts" element={<MenShorts />} />
                     <Route path="/menpants" element={<MenPants />} />
@@ -30,7 +30,7 @@ function App(): JSX.Element {
                     <Route path="/womenacc" element={<WomenAccessories />} />
                     <Route path="/womenouter" element={<WomenOuter />} />
                 </Routes>
-            </Router>
+            </HashRouter>
         </div>
     );
 }
