@@ -70,11 +70,7 @@ function NavBar() {
                         ></path>{" "}
                     </svg>
                 </button>
-                {count < 0 ? (
-                    <p className="cart-quantity">0</p>
-                ) : (
-                    <p className="cart-quantity">{count}</p>
-                )}
+                <p className="cart-quantity">{count}</p>
             </Navbar>
         </div>
     );
