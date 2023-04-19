@@ -8,7 +8,9 @@ function NavBar() {
     return (
         <div>
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand>E F F O R T L E S S</Navbar.Brand>
+                <Navbar.Brand className="title">
+                    E F F O R T L E S S
+                </Navbar.Brand>
                 <Nav>
                     <Nav.Link>
                         <Link to="/men">Shop Men</Link>
