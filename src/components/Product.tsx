@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 import "./Product.css";
 import "./Main.css";
@@ -24,15 +25,11 @@ const Product: React.FC<ProductProps> = ({
             <p className="productDesc">{description}</p>
             <p className="productPrice">Price: ${price}</p>
             <ul>
-                {sizes.map(
-                    // eslint-disable-next-line prettier/prettier
-                    (size) => (
-                        <li className="productSize" key={size}>
-                            {size}
-                        </li>
-                    )
-                    // eslint-disable-next-line prettier/prettier
-                )}
+                {sizes.map((size) => {
+                    <li className="productSize" key={size}>
+                        {size}
+                    </li>;
+                })}
             </ul>
         </div>
     );
