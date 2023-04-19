@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function NavBar() {
     const [count, setCount] = useState(0);
@@ -9,8 +10,12 @@ function NavBar() {
             <Navbar bg="dark" variant="dark">
                 <Navbar.Brand>E F F O R T L E S S</Navbar.Brand>
                 <Nav>
-                    <Nav.Link href="/men">Shop Men</Nav.Link>
-                    <Nav.Link href="/women">Shop Women</Nav.Link>
+                    <Nav.Link>
+                        <Link to="/men">Shop Men</Link>
+                    </Nav.Link>
+                    <Nav.Link>
+                        <Link to="/women">Shop Women</Link>
+                    </Nav.Link>
                     <button onClick={() => setCount(1 + count)}>
                         Add to Cart
                     </button>
