@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+.image1 {
+    background-color: black;
+}
 .image1 img {
     position: relative;
     width: 100vw;
