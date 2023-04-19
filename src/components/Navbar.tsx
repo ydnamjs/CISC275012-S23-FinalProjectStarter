@@ -11,37 +11,37 @@ function NavBar() {
                 <Nav>
                     <NavDropdown title="Shop Men" className="gender-dropdown">
                         <p className="product-dropdown">Products</p>
-                        <NavDropdown.Item href="https://www.youngla.com/collections/t-shirts">
+                        <NavDropdown.Item href="/mentops">
                             Tops
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="https://www.youngla.com/collections/shorts">
+                        <NavDropdown.Item href="/menshorts">
                             Shorts
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="https://www.youngla.com/collections/jeans">
+                        <NavDropdown.Item href="/menpants">
                             Pants
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="https://www.youngla.com/collections/lifting-gear">
+                        <NavDropdown.Item href="menacc">
                             Accessories
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="https://www.youngla.com/collections/outerwear">
+                        <NavDropdown.Item href="/menouter">
                             Outerwear
                         </NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Shop Women">
                         <p className="product-dropdown">Products</p>
-                        <NavDropdown.Item href="https://shop.lululemon.com/c/women-maintops/_/N-815">
+                        <NavDropdown.Item href="/womentops">
                             Tops
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="https://shop.lululemon.com/c/womens-leggings/_/N-8s6">
+                        <NavDropdown.Item href="/womenleggings">
                             Leggings
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="https://shop.lululemon.com/c/women-pants/_/N-7w0">
+                        <NavDropdown.Item href="/womenpants">
                             Pants
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="https://shop.lululemon.com/c/equipment/_/N-8tl">
+                        <NavDropdown.Item href="/womenacc">
                             Accessories
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="https://shop.lululemon.com/c/womens-outerwear/_/N-8s4">
+                        <NavDropdown.Item href="/womenouter">
                             Outerwear
                         </NavDropdown.Item>
                     </NavDropdown>
