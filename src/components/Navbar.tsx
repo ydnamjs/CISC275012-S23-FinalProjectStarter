@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import { Nav, NavDropdown, Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 
 function NavBar() {
     const [count, setCount] = useState(0);
