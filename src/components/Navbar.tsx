@@ -9,42 +9,8 @@ function NavBar() {
             <Navbar bg="dark" variant="dark">
                 <Navbar.Brand>E F F O R T L E S S</Navbar.Brand>
                 <Nav>
-                    <NavDropdown title="Shop Men" className="gender-dropdown">
-                        <p className="product-dropdown">Products</p>
-                        <NavDropdown.Item href="/mentops">
-                            Tops
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/menshorts">
-                            Shorts
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/menpants">
-                            Pants
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="menacc">
-                            Accessories
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/menouter">
-                            Outerwear
-                        </NavDropdown.Item>
-                    </NavDropdown>
-                    <NavDropdown title="Shop Women">
-                        <p className="product-dropdown">Products</p>
-                        <NavDropdown.Item href="/womentops">
-                            Tops
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/womenleggings">
-                            Leggings
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/womenpants">
-                            Pants
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/womenacc">
-                            Accessories
-                        </NavDropdown.Item>
-                        <NavDropdown.Item href="/womenouter">
-                            Outerwear
-                        </NavDropdown.Item>
-                    </NavDropdown>
+                    <Nav.Link href="/men">Shop Men</Nav.Link>
+                    <Nav.Link href="/women">Shop Women</Nav.Link>
                     <button onClick={() => setCount(1 + count)}>
                         Add to Cart
                     </button>
