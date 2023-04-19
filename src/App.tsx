@@ -8,13 +8,15 @@ import MenShorts from "./components/pages/MenShorts";
 function App(): JSX.Element {
     return (
         <div>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<FrontPage />} />
-                    <Route path="/men" element={<MenTops />} />
-                    <Route path="/women" element={<MenShorts />} />
-                </Routes>
-            </Router>
+            <React.StrictMode>
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<FrontPage />} />
+                        <Route path="/men" element={<MenTops />} />
+                        <Route path="/women" element={<MenShorts />} />
+                    </Routes>
+                </Router>
+            </React.StrictMode>
         </div>
     );
 }
