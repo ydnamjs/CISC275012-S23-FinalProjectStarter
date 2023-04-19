@@ -1,5 +1,26 @@
 .bg-dark {
     padding-left: 10px;
 }
-.content {
+.top-sellers {
+    padding-left: 3px;
+}
+.clothing-cat {
+    vertical-align: middle;
+    display: table-cell;
+    height: 50px;
+}
+
+.product-dropdown {
+    font-weight: bold;
+    padding-left: 6px;
+}
+.cart-icon {
+    margin-left: 52%;
+    background-color: rgb(42, 41, 41);
+    border: none;
+}
+.cart-quantity {
+    margin-top: 2%;
+    margin-left: 0.15%;
+    color: white;
 }
