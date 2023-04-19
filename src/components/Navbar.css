@@ -1,5 +1,12 @@
 .bg-dark {
     padding-left: 10px;
 }
-.content {
+.top-sellers {
+    padding-left: 3px;
+}
+.clothing-cat {
+    color: gray;
+    text-decoration: none;
+    font-size: 12px;
+    padding-left: 8px;
 }

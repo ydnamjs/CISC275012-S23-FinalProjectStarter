@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-//import { Button } from "./Button";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-//import Dropdown from "./Dropdown";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, NavDropdown, Navbar } from "react-bootstrap";
 
 function NavBar() {
     const [click, setClick] = useState(false);
@@ -14,11 +12,21 @@ function NavBar() {
                 <Navbar.Brand>E F F O R T L E S S</Navbar.Brand>
 
                 <Nav>
-                    <Nav.Link href="products">Shop Men</Nav.Link>
-                    <Nav.Link href="products">Shop Women</Nav.Link>
-                    <Nav.Link href="products">Best Sellers</Nav.Link>
-                    <Nav.Link href="products">Top Rated</Nav.Link>
-                    <Nav.Link href="products">Accesories</Nav.Link>
+                    <NavDropdown title="Shop Men">
+                        <p className="product-dropdown">Top Sellers</p>
+                        <a
+                            className="clothing-cat"
+                            href="https://www.youngla.com/products/435-tee"
+                        >
+                            T-Shirt and Tops
+                        </a>
+                    </NavDropdown>
+
+                    <NavDropdown title="Shop Women">
+                        <NavDropdown.Item href="women/tops">
+                            T-Shirt and Tops
+                        </NavDropdown.Item>
+                    </NavDropdown>
                 </Nav>
             </Navbar>
         </div>
