@@ -25,6 +25,7 @@ const Product: React.FC<ProductProps> = ({
             <p className="productPrice">Price: ${price}</p>
             <ul>
                 {sizes.map(
+                    // eslint-disable-next-line prettier/prettier
                     (size) => (
                         <li className="productSize" key={size}>
                             {size}
