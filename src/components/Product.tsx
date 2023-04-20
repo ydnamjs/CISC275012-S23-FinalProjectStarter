@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 import "./Product.css";
 import "./Main.css";
@@ -24,10 +25,11 @@ const Product: React.FC<ProductProps> = ({
             <p className="productDesc">{description}</p>
             <p className="productPrice">Price: ${price}</p>
             <ul>
-                {sizes.map((size) => (
-                    // eslint-disable-next-line react/jsx-key
-                    <li className="productSize">{size}</li>
-                ))}
+                {sizes.map((size) => {
+                    <li className="productSize" key={size}>
+                        {size}
+                    </li>;
+                })}
             </ul>
         </div>
     );
