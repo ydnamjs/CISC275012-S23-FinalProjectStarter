@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
-import shirt1 from "./images/shirt1.png";
-import shirt2 from "./images/shirt2.png";
-import sweatshirt1 from "./images/sweatshirt1.png";
-import sweatshirt2 from "./images/sweatshirt2.png";
+import { Button /*Col, Container, Row*/ } from "react-bootstrap";
+//import shirt1 from "./images/shirt1.png";
+//import shirt2 from "./images/shirt2.png";
+//import sweatshirt1 from "./images/sweatshirt1.png";
+//import sweatshirt2 from "./images/sweatshirt2.png";
 import "./App.css";
 import { FilterClothes } from "./FilterClothes";
 
