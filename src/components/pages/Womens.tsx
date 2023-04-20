@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "../Navbar";
-
 const Womens = () => {
     return (
         <div>
