@@ -11,10 +11,14 @@ function NavBar() {
                 <Navbar.Brand>E F F O R T L E S S</Navbar.Brand>
                 <Nav>
                     <Nav.Link>
-                        <Link to="/men">Shop Men</Link>
+                        <Link className="shop-buttons" to="/men">
+                            Shop Men
+                        </Link>
                     </Nav.Link>
                     <Nav.Link>
-                        <Link to="/women">Shop Women</Link>
+                        <Link className="shop-buttons" to="/women">
+                            Shop Women
+                        </Link>
                     </Nav.Link>
                     <button onClick={() => setCount(1 + count)}>
                         Add to Cart
