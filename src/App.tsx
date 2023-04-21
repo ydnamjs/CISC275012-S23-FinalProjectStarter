@@ -6,7 +6,7 @@ import { Button /*, Col, Container, Row*/ } from "react-bootstrap";
 //import sweatshirt2 from "./images/sweatshirt2.png";
 import "./App.css";
 import { FilterClothes } from "./FilterClothes";
-import { text } from "stream/consumers";
+//import { text } from "stream/consumers";
 
 function App(): JSX.Element {
     return (
