@@ -1,11 +1,12 @@
 import React from "react";
-import { Button /*Col, Container, Row*/ } from "react-bootstrap";
+import { Button /*, Col, Container, Row*/ } from "react-bootstrap";
 //import shirt1 from "./images/shirt1.png";
 //import shirt2 from "./images/shirt2.png";
 //import sweatshirt1 from "./images/sweatshirt1.png";
 //import sweatshirt2 from "./images/sweatshirt2.png";
 import "./App.css";
 import { FilterClothes } from "./FilterClothes";
+import { text } from "stream/consumers";
 
 function App(): JSX.Element {
     return (
@@ -15,7 +16,7 @@ function App(): JSX.Element {
                 Diaz, Steven Kraus, Grace Melton, Ryan Sexton
                 <div>
                     <Button>Login</Button>
-                    <Button>Checkout</Button>
+                    <Button>Cart</Button>
                 </div>
             </header>
             <p>

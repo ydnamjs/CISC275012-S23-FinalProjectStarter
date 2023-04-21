@@ -22,6 +22,15 @@ export function ClothingDisplay({
         <div>
             <Col>{title}</Col>
             <img src={source} height={height} width={width} alt={alt}></img>
+            <div>
+                <Button
+                    style={{
+                        fontSize: "10px"
+                    }}
+                >
+                    Detail
+                </Button>
+            </div>
             <p>Price: $2.00</p>
             <Button>Add to Cart</Button>
         </div>
