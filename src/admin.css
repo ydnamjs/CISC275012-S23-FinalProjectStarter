@@ -1,0 +1,39 @@
+.admin {
+    text-align: center;
+}
+
+.admin-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .admin-logo {
+        animation: admin-logo-spin infinite 20s linear;
+    }
+}
+
+.admin-header {
+    width: 100%;
+    background-color: #282c;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.admin-link {
+    color: #61dafb;
+}
+
+@keyframes admin-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
