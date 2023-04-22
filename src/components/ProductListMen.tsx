@@ -1,8 +1,8 @@
 import React from "react";
 import Product from "./Product";
-import "./ProductListMen.css";
+import "./ProductList.css";
 
-const products = [
+const prod = [
     {
         name: "Product 1",
         price: 10,
@@ -27,11 +27,11 @@ const products = [
 ];
 
 const ProductListMen = () => {
+    //let filter = "name";
+    const prodList = prod.map((item) => <Product {...item} key={item.name} />);
     return (
-        <div className="productListMen">
-            {products.map((product) => {
-                <Product {...product} key={product.name} />;
-            })}
+        <div>
+            <h1 className="productList">{prodList}</h1>
         </div>
     );
 };
