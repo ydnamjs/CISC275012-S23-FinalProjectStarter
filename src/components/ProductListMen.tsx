@@ -26,9 +26,9 @@ const products = [
     }
 ];
 
-const ProductList = () => {
+const ProductListMen = () => {
     return (
-        <div className="productList">
+        <div className="productListMen">
             {products.map((product) => {
                 <Product {...product} key={product.name} />;
             })}
@@ -36,4 +36,4 @@ const ProductList = () => {
     );
 };
 
-export default ProductList;
+export default ProductListMen;
