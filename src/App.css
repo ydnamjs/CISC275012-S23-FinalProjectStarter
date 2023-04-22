@@ -17,12 +17,17 @@
     width: 100%;
     background-color: #282c;
     min-height: 20vh;
-    display: flex;
+    display: table;
+    margin: auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+
+.App-header div {
+    display: table-cell;
 }
 
 .App-link {

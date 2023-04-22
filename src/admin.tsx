@@ -12,6 +12,11 @@ function admin(): JSX.Element {
             <header className="admin-header">SecondSail ADMIN VIEW</header>
             <br></br>
             <br></br>
+            <p>
+                <Button disabled>Store</Button>
+                <Button>Orders</Button>
+            </p>
+            <br></br>
             <div>
                 <Container>
                     <Row></Row>
@@ -26,7 +31,9 @@ function admin(): JSX.Element {
                             <Col>Logitech G Pro Superlight</Col>
                             <p>Price: $150.00</p>
                             <Button>Add to Cart</Button>
-                            <Button>Edit</Button>
+                            <Col>
+                                <Button>Edit</Button>
+                            </Col>
                         </Col>
                         <Col>
                             <img
@@ -40,7 +47,9 @@ function admin(): JSX.Element {
                             <Col>Sony Headphones</Col>
                             <p>Price: $60.00</p>
                             <Button>Add to Cart</Button>
-                            <Button>Edit</Button>
+                            <Col>
+                                <Button>Edit</Button>
+                            </Col>
                         </Col>
                         <Col>
                             <img
@@ -52,7 +61,9 @@ function admin(): JSX.Element {
                             <Col>Used Python Textbook</Col>
                             <p>Price: $15.00</p>
                             <Button>Add to Cart</Button>
-                            <Button>Edit</Button>
+                            <Col>
+                                <Button>Edit</Button>
+                            </Col>
                         </Col>
                         <Col>
                             <img
@@ -64,7 +75,9 @@ function admin(): JSX.Element {
                             <Col>Nintendo Switch Pro Controller</Col>
                             <p>Price: $74.99</p>
                             <Button>Add to Cart</Button>
-                            <Button>Edit</Button>
+                            <Col>
+                                <Button>Edit</Button>
+                            </Col>
                         </Col>
                         <Col>
                             <Button>Create New Item</Button>
