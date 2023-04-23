@@ -12,7 +12,12 @@ function App(): JSX.Element {
             <header className="App-header">
                 <div>
                     <h2>
-                        <Button>Sign In</Button>
+                        <Button>Sign In as User</Button>
+                    </h2>
+                </div>
+                <div>
+                    <h2>
+                        <Button>Sign In as admin</Button>
                     </h2>
                 </div>
                 <div>
@@ -23,9 +28,18 @@ function App(): JSX.Element {
                         <Button>Cart</Button>
                     </h2>
                 </div>
+                <div>
+                    <h2>
+                        <Button>Checkout</Button>
+                    </h2>
+                </div>
             </header>
+            <header className="user-header">SecondSail [User VIEW]</header>
             <br></br>
             <br></br>
+            <p>
+                <Button>My history orders</Button>
+            </p>
             <div>
                 <Container>
                     <Row></Row>
