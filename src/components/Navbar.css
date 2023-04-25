@@ -15,8 +15,11 @@
     padding-left: 6px;
 }
 .cart-icon {
-    margin-left: 52%;
     background-color: rgb(42, 41, 41);
+    border: none;
+}
+.search {
+    margin-left: 42%;
     border: none;
 }
 .cart-quantity {
