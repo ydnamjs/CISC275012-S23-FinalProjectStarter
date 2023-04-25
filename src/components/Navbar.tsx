@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import "./Navbar.css";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 
 function NavBar() {
