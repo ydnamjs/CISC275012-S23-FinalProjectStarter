@@ -21,6 +21,7 @@
 .search {
     margin-left: 42%;
     border: none;
+    display: flex;
 }
 .cart-quantity {
     margin-top: 2%;
@@ -29,4 +30,11 @@
 }
 .title {
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.search-button {
+    color: white;
+    background-color: rgb(42, 41, 41);
+    border-color: white;
+    border-width: 3px;
+    width: 3cm;
 }
