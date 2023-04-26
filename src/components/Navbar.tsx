@@ -6,7 +6,10 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 
 function NavBar() {
-    const [count, setCount] = useState(0);
+    const [isAdmin, setPriv] = useState("User");
+    function updatePriv(event: React.ChangeEvent<HTMLSelectElement>) {
+        setPriv(event.target.value);
+    }
     return (
         <div>
             <Navbar bg="dark" variant="dark">
@@ -16,29 +19,23 @@ function NavBar() {
                     </Navbar.Brand>
                     <Nav className="justify-content-end">
                         <Nav.Link>
-                            <Link to="/men">Shop Men</Link>
+                            <Link to="/men">Shop Clothing</Link>
                         </Nav.Link>
-                        <Nav.Link>
-                            <Link to="/women">Shop Women</Link>
-                        </Nav.Link>
-                        <button onClick={() => setCount(1 + count)}>
-                            Add to Cart
-                        </button>
-                        <button
-                            onClick={() => setCount(count - 1)}
-                            disabled={count <= 0}
-                        >
-                            Remove From Cart
-                        </button>
                     </Nav>
                     <Form className="search">
-                        <Form.Control
-                            type="search"
-                            placeholder="Shop Clothing"
-                            className="me-"
-                        ></Form.Control>
-                        <button className="search-button">Search</button>
+                        <Form.Label className="role-select">
+                            Role select
+                        </Form.Label>
+                        <Form.Select
+                            className="search"
+                            value={isAdmin}
+                            onChange={updatePriv}
+                        >
+                            <option value="User">User</option>
+                            <option value="Admin">Admin</option>
+                        </Form.Select>
                     </Form>
+                    This user is a {isAdmin}
                     <Nav.Link>
                         <Link to="/cart">
                             <button className="cart-icon">
@@ -58,8 +55,6 @@ function NavBar() {
                             </button>
                         </Link>
                     </Nav.Link>
-
-                    <p className="cart-quantity">{count}</p>
                 </Container>
             </Navbar>
         </div>
