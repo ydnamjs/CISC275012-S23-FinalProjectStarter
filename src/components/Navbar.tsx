@@ -15,7 +15,7 @@ function NavBar() {
             <Navbar bg="dark" variant="dark">
                 <Container fluid>
                     <Navbar.Brand href="/" className="title">
-                        E F F O R T L E S S
+                        <Link to="/">E F F O R T L E S S</Link>
                     </Navbar.Brand>
                     <Nav className="justify-content-end">
                         <Nav.Link>
