@@ -1,44 +1,13 @@
 .bg-dark {
     padding-left: 10px;
 }
-.top-sellers {
-    padding-left: 3px;
-}
-.clothing-cat {
-    vertical-align: middle;
-    display: table-cell;
-    height: 50px;
-}
-
-.product-dropdown {
-    font-weight: bold;
-    padding-left: 6px;
-}
 .cart-icon {
     background-color: rgb(42, 41, 41);
     border: none;
 }
-.search {
-    margin-left: 42%;
-    border: none;
-    display: flex;
-}
-.cart-quantity {
-    margin-top: 2%;
-    margin-left: 0.15%;
-    color: white;
-}
-.shop-buttons {
-    text-decoration: none;
-    color: white;
-}
 .title {
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
-.search-button {
+.role-select {
     color: white;
-    background-color: rgb(42, 41, 41);
-    border-color: white;
-    border-width: 3px;
-    width: 3cm;
 }

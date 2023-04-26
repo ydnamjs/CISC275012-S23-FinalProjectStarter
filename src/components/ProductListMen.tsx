@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "./Product";
+import { Row, Col } from "react-bootstrap";
 import "./ProductList.css";
 
 const prod = [
@@ -31,7 +32,9 @@ const ProductListMen = () => {
     const prodList = prod.map((item) => <Product {...item} key={item.name} />);
     return (
         <div>
-            <h1 className="productList">{prodList}</h1>
+            <Row md={2} xs={2} lg={3} className="g-3">
+                {prodList}
+            </Row>
         </div>
     );
 };
