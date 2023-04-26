@@ -3,23 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Cart from "./pages/Cart";
-
-const router = createBrowserRouter([
-    {
-        path: "/homepage",
-        element: <App />
-    },
-    {
-        path: "Cart",
-        element: <Cart />
-    }
-]);
 
 ReactDOM.render(
     <React.StrictMode>
-        <RouterProvider router={router} />
+        <App />
     </React.StrictMode>,
     document.getElementById("root")
 );
