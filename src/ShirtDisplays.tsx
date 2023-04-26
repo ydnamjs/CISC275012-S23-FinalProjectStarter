@@ -3,6 +3,8 @@ import { Col, Container, Row } from "react-bootstrap";
 import { ClothingDisplay } from "./ClothingDisplay";
 import shirt1 from "./images/shirt1.png";
 import shirt2 from "./images/shirt2.png";
+import shirt3 from "./images/shirt3.png";
+import shirt4 from "./images/shirt4.png";
 
 export function ShirtDisplays() {
     return (
@@ -25,6 +27,26 @@ export function ShirtDisplays() {
                             height={200}
                             width={200}
                             alt={"Shirt two"}
+                        ></ClothingDisplay>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <ClothingDisplay
+                            title={"Shirt Three"}
+                            source={shirt3}
+                            height={200}
+                            width={200}
+                            alt={"Shirt three"}
+                        ></ClothingDisplay>
+                    </Col>
+                    <Col>
+                        <ClothingDisplay
+                            title={"Shirt Four"}
+                            source={shirt4}
+                            height={200}
+                            width={200}
+                            alt={"Shirt four"}
                         ></ClothingDisplay>
                     </Col>
                 </Row>
