@@ -1,16 +1,13 @@
 import React from "react";
 import NavBar from "../Navbar";
-import "../pages/Mens.css";
-import UDshirt from "../../assets/ud_shirt.png";
-import Product from "../Product";
+import ProductListMen from "../ProductListMen";
 
 const Mens = () => {
     return (
         <div className="background">
             <NavBar />
-            <img className="product-image" src={UDshirt}></img>
-            <h1 className="background">THIS IS MENS PAGE</h1>
-            Mens clothing Bello There
+            Mens clothing
+            <ProductListMen />
         </div>
     );
 };
