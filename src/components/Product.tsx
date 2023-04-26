@@ -1,5 +1,4 @@
-/* eslint-disable prettier/prettier */
-import React, { useState } from "react";
+import React from "react";
 import "./Product.css";
 import "./Main.css";
 import { Button, Card } from "react-bootstrap";
@@ -37,29 +36,25 @@ const Product: React.FC<ProductProps> = ({
                     </span>
                 </Card.Title>
                 <div className="mt-auto">
-                    {quantity === 0 ? (
-                        <Button className="w-100">Add to Cart</Button>
-                    ) : (
+                    <div
+                        className="d-flex align-items-center flex-column"
+                        style={{ gap: ".5rem" }}
+                    >
                         <div
-                            className="d-flex align-items-center flex-column"
+                            className="d-flex align-items-center justify-content-center"
                             style={{ gap: ".5rem" }}
                         >
-                            <div
-                                className="d-flex align-items-center justify-content-center"
-                                style={{ gap: ".5rem" }}
-                            >
-                                <Button>-</Button>
-                                <div>
-                                    <span className="fs-3">{quantity}</span>
-                                    in cart
-                                </div>
-                                <Button>+</Button>
+                            <Button>-</Button>
+                            <div>
+                                <span className="fs-3">{quantity}</span>
+                                in cart
                             </div>
-                            <Button variant="danger" size="sm">
-                                Remove
-                            </Button>
+                            <Button>+</Button>
                         </div>
-                    )}
+                        <Button variant="danger" size="sm">
+                            Remove
+                        </Button>
+                    </div>
                 </div>
             </Card.Body>
             <p>{quantity}</p>
