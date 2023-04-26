@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "./Product";
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import "./ProductList.css";
 
 const prod = [
