@@ -5,30 +5,50 @@ import "./ProductList.css";
 
 const prod = [
     {
-        name: "Product 1",
+        name: "UD Football Shirt",
         price: 10,
-        description: "Lorem ipsum dolor sit amet.",
-        sizes: ["Small", "Medium", "Large"],
+        description: "Support UD Football in this grey t-shirt!",
+        sizes: ["S", "M", "L"],
         picture: "ud_shirt"
     },
     {
-        name: "Product 2",
+        name: "UD Crewneck",
+        price: 35,
+        description: "Support UD in this comfy  crewneck.",
+        sizes: ["S", "M", "L"],
+        picture: "UDcrew"
+    },
+    {
+        name: "Jeans",
         price: 20,
-        description: "Consectetur adipiscing elit.",
-        sizes: ["Small", "Large"],
-        picture: "ud_shirt"
+        description: "These breathable jeans are perfect for work or school.",
+        sizes: ["S", "M", "L"],
+        picture: "jeans"
     },
     {
-        name: "Product 3",
-        price: 30,
-        description: "Nullam accumsan cursus semper.",
-        sizes: ["Medium"],
-        picture: "ud_shirt"
+        name: "Sweat-Pants",
+        price: 15,
+        description: "Enjoy the comfortability of these casual sweatpants.",
+        sizes: ["S", "M", "L"],
+        picture: "sweatpants"
+    },
+    {
+        name: "Nike Hoodie",
+        price: 45,
+        description: "Look sporty with this breathable Nike athletic hoodie.",
+        sizes: ["S", "M", "L"],
+        picture: "nikeHood"
+    },
+    {
+        name: "Apple T-Shirt",
+        price: 25,
+        description: "Think different.",
+        sizes: ["S", "M", "L"],
+        picture: "appleT"
     }
 ];
 
 const ProductListMen = () => {
-    //let filter = "name";
     const prodList = prod.map((item) => <Product {...item} key={item.name} />);
     return (
         <div>
