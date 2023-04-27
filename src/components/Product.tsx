@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
 import "./Main.css";
 
@@ -18,19 +18,40 @@ const Product: React.FC<ProductProps> = ({
     sizes,
     picture
 }) => {
+    const [selectedSize, setSelectedSize] = useState("");
+
+    const handleSizeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedSize(event.target.value);
+    };
+
+    const handleAddToCart = () => {
+        // Implement your "Add to Cart" logic here
+        console.log(`Added ${name} (size ${selectedSize}) to cart`);
+    };
     return (
         <div className="productImage">
             <img src={require(`../assets/${picture}.png`)} alt={description} />
             <h2 className="productName">{name}</h2>
             <p className="productDesc">{description}</p>
             <p className="productPrice">Price: ${price}</p>
-            <ul>
-                {sizes.map((size) => {
-                    <li className="productSize" key={size}>
-                        {size}
-                    </li>;
-                })}
-            </ul>
+            <div className="productSize">
+                <label className="productSize">Size:</label>
+                <select
+                    id="sizeSelect"
+                    value={selectedSize}
+                    onChange={handleSizeChange}
+                >
+                    <option value="">--Please select a size--</option>
+                    {sizes.map((size) => (
+                        <option key={size} value={size}>
+                            {size}
+                        </option>
+                    ))}
+                </select>
+            </div>
+            <button className="productButton" onClick={handleAddToCart}>
+                Add to Cart
+            </button>
         </div>
     );
 };
