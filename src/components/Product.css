@@ -3,8 +3,9 @@
     font-size: 20px;
 }
 .productDesc {
-    color: black;
-    font-size: 20px;
+    color: rgb(113, 113, 113);
+    font-size: 15px;
+    margin: 10px;
 }
 .productPrice {
     color: black;
