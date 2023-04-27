@@ -1,13 +1,13 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import shirt1 from "./images/shirt3.png";
+import shirt6 from "./images/shirt6.png";
 import "./App.css";
 
 function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                Shirt Three Detail
+                Shirt Six Detail
                 <div>
                     <Button>Back to All Products</Button>
                     <Button>Login</Button>
@@ -23,13 +23,13 @@ function App(): JSX.Element {
                                     fontSize: "30px"
                                 }}
                             >
-                                Shirt One
+                                Shirt Six
                             </Col>
                             <img
-                                src={shirt1}
+                                src={shirt6}
                                 height={400}
                                 width={400}
-                                alt={"Shirt 3"}
+                                alt={"Shirt 6"}
                                 style={{
                                     border: "1px solid black",
                                     padding: "4px",

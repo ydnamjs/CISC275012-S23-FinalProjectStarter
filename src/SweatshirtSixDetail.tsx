@@ -1,13 +1,13 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import shirt1 from "./images/shirt3.png";
+import sweatshirt6 from "./images/sweatshirt6.png";
 import "./App.css";
 
 function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                Shirt Three Detail
+                Sweatshirt Six Detail
                 <div>
                     <Button>Back to All Products</Button>
                     <Button>Login</Button>
@@ -23,13 +23,13 @@ function App(): JSX.Element {
                                     fontSize: "30px"
                                 }}
                             >
-                                Shirt One
+                                Sweatshirt Six
                             </Col>
                             <img
-                                src={shirt1}
+                                src={sweatshirt6}
                                 height={400}
                                 width={400}
-                                alt={"Shirt 3"}
+                                alt={"Sweatshirt 6"}
                                 style={{
                                     border: "1px solid black",
                                     padding: "4px",
@@ -50,8 +50,8 @@ function App(): JSX.Element {
                                     fontSize: "50px"
                                 }}
                             >
-                                This is a magnificent and very exquisite shirt.
-                                Made of the finest materials.
+                                This is a magnificent and very exquisite
+                                sweatshirt. Made of the finest materials.
                             </p>
                             <p
                                 style={{
