@@ -4,7 +4,7 @@ import ProductListMen from "../ProductListMen";
 
 const Mens = () => {
     return (
-        <div>
+        <div className="background">
             <NavBar />
             Mens clothing
             <ProductListMen />
