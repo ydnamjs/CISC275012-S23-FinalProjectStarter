@@ -24,16 +24,18 @@ const Product: React.FC<ProductProps> = ({
                 <Card.Img
                     variant="top"
                     src={require(`../assets/${picture}.png`)}
-                    height="500px"
+                    height="550px"
                     style={{ objectFit: "cover" }}
                 />
                 <Card.Body className="d-flex flex-column">
                     <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-                        <span className="fs-2">{name}</span>
-                        <span className="productDesc">{description}</span>
-                        <h1 className="mg-2 text-muted">
+                        <div>
+                            <span className="productName">{name}</span>
+                            <h1 className="productDesc">{description}</h1>
+                        </div>
+                        <span className="productPrice">
                             {formatMoney(price)}
-                        </h1>
+                        </span>
                     </Card.Title>
                     <div className="mt-auto">
                         <div
