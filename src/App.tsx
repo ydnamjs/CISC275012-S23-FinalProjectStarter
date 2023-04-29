@@ -36,18 +36,6 @@ function App(): JSX.Element {
             </header>
             <header className="user-header">SecondSail [User VIEW]</header>
             <br></br>
-            <div className="wrap">
-                <div className="search">
-                    <input
-                        type="text"
-                        className="searchTerm"
-                        placeholder="What are you looking for?"
-                    ></input>
-                    <button type="submit" className="searchButton">
-                        <i className="fa fa-search"></i>
-                    </button>
-                </div>
-            </div>
             <br></br>
             <p>
                 <Button>My history orders</Button>
