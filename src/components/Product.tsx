@@ -3,6 +3,7 @@ import "./Product.css";
 import "./Main.css";
 import { Button, Card } from "react-bootstrap";
 import { formatMoney } from "../utility/formatMoney";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 interface ProductProps {
     name: string;
@@ -17,7 +18,10 @@ const Product: React.FC<ProductProps> = ({
     description,
     picture
 }) => {
-    const quantity = 0;
+    const { getQuantity, increaseQuantity, decreaseQuantity, removeFromCart } =
+        useShoppingCart();
+    const quantity = getQuantity(name);
+
     return (
         <div className="productImage">
             <Card>
@@ -44,14 +48,22 @@ const Product: React.FC<ProductProps> = ({
                                 className="d-flex align-items-center justify-content-center"
                                 style={{ gap: ".5rem" }}
                             >
-                                <Button>-</Button>
+                                <Button onClick={() => decreaseQuantity(name)}>
+                                    -
+                                </Button>
                                 <div>
                                     <span className="fs-3">{quantity}</span>
                                     in cart
                                 </div>
-                                <Button>+</Button>
+                                <Button onClick={() => increaseQuantity(name)}>
+                                    +
+                                </Button>
                             </div>
-                            <Button variant="danger" size="sm">
+                            <Button
+                                variant="danger"
+                                size="sm"
+                                onClick={() => removeFromCart(name)}
+                            >
                                 Remove
                             </Button>
                         </div>

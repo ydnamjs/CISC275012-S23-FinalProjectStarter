@@ -3,7 +3,7 @@ import Product from "./Product";
 import { Row } from "react-bootstrap";
 import "./ProductList.css";
 
-const prod = [
+export const prod = [
     {
         name: "UD Football Shirt",
         price: 10,
