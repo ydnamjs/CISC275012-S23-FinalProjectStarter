@@ -1,10 +1,19 @@
 import React from "react";
 import NavBar from "../Navbar";
+import ProductListMen from "../ProductListMen";
+import { Center, Text } from "@chakra-ui/react";
+import ProductListWomen from "../ProductListWomen";
+
 const Womens = () => {
     return (
-        <div>
+        <div className="background">
             <NavBar />
-            Womens clothing
+            <Center>
+                <Text as="b" fontSize="6xl">
+                    Womens Clothing
+                </Text>
+            </Center>
+            <ProductListWomen />
         </div>
     );
 };
