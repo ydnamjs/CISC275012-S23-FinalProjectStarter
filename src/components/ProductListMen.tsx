@@ -62,11 +62,9 @@ const ProductListMen = () => {
     const filteredProd =
         selectedFilter === "All"
             ? prod
-            : prod.filter((item) => item.category === selectedFilter);
+            : prod.filter((x) => x.category === selectedFilter);
 
-    const prodList = filteredProd.map((item) => (
-        <Product {...item} key={item.name} />
-    ));
+    const prodList = filteredProd.map((x) => <Product {...x} key={x.name} />);
 
     return (
         <div>
@@ -75,14 +73,17 @@ const ProductListMen = () => {
                     {selectedFilter}
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
-                    {filterOptions.map((option) => (
-                        <Dropdown.Item
-                            key={option}
-                            onClick={() => setSelectedFilter(option)}
-                        >
-                            {option}
-                        </Dropdown.Item>
-                    ))}
+                    {
+                        // eslint-disable-next-line prettier/prettier
+                        filterOptions.map((y) => (
+                            <Dropdown.Item
+                                key={y}
+                                onClick={() => setSelectedFilter(y)}
+                            >
+                                {y}
+                            </Dropdown.Item>
+                        ))
+                    }
                 </Dropdown.Menu>
             </Dropdown>
             <Row md={2} xs={2} lg={3} className="g-3">
