@@ -1,7 +1,18 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import Product from "./Product";
-import { Row, Dropdown } from "react-bootstrap";
 import "./ProductList.css";
+import {
+    Button,
+    Center,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuList,
+    SimpleGrid
+} from "@chakra-ui/react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 export const prod = [
     {
@@ -62,33 +73,36 @@ const ProductListMen = () => {
     const filteredProd =
         selectedFilter === "All"
             ? prod
-            : prod.filter((x) => x.category === selectedFilter);
-
-    const prodList = filteredProd.map((x) => <Product {...x} key={x.name} />);
-
+            : prod.filter((item) => item.category === selectedFilter);
     return (
-        <div>
-            <Dropdown>
-                <Dropdown.Toggle variant="secondary" id="filter-dropdown">
-                    {selectedFilter}
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                    {
-                        // eslint-disable-next-line prettier/prettier
-                        filterOptions.map((y) => (
-                            <Dropdown.Item
-                                key={y}
-                                onClick={() => setSelectedFilter(y)}
+        <div style={{ padding: 15 }}>
+            <Center>
+                <Menu>
+                    <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                        {selectedFilter}
+                    </MenuButton>
+
+                    <MenuList>
+                        {filterOptions.map((option) => (
+                            <MenuItem
+                                onClick={() => {
+                                    setSelectedFilter(option);
+                                }}
                             >
-                                {y}
-                            </Dropdown.Item>
-                        ))
-                    }
-                </Dropdown.Menu>
-            </Dropdown>
-            <Row md={2} xs={2} lg={3} className="g-3">
-                {prodList}
-            </Row>
+                                {option}
+                            </MenuItem>
+                        ))}
+                    </MenuList>
+                </Menu>
+            </Center>
+            <br></br>
+            <Center>
+                <SimpleGrid columns={2} spacing={10}>
+                    {filteredProd.map((item) => (
+                        <Product {...item} key={item.name} />
+                    ))}
+                </SimpleGrid>
+            </Center>
         </div>
     );
 };

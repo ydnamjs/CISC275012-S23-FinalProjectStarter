@@ -1,3 +1,4 @@
+/* eslint-disable no-extra-parens */
 import React, { Offcanvas, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
