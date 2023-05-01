@@ -2,6 +2,7 @@ import React, { Button, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { prod } from "./ProductListMen";
 import formatMoney from "../utility/formatMoney";
+import { Image } from "@chakra-ui/react";
 
 type CartItemProps = {
     name: string;
@@ -19,7 +20,10 @@ export function CartItem({ name, quantity }: CartItemProps) {
             gap={2}
             className="d-flex align-items-center"
         >
-            <img src={item?.picture} />
+            <Image
+                src={require(`../assets/${item.picture}.png`)}
+                boxSize={12}
+            />
             <div className="me-auto">
                 <div>
                     {item.name} {quantity > 1}{" "}

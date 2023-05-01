@@ -1,7 +1,7 @@
 import React from "react";
 import "./Product.css";
 import "./Main.css";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, CardBody, Image } from "@chakra-ui/react";
 import { formatMoney } from "../utility/formatMoney";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
@@ -24,37 +24,41 @@ const Product: React.FC<ProductProps> = ({
 
     return (
         <div className="productImage">
-            <Card>
-                <Card.Img
-                    variant="top"
+            <Card
+                key={name}
+                boxShadow="md"
+                direction={{ base: "column", sm: "row" }}
+                overflow="hidden"
+                transition="box-shadow 0.2s"
+                variant="outline"
+                width="750px"
+                height="350px"
+                _hover={{ boxShadow: "2xl" }}
+                align="center"
+            >
+                <Image
                     src={require(`../assets/${picture}.png`)}
-                    height="550px"
+                    height="500px"
                     style={{ objectFit: "cover" }}
                 />
-                <Card.Body className="d-flex flex-column">
-                    <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-                        <div>
-                            <span className="productName">{name}</span>
-                            <h1 className="productDesc">{description}</h1>
-                        </div>
-                        <span className="productPrice">
-                            {formatMoney(price)}
-                        </span>
-                    </Card.Title>
+                <CardBody className="d-flex flex-column">
+                    <span className="fs-2">{name}</span>
+                    <span className="productDesc">{description}</span>
+                    <h1 className="mg-2 text-muted">{formatMoney(price)}</h1>
                     <div className="mt-auto">
                         <div
                             className="d-flex align-items-center flex-column"
-                            style={{ gap: ".5rem" }}
+                            style={{ gap: "1.5rem" }}
                         >
                             <div
                                 className="d-flex align-items-center justify-content-center"
-                                style={{ gap: ".5rem" }}
+                                style={{ gap: "1.5rem" }}
                             >
                                 <Button onClick={() => decreaseQuantity(name)}>
                                     -
                                 </Button>
                                 <div>
-                                    <span className="fs-3">{quantity}</span>
+                                    <span className="fs-3">{quantity} </span>
                                     in cart
                                 </div>
                                 <Button onClick={() => increaseQuantity(name)}>
@@ -62,7 +66,6 @@ const Product: React.FC<ProductProps> = ({
                                 </Button>
                             </div>
                             <Button
-                                variant="danger"
                                 size="sm"
                                 onClick={() => removeFromCart(name)}
                             >
@@ -70,8 +73,7 @@ const Product: React.FC<ProductProps> = ({
                             </Button>
                         </div>
                     </div>
-                </Card.Body>
-                <p>{quantity}</p>
+                </CardBody>
             </Card>
         </div>
     );

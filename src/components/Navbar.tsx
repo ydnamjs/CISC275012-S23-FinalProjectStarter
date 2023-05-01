@@ -1,79 +1,145 @@
+/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
-import "./Navbar.css";
-import { Button, Nav, Navbar } from "react-bootstrap";
+import {
+    Box,
+    Button,
+    ButtonGroup,
+    Flex,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuList,
+    Spacer,
+    Stack,
+    Text,
+    Image
+} from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+import Cart from "../assets/cart.png";
 
 function NavBar() {
-    const [isAdmin, setPriv] = useState("User");
+    const [isAdmin, setPriv] = useState<boolean>(true);
     const { openCart, cartQuantity } = useShoppingCart();
-    function updatePriv(event: React.ChangeEvent<HTMLSelectElement>) {
-        setPriv(event.target.value);
-    }
-    return (
-        <div>
-            <Navbar bg="dark" variant="dark">
-                <Container fluid>
-                    <Navbar.Brand href="/" className="title">
-                        <Link to="/">E F F O R T L E S S</Link>
-                    </Navbar.Brand>
-                    <Nav className="justify-content-end">
-                        <Nav.Link>
-                            <Link to="/men">Shop Clothing</Link>
-                        </Nav.Link>
-                    </Nav>
-                    <Form className="search">
-                        <Form.Label className="role-select">
-                            Role select
-                        </Form.Label>
-                        <Form.Select
-                            className="search"
-                            value={isAdmin}
-                            onChange={updatePriv}
-                        >
-                            <option value="User">User</option>
-                            <option value="Admin">Admin</option>
-                        </Form.Select>
-                    </Form>
-                    This user is a {isAdmin}
-                    <Button
-                        style={{
-                            width: "3rem",
-                            height: "3rem",
-                            position: "relative"
-                        }}
-                        variant="outline-primary"
-                        className="rounded-circle"
-                        onClick={openCart}
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512"
-                            fill="currentColor"
-                        >
-                            <path d="M96 0C107.5 0 117.4 8.19 119.6 19.51L121.1 32H541.8C562.1 32 578.3 52.25 572.6 72.66L518.6 264.7C514.7 278.5 502.1 288 487.8 288H170.7L179.9 336H488C501.3 336 512 346.7 512 360C512 373.3 501.3 384 488 384H159.1C148.5 384 138.6 375.8 136.4 364.5L76.14 48H24C10.75 48 0 37.25 0 24C0 10.75 10.75 0 24 0H96zM128 464C128 437.5 149.5 416 176 416C202.5 416 224 437.5 224 464C224 490.5 202.5 512 176 512C149.5 512 128 490.5 128 464zM512 464C512 490.5 490.5 512 464 512C437.5 512 416 490.5 416 464C416 437.5 437.5 416 464 416C490.5 416 512 437.5 512 464z" />
-                        </svg>
 
-                        <div
-                            className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
-                            style={{
-                                color: "white",
-                                width: "1.5rem",
-                                height: "1.5rem",
-                                position: "absolute",
-                                bottom: 0,
-                                right: 0,
-                                transform: "translate(25%, 25%)"
-                            }}
+    const navLinks = [
+        { label: "Mens", path: "/men" },
+        { label: "Womens", path: "/Women" }
+    ];
+
+    return (
+        <Box
+            as="nav"
+            position="sticky"
+            top={0}
+            zIndex={99999999}
+            py={2}
+            bgGradient="linear(to-b, gray.900, gray.100)"
+            boxShadow="md"
+            padding={2}
+        >
+            <Flex
+                justify="space-between"
+                align="center"
+                wrap="wrap"
+                maxW={{ base: "100%", md: "100%" }}
+                mx="auto"
+            >
+                <ButtonGroup>
+                    <Link to="/">
+                        <Text
+                            as="span"
+                            fontWeight="bold"
+                            color="black"
+                            fontSize={{ base: "xl", md: "2xl" }}
+                            px={{ base: 4, md: 6 }}
+                            py={{ base: 2, md: 3 }}
                         >
-                            {cartQuantity}
-                        </div>
-                    </Button>
-                </Container>
-            </Navbar>
-        </div>
+                            <i className="title">E F F O R T L E S S</i>
+                        </Text>
+                    </Link>
+                    <Box
+                        display={{ base: "none", md: "block" }}
+                        mr={{ base: 0, md: 10 }}
+                    >
+                        <Stack direction="row" spacing={5}>
+                            {navLinks.map((link) => (
+                                <Link key={link.path} to={link.path}>
+                                    <Button
+                                        as="span"
+                                        fontWeight="bold"
+                                        color="black"
+                                        variant="ghost"
+                                        fontSize={{ base: "md", md: "lg" }}
+                                        transition="background-color 0.3s ease"
+                                        _hover={{
+                                            bgGradient:
+                                                "linear(to-b, gray.900, gray.300)",
+                                            color: "black"
+                                        }}
+                                    >
+                                        {link.label}
+                                    </Button>
+                                </Link>
+                            ))}
+                        </Stack>
+                    </Box>
+                </ButtonGroup>
+                <ButtonGroup>
+                    <Menu>
+                        <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                            {!isAdmin ? "Admin" : "User"}
+                        </MenuButton>
+                        <MenuList>
+                            <MenuItem
+                                onClick={() => {
+                                    alert("Now in User Mode");
+                                    setPriv(true);
+                                }}
+                            >
+                                User
+                            </MenuItem>
+                            <MenuItem
+                                onClick={() => {
+                                    alert("Now in Admin Mode");
+                                    setPriv(false);
+                                }}
+                            >
+                                Admin
+                            </MenuItem>
+                        </MenuList>
+                    </Menu>
+                    <Spacer />
+                    <Stack spacing={3}>
+                        <Button onClick={openCart}>
+                            <Image
+                                src={Cart}
+                                boxSize={5}
+                                alt="Shopping Cart"
+                                objectFit="cover"
+                            ></Image>
+                            <div
+                                className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
+                                style={{
+                                    color: "white",
+                                    width: "1.5rem",
+                                    height: "1.5rem",
+                                    position: "absolute",
+                                    bottom: 0,
+                                    right: 0,
+                                    transform: "translate(25%, 25%)"
+                                }}
+                            >
+                                {cartQuantity}
+                            </div>
+                        </Button>
+                    </Stack>
+                    <Spacer />
+                </ButtonGroup>
+            </Flex>
+        </Box>
     );
 }
+
 export default NavBar;
