@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "../Navbar";
-import ProductListMen from "../ProductListMen";
 import { Center, Text } from "@chakra-ui/react";
 import ProductListWomen from "../ProductListWomen";
 
