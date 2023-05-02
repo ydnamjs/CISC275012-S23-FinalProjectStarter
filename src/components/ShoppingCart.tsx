@@ -3,7 +3,8 @@ import React, { Offcanvas, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
-import { prod } from "./ProductListMen";
+import { prodM } from "./ProductListMen";
+import { prodW } from "./ProductListWomen";
 
 type ShoppingCartProps = {
     isOpen: boolean;
@@ -24,9 +25,14 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                     <div className="ms-auto fw-bold fs-6">
                         {formatMoney(
                             cartItems.reduce((total, cartItem) => {
-                                const item = prod.find(
+                                let item = prodM.find(
                                     (item) => item.name === cartItem.name
                                 );
+                                if (item == null) {
+                                    item = prodW.find(
+                                        (item) => item.name === cartItem.name
+                                    );
+                                }
                                 return (
                                     total +
                                     (item?.price || 0) * cartItem.quantity
