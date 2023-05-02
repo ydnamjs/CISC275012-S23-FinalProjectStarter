@@ -27,62 +27,6 @@ function App(): JSX.Element {
                     <hr />
                 </div>
             </p>
-            <div>
-                {/* <Container>
-                    <Row>
-                        <Col>
-                            <Col>Shirt One.</Col>
-                            <img
-                                src={shirt1}
-                                height={200}
-                                width={200}
-                                alt={"Shirt 1"}
-                            ></img>
-                            <p>Price: $2.00</p>
-                            <Button>Add to Cart</Button>
-                        </Col>
-                        <Col>
-                            <Col>Shirt two.</Col>
-                            <img
-                                src={shirt2}
-                                height={200}
-                                width={200}
-                                alt={"Shirt 2"}
-                            ></img>
-                            <p>Price: $20.00</p>
-                            <Button>Add to Cart</Button>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-            <div>
-                <Container>
-                    <Row>
-                        <Col>
-                            <Col>Sweatshirt 1</Col>
-                            <img
-                                src={sweatshirt1}
-                                height={200}
-                                width={200}
-                                alt={"Sweatshirt 1"}
-                            ></img>
-                            <p>Price: $200.00</p>
-                            <Button>Add to Cart</Button>
-                        </Col>
-                        <Col>
-                            <Col>Sweatshirt 2</Col>
-                            <img
-                                src={sweatshirt2}
-                                height={200}
-                                width={200}
-                                alt={"Sweatshirt 2"}
-                            ></img>
-                            <p>Price: $2000.00</p>
-                            <Button>Add to Cart</Button>
-                        </Col>
-                    </Row>
-                </Container> */}
-            </div>
         </div>
     );
 }

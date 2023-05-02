@@ -16,6 +16,7 @@ export function SweatShirtDisplays() {
                             height={200}
                             width={200}
                             alt={"Shirt one"}
+                            color={"black"}
                         ></ClothingDisplay>
                     </Col>
                     <Col>
@@ -25,6 +26,7 @@ export function SweatShirtDisplays() {
                             height={200}
                             width={200}
                             alt={"Shirt two"}
+                            color={"blue"}
                         ></ClothingDisplay>
                     </Col>
                 </Row>

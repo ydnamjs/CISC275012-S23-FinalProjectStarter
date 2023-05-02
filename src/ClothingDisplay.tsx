@@ -10,18 +10,26 @@ export function ClothingDisplay({
     source,
     height,
     width,
-    alt
+    alt,
+    color
 }: {
     title: string;
     source: string;
     height: number;
     width: number;
     alt: string;
+    color: string;
 }): JSX.Element {
     return (
         <div>
             <Col>{title}</Col>
-            <img src={source} height={height} width={width} alt={alt}></img>
+            <img
+                src={source}
+                height={height}
+                width={width}
+                alt={alt}
+                color={color}
+            ></img>
             <p>Price: $2.00</p>
             <Button>Add to Cart</Button>
         </div>

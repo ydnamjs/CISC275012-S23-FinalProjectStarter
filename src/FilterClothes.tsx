@@ -7,6 +7,7 @@ import { Button } from "react-bootstrap";
 //import { ClothingDisplay } from "./ClothingDisplay";
 import { ShirtDisplays } from "./ShirtDisplays";
 import { SweatShirtDisplays } from "./SweatShirtDisplays";
+import { ColorFilter } from "./ColorFilter";
 
 export function FilterClothes(): JSX.Element {
     const [Shirtvisible, setShirtVisible] = useState<boolean>(true);
@@ -22,10 +23,11 @@ export function FilterClothes(): JSX.Element {
 
     return (
         <div>
-            <Button onClick={flipShirtVisbility}>Shirt</Button>
-            {Shirtvisible && <ShirtDisplays></ShirtDisplays>}
-            <Button onClick={flipSweatShirtVisbility}>Sweatshirt</Button>
-            {SweatShirtvisible && <SweatShirtDisplays></SweatShirtDisplays>}
+            <Button onClick={flipSweatShirtVisbility}>SweatShirt</Button>
+            {Shirtvisible && <SweatShirtDisplays></SweatShirtDisplays>}
+            <Button onClick={flipShirtVisbility}>Shirts</Button>
+            {SweatShirtvisible && <ShirtDisplays></ShirtDisplays>}
+            <ColorFilter></ColorFilter>
         </div>
     );
 }
