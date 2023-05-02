@@ -15,34 +15,39 @@ export function CartItem({ name, quantity }: CartItemProps) {
     if (item == null) return null;
 
     return (
-        <Stack
-            direction="horizontal"
-            gap={2}
-            className="d-flex align-items-center"
-        >
-            <Image
-                src={require(`../assets/${item.picture}.png`)}
-                boxSize={12}
-            />
-            <div className="me-auto">
-                <div>
-                    {item.name} {quantity > 1}{" "}
-                    <span className="text-muted" style={{ fontSize: ".65rem" }}>
-                        x{quantity}
-                    </span>
-                </div>
-                <div className="text-muted" style={{ fontSize: ".75rem" }}>
-                    {formatMoney(item.price)}
-                </div>
-            </div>
-            <div>{formatMoney(item.price * quantity)}</div>
-            <Button
-                variant="outline-danger"
-                size="sm"
-                onClick={() => removeFromCart(item.name)}
+        <div>
+            <Stack
+                direction="horizontal"
+                gap={2}
+                className="d-flex align-items-center"
             >
-                &times;
-            </Button>
-        </Stack>
+                <Image
+                    src={require(`../assets/${item.picture}.png`)}
+                    boxSize={12}
+                />
+                <div className="me-auto">
+                    <div>
+                        {item.name} {quantity > 1}{" "}
+                        <span
+                            className="text-muted"
+                            style={{ fontSize: ".65rem" }}
+                        >
+                            x{quantity}
+                        </span>
+                    </div>
+                    <div className="text-muted" style={{ fontSize: ".75rem" }}>
+                        {formatMoney(item.price)}
+                    </div>
+                </div>
+                <div>{formatMoney(item.price * quantity)}</div>
+                <Button
+                    variant="outline-secondary"
+                    size="sm"
+                    onClick={() => removeFromCart(item.name)}
+                >
+                    &times;
+                </Button>
+            </Stack>
+        </div>
     );
 }

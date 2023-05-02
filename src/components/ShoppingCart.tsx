@@ -1,5 +1,5 @@
 /* eslint-disable no-extra-parens */
-import React, { Offcanvas, Stack } from "react-bootstrap";
+import React, { Button, Offcanvas, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
@@ -35,6 +35,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                         )}
                     </div>
                 </Stack>
+                <Button>Checkout</Button>
             </Offcanvas.Body>
         </Offcanvas>
     );
