@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-export const prod = [
+export const prodW = [
     {
         name: "UD T-Shirt",
         price: 10,
@@ -72,8 +72,8 @@ const ProductListWomen = () => {
 
     const filteredProd =
         selectedFilter === "All"
-            ? prod
-            : prod.filter((item) => item.category === selectedFilter);
+            ? prodW
+            : prodW.filter((item) => item.category === selectedFilter);
     return (
         <div style={{ padding: 15 }}>
             <Center>
