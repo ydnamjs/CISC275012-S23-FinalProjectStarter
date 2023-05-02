@@ -15,11 +15,11 @@ function Navbar() {
                         {" "}
                         Cart
                     </Nav.Link>
-                    <Nav.Link to="/user-sign-in" as={NavLink}>
+                    <Nav.Link to="/login" as={NavLink}>
                         {" "}
                         Login
                     </Nav.Link>
-                    <Nav.Link to="/admin-sign-in" as={NavLink}>
+                    <Nav.Link to="/admin" as={NavLink}>
                         {" "}
                         Admin
                     </Nav.Link>
