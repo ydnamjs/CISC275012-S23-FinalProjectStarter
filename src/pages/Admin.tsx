@@ -1,12 +1,12 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 // import image from "./image/image.png";
-import gpro from "./image/gpro.png";
-import book from "./image/book.png";
-import controller from "./image/controller.png";
-import "./admin.css";
+import gpro from "../image/gpro.png";
+import book from "../image/book.png";
+import controller from "../image/controller.png";
+import "../admin.css";
 
-function admin(): JSX.Element {
+function AdminPage() {
     return (
         <div className="admin">
             <header className="admin-header">SecondSail ADMIN VIEW</header>
@@ -94,4 +94,4 @@ function admin(): JSX.Element {
     );
 }
 
-export default admin;
+export default AdminPage;
