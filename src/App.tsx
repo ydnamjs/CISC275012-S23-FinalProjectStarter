@@ -33,9 +33,6 @@ function App(): JSX.Element {
                             </Col>
                         </Row>
                     </Container>
-
-                    <Button>Login</Button>
-                    <Button>Cart</Button>
                 </div>
             </header>
             <p>
