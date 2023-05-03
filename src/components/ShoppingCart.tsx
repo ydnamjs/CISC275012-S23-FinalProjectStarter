@@ -5,7 +5,6 @@ import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
 import { prodM } from "./ProductListMen";
 import { prodW } from "./ProductListWomen";
-import { Link } from "react-router-dom";
 
 type ShoppingCartProps = {
     isOpen: boolean;
