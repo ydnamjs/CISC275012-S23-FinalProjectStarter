@@ -1,10 +1,11 @@
 /* eslint-disable no-extra-parens */
-import React, { Offcanvas, Stack } from "react-bootstrap";
+import React, { Button, Offcanvas, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
 import { prodM } from "./ProductListMen";
 import { prodW } from "./ProductListWomen";
+import { Link } from "react-router-dom";
 
 type ShoppingCartProps = {
     isOpen: boolean;
@@ -23,6 +24,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                         <CartItem key={item.name} {...item} />
                     ))}
                     <div className="ms-auto fw-bold fs-6">
+                        Total:&nbsp;
                         {formatMoney(
                             cartItems.reduce((total, cartItem) => {
                                 let item = prodM.find(
@@ -33,6 +35,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                                         (item) => item.name === cartItem.name
                                     );
                                 }
+
                                 return (
                                     total +
                                     (item?.price || 0) * cartItem.quantity
@@ -41,6 +44,9 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                         )}
                     </div>
                 </Stack>
+                <div style={{ textAlign: "right", paddingTop: 5 }}>
+                    <Button>Checkout</Button>
+                </div>
             </Offcanvas.Body>
         </Offcanvas>
     );
