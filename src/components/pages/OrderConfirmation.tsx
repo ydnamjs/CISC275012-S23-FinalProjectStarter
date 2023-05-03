@@ -1,3 +1,4 @@
+/* eslint-disable no-extra-parens */
 import React from "react";
 import { CheckoutItem } from "../CheckoutItem";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
@@ -5,7 +6,7 @@ import { Stack } from "react-bootstrap";
 import formatMoney from "../../utility/formatMoney";
 import { prodM } from "../ProductListMen";
 import { prodW } from "../ProductListWomen";
-import { Card, CardBody, CardHeader, Heading } from "@chakra-ui/react";
+import { Card, CardHeader, Heading } from "@chakra-ui/react";
 
 const OrderConfirmation = () => {
     const { cartItems } = useShoppingCart();
