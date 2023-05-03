@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import sweatshirt3 from "./images/sweatshirt3.png";
+import sweatshirt2 from "./images/sweatshirt2.png";
 import "./App.css";
 
-function SweatshirtThreeDetail(): JSX.Element {
+function SweatshirtTwoDetailCopy(): JSX.Element {
     return (
-        <div className="SweatshirtThree">
+        <div className="SweatshirtTwoCopy">
             <div>
                 <Container>
                     <Row>
@@ -15,13 +15,13 @@ function SweatshirtThreeDetail(): JSX.Element {
                                     fontSize: "30px"
                                 }}
                             >
-                                Sweatshirt Three
+                                Sweatshirt Two
                             </Col>
                             <img
-                                src={sweatshirt3}
+                                src={sweatshirt2}
                                 height={400}
                                 width={400}
-                                alt={"Sweatshirt 3"}
+                                alt={"Sweatshirt 2"}
                                 style={{
                                     border: "1px solid black",
                                     padding: "4px",
@@ -64,4 +64,4 @@ function SweatshirtThreeDetail(): JSX.Element {
     );
 }
 
-export default SweatshirtThreeDetail;
+export default SweatshirtTwoDetailCopy;
