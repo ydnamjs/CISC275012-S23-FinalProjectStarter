@@ -5,6 +5,7 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Mens from "./components/pages/Mens";
 import Womens from "./components/pages/Womens";
 import Admin from "./components/pages/Admin";
+import Login from "./components/pages/Login";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 function App(): JSX.Element {
@@ -18,6 +19,7 @@ function App(): JSX.Element {
                             <Route path="/men" element={<Mens />} />
                             <Route path="/women" element={<Womens />} />
                             <Route path="/admin" element={<Admin />} />
+                            <Route path="/login" element={<Login />} />
                         </Routes>
                     </Router>
                 </React.StrictMode>
