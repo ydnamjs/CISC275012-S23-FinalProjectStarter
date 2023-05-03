@@ -9,7 +9,7 @@ const Mens = () => {
             <NavBar />
             <Center>
                 <Text as="b" fontSize="6xl">
-                    Mens Clothing
+                    Men{"'"}s Clothing
                 </Text>
             </Center>
             <ProductListMen />
