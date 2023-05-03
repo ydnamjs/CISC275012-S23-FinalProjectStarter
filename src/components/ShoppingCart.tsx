@@ -41,7 +41,9 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                         )}
                     </div>
                 </Stack>
-                <Button>Checkout</Button>
+                <div className="text-center">
+                    <Button>Checkout</Button>
+                </div>
             </Offcanvas.Body>
         </Offcanvas>
     );
