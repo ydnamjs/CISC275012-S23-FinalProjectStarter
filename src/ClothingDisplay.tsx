@@ -23,7 +23,13 @@ export function ClothingDisplay({
     return (
         <div>
             <Col>{title}</Col>
-            <img src={source} height={height} width={width} alt={alt}></img>
+            <img
+                src={source}
+                height={height}
+                width={width}
+                alt={alt}
+                color={color}
+            ></img>
             <div>
                 <Button
                     style={{

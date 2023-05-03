@@ -1,10 +1,5 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-//import shirt1 from "./images/shirt1.png";
-//import shirt2 from "./images/shirt2.png";
-//import sweatshirt1 from "./images/sweatshirt1.png";
-//import sweatshirt2 from "./images/sweatshirt2.png";
-//import { ClothingDisplay } from "./ClothingDisplay";
 import { ShirtDisplays } from "./ShirtDisplays";
 import { SweatShirtDisplays } from "./SweatShirtDisplays";
 import { ColorFilter } from "./ColorFilter";
@@ -27,7 +22,7 @@ export function FilterClothes(): JSX.Element {
             {Shirtvisible && <SweatShirtDisplays></SweatShirtDisplays>}
             <Button onClick={flipShirtVisbility}>Shirts</Button>
             {SweatShirtvisible && <ShirtDisplays></ShirtDisplays>}
-            <ColorFilter></ColorFilter>
+            {<ColorFilter></ColorFilter>}
         </div>
     );
 }

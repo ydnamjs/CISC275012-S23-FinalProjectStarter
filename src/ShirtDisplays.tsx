@@ -42,6 +42,7 @@ export function ShirtDisplays() {
                             height={200}
                             width={200}
                             alt={"Shirt three"}
+                            color={"green"}
                         ></ClothingDisplay>
                     </Col>
                     <Col>
@@ -51,6 +52,7 @@ export function ShirtDisplays() {
                             height={200}
                             width={200}
                             alt={"Shirt four"}
+                            color={"blue"}
                         ></ClothingDisplay>
                     </Col>
                 </Row>
@@ -62,6 +64,7 @@ export function ShirtDisplays() {
                             height={200}
                             width={200}
                             alt={"Shirt five"}
+                            color={"pink"}
                         ></ClothingDisplay>
                     </Col>
                     <Col>
@@ -71,6 +74,7 @@ export function ShirtDisplays() {
                             height={200}
                             width={200}
                             alt={"Shirt six"}
+                            color={"yellow"}
                         ></ClothingDisplay>
                     </Col>
                 </Row>

@@ -37,13 +37,7 @@ function App(): JSX.Element {
             </header>
             <p>
                 <div>
-                    Filter Items:
-                    <Button>Shirts</Button>
-                    <Button>Sweatshirts</Button>
-                    <Button>Size</Button>
-                    <hr />
-                    <FilterClothes></FilterClothes>
-                    <hr />
+                    Filter Items: <FilterClothes></FilterClothes>
                 </div>
             </p>
         </div>
