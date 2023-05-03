@@ -18,6 +18,7 @@ export const prodW = [
     {
         name: "UD T-Shirt",
         price: 10,
+        stock: 10,
         description: "Support UD in this grey t-shirt!",
         sizes: ["S", "M", "L"],
         picture: "WTShirt",
@@ -26,6 +27,7 @@ export const prodW = [
     {
         name: "UD Sweater",
         price: 35,
+        stock: 10,
         description: "Support UD in this comfy sweater.",
         sizes: ["S", "M", "L"],
         picture: "Wcrew",
@@ -34,6 +36,7 @@ export const prodW = [
     {
         name: "Ripped Jeans",
         price: 20,
+        stock: 10,
         description: "These stylish jeans are perfect for any casual event.",
         sizes: ["S", "M", "L"],
         picture: "ripped",
@@ -42,6 +45,7 @@ export const prodW = [
     {
         name: "UD Sweatpants",
         price: 15,
+        stock: 10,
         description: "Enjoy the comfortability of these UD sweatpants.",
         sizes: ["S", "M", "L"],
         picture: "UDswpants",
@@ -50,6 +54,7 @@ export const prodW = [
     {
         name: "Nike Sport Crewneck",
         price: 45,
+        stock: 10,
         description: "Look sporty with this breathable Nike Crew.",
         sizes: ["S", "M", "L"],
         picture: "SportSweater",
@@ -58,6 +63,7 @@ export const prodW = [
     {
         name: "North Face Zip-Up",
         price: 25,
+        stock: 10,
         description: "Go anywhere in this zip-up hoodie from North Face.",
         sizes: ["S", "M", "L"],
         picture: "NFHood",
