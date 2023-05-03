@@ -18,6 +18,7 @@ export const prodM = [
     {
         name: "UD Football Shirt",
         price: 10,
+        stock: 10,
         description: "Support UD Football in this grey t-shirt!",
         sizes: ["S", "M", "L"],
         picture: "ud_shirt",
@@ -26,6 +27,7 @@ export const prodM = [
     {
         name: "UD Crewneck",
         price: 35,
+        stock: 10,
         description: "Support UD in this comfy  crewneck.",
         sizes: ["S", "M", "L"],
         picture: "UDcrew",
@@ -34,6 +36,7 @@ export const prodM = [
     {
         name: "Jeans",
         price: 20,
+        stock: 10,
         description: "These breathable jeans are perfect for work or school.",
         sizes: ["S", "M", "L"],
         picture: "jeans",
@@ -42,6 +45,7 @@ export const prodM = [
     {
         name: "Sweat-Pants",
         price: 15,
+        stock: 10,
         description: "Enjoy the comfortability of these casual sweatpants.",
         sizes: ["S", "M", "L"],
         picture: "sweatpants",
@@ -50,6 +54,7 @@ export const prodM = [
     {
         name: "Nike Hoodie",
         price: 45,
+        stock: 10,
         description: "Look sporty with this breathable Nike athletic hoodie.",
         sizes: ["S", "M", "L"],
         picture: "nikeHood",
@@ -58,6 +63,7 @@ export const prodM = [
     {
         name: "Apple T-Shirt",
         price: 25,
+        stock: 10,
         description: "Think different.",
         sizes: ["S", "M", "L"],
         picture: "appleT",

@@ -8,6 +8,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 interface ProductProps {
     name: string;
     price: number;
+    stock: number;
     description: string;
     picture: string;
 }
@@ -15,6 +16,7 @@ interface ProductProps {
 const Product: React.FC<ProductProps> = ({
     name,
     price,
+    stock,
     description,
     picture
 }) => {
@@ -44,6 +46,7 @@ const Product: React.FC<ProductProps> = ({
                 <CardBody className="d-flex flex-column">
                     <span className="fs-2">{name}</span>
                     <span className="productDesc">{description}</span>
+                    <span>In Stock: {stock}</span>
                     <h1 className="mg-2 text-muted">{formatMoney(price)}</h1>
                     <div className="mt-auto">
                         <div
