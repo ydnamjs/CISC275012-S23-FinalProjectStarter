@@ -5,6 +5,7 @@ import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
 import { prodM } from "./ProductListMen";
 import { prodW } from "./ProductListWomen";
+import { Link } from "@chakra-ui/react";
 
 type ShoppingCartProps = {
     isOpen: boolean;
@@ -44,7 +45,9 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                     </div>
                 </Stack>
                 <div style={{ textAlign: "right", paddingTop: 5 }}>
-                    <Button>Checkout</Button>
+                    <Link href="/homepage#/checkout">
+                        <Button>Checkout</Button>
+                    </Link>
                 </div>
             </Offcanvas.Body>
         </Offcanvas>
