@@ -180,6 +180,26 @@ function NavBar() {
                         </MenuList>
                     </Menu>
                     <Spacer />
+                    <Stack direction="row" spacing={5}>
+                        <Link to="/login">
+                            <Button
+                                as="span"
+                                fontWeight="bold"
+                                color="black"
+                                variant="ghost"
+                                fontSize={{ base: "md", md: "lg" }}
+                                transition="background-color 0.3s ease"
+                                _hover={{
+                                    bgGradient:
+                                        "linear(to-b, gray.800, gray.300)",
+                                    color: "black"
+                                }}
+                            >
+                                Log in/Register
+                            </Button>
+                        </Link>
+                    </Stack>
+                    <Spacer />
                     <Stack spacing={3}>
                         <Button onClick={openCart}>
                             <Image
