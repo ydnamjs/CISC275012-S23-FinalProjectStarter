@@ -14,7 +14,7 @@ const OrderConfirmation = () => {
             <h1 className="text-center">Checkout</h1>
             <Card>
                 <CardHeader>
-                    <Heading size="md">Client Report</Heading>
+                    <Heading size="md">Order Overview</Heading>
                 </CardHeader>
             </Card>
             <div></div>

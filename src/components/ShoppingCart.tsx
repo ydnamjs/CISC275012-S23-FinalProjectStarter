@@ -1,11 +1,11 @@
 /* eslint-disable no-extra-parens */
-import React, { Button, Offcanvas } from "react-bootstrap";
+import React, { Button, Offcanvas, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
 import { prodM } from "./ProductListMen";
 import { prodW } from "./ProductListWomen";
-import { Stack } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 type ShoppingCartProps = {
     isOpen: boolean;
@@ -35,6 +35,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                                         (item) => item.name === cartItem.name
                                     );
                                 }
+
                                 return (
                                     total +
                                     (item?.price || 0) * cartItem.quantity
@@ -43,7 +44,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                         )}
                     </div>
                 </Stack>
-                <div className="text-center">
+                <div style={{ textAlign: "right", paddingTop: 5 }}>
                     <Button>Checkout</Button>
                 </div>
             </Offcanvas.Body>

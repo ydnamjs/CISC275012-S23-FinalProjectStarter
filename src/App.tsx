@@ -7,6 +7,7 @@ import Womens from "./components/pages/Womens";
 import Admin from "./components/pages/Admin";
 import Login from "./components/pages/Login";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import OrderConfirmation from "./components/pages/OrderConfirmation";
 
 function App(): JSX.Element {
     return (
@@ -20,6 +21,10 @@ function App(): JSX.Element {
                             <Route path="/women" element={<Womens />} />
                             <Route path="/admin" element={<Admin />} />
                             <Route path="/login" element={<Login />} />
+                            <Route
+                                path="/checkout"
+                                element={<OrderConfirmation />}
+                            />
                         </Routes>
                     </Router>
                 </React.StrictMode>
