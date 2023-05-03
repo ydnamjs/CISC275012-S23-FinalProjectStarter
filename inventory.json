@@ -1,0 +1,76 @@
+{
+    "items": [
+        {
+            "name": "shirt1",
+            "type": "shirt",
+            "color": "black",
+            "price": 15.0
+        },
+        {
+            "name": "shirt2",
+            "type": "shirt",
+            "color": "red",
+            "price": 15.0
+        },
+        {
+            "name": "shirt3",
+            "type": "shirt",
+            "color": "green",
+            "price": 15.0
+        },
+        {
+            "name": "shirt4",
+            "type": "shirt",
+            "color": "blue",
+            "price": 15.0
+        },
+        {
+            "name": "shirt5",
+            "type": "shirt",
+            "color": "pink",
+            "price": 15.0
+        },
+        {
+            "name": "shirt6",
+            "type": "shirt",
+            "color": "yellow",
+            "price": 15.0
+        },
+        {
+            "name": "sweatshirt1",
+            "type": "sweatshirt",
+            "color": "black",
+            "price": 30.0
+        },
+        {
+            "name": "sweatshirt2",
+            "type": "sweatshirt",
+            "color": "blue",
+            "price": 30.0
+        },
+        {
+            "name": "sweatshirt3",
+            "type": "sweatshirt",
+            "color": "red",
+            "price": 30.0
+        },
+        {
+            "name": "sweatshirt4",
+            "type": "sweatshirt",
+            "color": "green",
+            "price": 30.0
+        },
+        {
+            "name": "sweatshirt5",
+            "type": "sweatshirt",
+            "color": "purple",
+            "price": 30.0
+        },
+        {
+            "name": "sweatshirt6",
+            "type": "sweatshirt",
+            "color": "yellow",
+            "price": 30.0
+        }
+    ]
+}
