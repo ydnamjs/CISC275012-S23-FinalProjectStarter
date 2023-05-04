@@ -76,3 +76,5 @@ export function ShirtDisplays() {
         </div>
     );
 }
+
+export default ShirtDisplays;

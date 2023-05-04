@@ -76,3 +76,5 @@ export function SweatShirtDisplays() {
         </div>
     );
 }
+
+export default SweatShirtDisplays;
