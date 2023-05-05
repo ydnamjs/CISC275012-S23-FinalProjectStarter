@@ -94,3 +94,5 @@ export function SweatShirtDisplays({ color }: { color: string }) {
         </div>
     );
 }
+
+export default SweatShirtDisplays;

@@ -94,3 +94,5 @@ export function ShirtDisplays({ color }: { color: string }) {
         </div>
     );
 }
+
+export default ShirtDisplays;

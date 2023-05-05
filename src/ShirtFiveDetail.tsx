@@ -3,17 +3,9 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import shirt5 from "./images/shirt5.png";
 import "./App.css";
 
-function App(): JSX.Element {
+function ShirtFiveDetail(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">
-                Shirt Five Detail
-                <div>
-                    <Button>Back to All Products</Button>
-                    <Button>Login</Button>
-                    <Button>Cart</Button>
-                </div>
-            </header>
+        <div className="ShirtFive">
             <div>
                 <Container>
                     <Row>
@@ -72,4 +64,4 @@ function App(): JSX.Element {
     );
 }
 
-export default App;
+export default ShirtFiveDetail;

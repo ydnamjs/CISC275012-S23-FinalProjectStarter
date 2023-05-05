@@ -6,16 +6,9 @@ import sweatshirt1 from "./images/sweatshirt1.png";
 import sweatshirt2 from "./images/sweatshirt2.png";
 import "./App.css";
 
-function App(): JSX.Element {
+function OrderViewer(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">
-                Cart
-                <div>
-                    <Button>Back to All Products</Button>
-                    <Button>Checkout</Button>
-                </div>
-            </header>
+        <div className="OrderViewer">
             <div>
                 <Container>
                     <Row>
@@ -128,4 +121,4 @@ function App(): JSX.Element {
     );
 }
 
-export default App;
+export default OrderViewer;
