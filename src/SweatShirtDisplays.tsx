@@ -8,74 +8,86 @@ import sweatshirt4 from "./images/sweatshirt4.png";
 import sweatshirt5 from "./images/sweatshirt5.png";
 import sweatshirt6 from "./images/sweatshirt6.png";
 
-export function SweatShirtDisplays() {
+export function SweatShirtDisplays({ color }: { color: string }) {
     return (
         <div>
             <Container>
                 <Row>
                     <Col>
-                        <ClothingDisplay
-                            title={"Sweatshirt One"}
-                            source={sweatshirt1}
-                            height={200}
-                            width={200}
-                            alt={"Shirt one"}
-                            color={"black"}
-                        ></ClothingDisplay>
+                        {(color === "black" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Sweatshirt One"}
+                                source={sweatshirt1}
+                                height={200}
+                                width={200}
+                                alt={"Shirt one"}
+                                color={"black"}
+                            ></ClothingDisplay>
+                        )}
                     </Col>
                     <Col>
-                        <ClothingDisplay
-                            title={"Sweatshirt Two"}
-                            source={sweatshirt2}
-                            height={200}
-                            width={200}
-                            alt={"Shirt two"}
-                            color={"blue"}
-                        ></ClothingDisplay>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <ClothingDisplay
-                            title={"Sweatshirt Three"}
-                            source={sweatshirt3}
-                            height={200}
-                            width={200}
-                            alt={"Shirt three"}
-                            color={"red"}
-                        ></ClothingDisplay>
-                    </Col>
-                    <Col>
-                        <ClothingDisplay
-                            title={"Sweatshirt Four"}
-                            source={sweatshirt4}
-                            height={200}
-                            width={200}
-                            alt={"Shirt four"}
-                            color={"green"}
-                        ></ClothingDisplay>
+                        {(color === "blue" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Sweatshirt Two"}
+                                source={sweatshirt2}
+                                height={200}
+                                width={200}
+                                alt={"Shirt two"}
+                                color={"blue"}
+                            ></ClothingDisplay>
+                        )}
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <ClothingDisplay
-                            title={"Sweatshirt Five"}
-                            source={sweatshirt5}
-                            height={200}
-                            width={200}
-                            alt={"Shirt five"}
-                            color={"purple"}
-                        ></ClothingDisplay>
+                        {(color === "red" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Sweatshirt Three"}
+                                source={sweatshirt3}
+                                height={200}
+                                width={200}
+                                alt={"Shirt three"}
+                                color={"red"}
+                            ></ClothingDisplay>
+                        )}
                     </Col>
                     <Col>
-                        <ClothingDisplay
-                            title={"Sweatshirt Six"}
-                            source={sweatshirt6}
-                            height={200}
-                            width={200}
-                            alt={"Shirt six"}
-                            color={"yellow"}
-                        ></ClothingDisplay>
+                        {(color === "green" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Sweatshirt Four"}
+                                source={sweatshirt4}
+                                height={200}
+                                width={200}
+                                alt={"Shirt four"}
+                                color={"green"}
+                            ></ClothingDisplay>
+                        )}
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        {(color === "purple" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Sweatshirt Five"}
+                                source={sweatshirt5}
+                                height={200}
+                                width={200}
+                                alt={"Shirt five"}
+                                color={"purple"}
+                            ></ClothingDisplay>
+                        )}
+                    </Col>
+                    <Col>
+                        {(color === "yellow" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Sweatshirt Six"}
+                                source={sweatshirt6}
+                                height={200}
+                                width={200}
+                                alt={"Shirt six"}
+                                color={"yellow"}
+                            ></ClothingDisplay>
+                        )}
                     </Col>
                 </Row>
             </Container>

@@ -35,11 +35,9 @@ function App(): JSX.Element {
                     </Container>
                 </div>
             </header>
-            <p>
-                <div>
-                    Filter Items: <FilterClothes></FilterClothes>
-                </div>
-            </p>
+            <div>
+                Filter Items: <FilterClothes></FilterClothes>
+            </div>
         </div>
     );
 }

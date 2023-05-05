@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Form } from "react-bootstrap";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import Dropdown from "react-bootstrap/Dropdown";
+//import DropdownButton from "react-bootstrap/DropdownButton";
+//import Dropdown from "react-bootstrap/Dropdown";
 //import { SweatShirtDisplays } from "./SweatShirtDisplays";
 //import { ShirtDisplays } from "./ShirtDisplays";
+import "./ColorFilter.css";
 
 export function ColorFilter({
     color,
@@ -12,43 +13,19 @@ export function ColorFilter({
     color: string;
     setColor: (color: string) => void;
 }): JSX.Element {
-    const COLORS = [
-        "red",
-        "green",
-        "purple",
-        "blue",
-        "yellow",
-        "black",
-        "pink"
-    ];
-
-    //const [color, setColor] = useState<string>("");
-    const [visibility, setVisibility] = useState<boolean>(true);
-
-    function flipVisbility(): void {
-        setVisibility(!visibility);
+    function conditionallyRenderedElement(value: string): void {
+        setColor(value);
     }
-
-    //const [selection, setSelection] = useState<string>("");
-
-    function conditionallyRenderedElement(): void {
-        if (color === "yellow") {
-            COLORS.filter((color: string): boolean => color != "yellow");
-            flipVisbility();
-        }
-    }
-
-    /* function updateColor(event: React.ChangeEvent<HTMLSelectElement>) {
-        setColor(event.target.value);
-    } */
 
     return (
         <div>
-            <Form.Group controlId="userEmotions">
+            <Form.Group controlId="userColor">
                 <Form.Label>Select a Color</Form.Label>
                 <Form.Select
                     value={color}
-                    onChange={conditionallyRenderedElement}
+                    onChange={(e) => {
+                        conditionallyRenderedElement(e.currentTarget.value);
+                    }}
                 >
                     <option value="yellow">Yellow</option>
                     <option value="red">Red</option>
@@ -59,7 +36,7 @@ export function ColorFilter({
                     <option value="green">Green</option>
                 </Form.Select>
             </Form.Group>
-            The user is feeling {color}.
+            The user selected {color}.
         </div>
     );
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { ShirtDisplays } from "./ShirtDisplays";
@@ -20,7 +21,9 @@ export function FilterClothes(): JSX.Element {
     return (
         <div>
             <Button onClick={flipSweatShirtVisbility}>SweatShirt</Button>
-            {Shirtvisible && <SweatShirtDisplays></SweatShirtDisplays>}
+            {Shirtvisible && (
+                <SweatShirtDisplays color={color}></SweatShirtDisplays>
+            )}
             <Button onClick={flipShirtVisbility}>Shirts</Button>
             {SweatShirtvisible && <ShirtDisplays color={color}></ShirtDisplays>}
             {<ColorFilter color={color} setColor={setColor}></ColorFilter>}
