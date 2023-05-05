@@ -7,6 +7,7 @@ import { ColorFilter } from "./ColorFilter";
 export function FilterClothes(): JSX.Element {
     const [Shirtvisible, setShirtVisible] = useState<boolean>(true);
     const [SweatShirtvisible, setSweatShirtVisible] = useState<boolean>(true);
+    const [color, setColor] = useState<string>("all");
 
     function flipShirtVisbility(): void {
         setShirtVisible(!Shirtvisible);
@@ -21,8 +22,8 @@ export function FilterClothes(): JSX.Element {
             <Button onClick={flipSweatShirtVisbility}>SweatShirt</Button>
             {Shirtvisible && <SweatShirtDisplays></SweatShirtDisplays>}
             <Button onClick={flipShirtVisbility}>Shirts</Button>
-            {SweatShirtvisible && <ShirtDisplays></ShirtDisplays>}
-            {<ColorFilter></ColorFilter>}
+            {SweatShirtvisible && <ShirtDisplays color={color}></ShirtDisplays>}
+            {<ColorFilter color={color} setColor={setColor}></ColorFilter>}
         </div>
     );
 }

@@ -2,10 +2,16 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
-import { SweatShirtDisplays } from "./SweatShirtDisplays";
-import { ShirtDisplays } from "./ShirtDisplays";
+//import { SweatShirtDisplays } from "./SweatShirtDisplays";
+//import { ShirtDisplays } from "./ShirtDisplays";
 
-export function ColorFilter(): JSX.Element {
+export function ColorFilter({
+    color,
+    setColor
+}: {
+    color: string;
+    setColor: (color: string) => void;
+}): JSX.Element {
     const COLORS = [
         "red",
         "green",
@@ -20,7 +26,16 @@ export function ColorFilter(): JSX.Element {
     const [visibility, setVisibility] = useState<boolean>(true);
 
     function flipVisbility(): void {
-        COLORS.map((color: string) => setVisibility(!visibility));
+        setVisibility(!visibility);
+    }
+
+    //const [selection, setSelection] = useState<string>("");
+
+    function conditionallyRenderedElement(): void {
+        if (color === "yellow") {
+            COLORS.filter((color: string): boolean => color != "yellow");
+            flipVisbility();
+        }
     }
 
     /* function updateColor(event: React.ChangeEvent<HTMLSelectElement>) {
@@ -28,36 +43,23 @@ export function ColorFilter(): JSX.Element {
     } */
 
     return (
-        <DropdownButton id="dropdown-basic-button" title="Color">
-            <Dropdown.Item href="yellow" onClick={flipVisbility}>
-                Yellow
-            </Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Green</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Red</Dropdown.Item>
-            <Dropdown.Item href="#/action-1">Purple</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Pink</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Black</Dropdown.Item>
-        </DropdownButton>
-        /* <div>
-            {COLORS.map((color: string) => (
-                <Form.Check
-                    inline
-                    key={color}
-                    type="dropdown"
-                    name="colors"
-                    onChange={updateColor}
-                    id="color-check"
-                    label={color}
+        <div>
+            <Form.Group controlId="userEmotions">
+                <Form.Label>Select a Color</Form.Label>
+                <Form.Select
                     value={color}
-                    checked={color === "happy"}
-                    background-color={color}
-                />
-            ))}
-            <div>You have chosen: </div>
-            <span data-testid="colored-box" style={{ backgroundColor: color }}>
-                {" "}
-                {color}
-            </span>
-        </div> */
+                    onChange={conditionallyRenderedElement}
+                >
+                    <option value="yellow">Yellow</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="black">Black</option>
+                    <option value="purple">Purple</option>
+                    <option value="pink">Pink</option>
+                    <option value="green">Green</option>
+                </Form.Select>
+            </Form.Group>
+            The user is feeling {color}.
+        </div>
     );
 }

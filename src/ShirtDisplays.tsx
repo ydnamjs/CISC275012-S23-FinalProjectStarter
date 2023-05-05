@@ -8,20 +8,22 @@ import shirt4 from "./images/shirt4.png";
 import shirt5 from "./images/shirt5.png";
 import shirt6 from "./images/shirt6.png";
 
-export function ShirtDisplays() {
+export function ShirtDisplays({ color }: { color: string }) {
     return (
         <div>
             <Container>
                 <Row>
                     <Col>
-                        <ClothingDisplay
-                            title={"Shirt One"}
-                            source={shirt1}
-                            height={200}
-                            width={200}
-                            alt={"Shirt one"}
-                            color={"black"}
-                        ></ClothingDisplay>
+                        {(color === "black" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Shirt One"}
+                                source={shirt1}
+                                height={200}
+                                width={200}
+                                alt={"Shirt one"}
+                                color={"black"}
+                            ></ClothingDisplay>
+                        )}
                     </Col>
                     <Col>
                         <ClothingDisplay
