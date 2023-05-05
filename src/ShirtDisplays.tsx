@@ -1,4 +1,3 @@
-/* eslint-disable no-extra-parens */
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { ClothingDisplay } from "./ClothingDisplay";
