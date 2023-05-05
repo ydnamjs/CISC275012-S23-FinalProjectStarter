@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-//import shirt1 from "./images/shirt1.png";
-//import shirt2 from "./images/shirt2.png";
-//import sweatshirt1 from "./images/sweatshirt1.png";
-//import sweatshirt2 from "./images/sweatshirt2.png";
-//import { ClothingDisplay } from "./ClothingDisplay";
 import { ShirtDisplays } from "./ShirtDisplays";
 import { SweatShirtDisplays } from "./SweatShirtDisplays";
+import { ColorFilter } from "./ColorFilter";
 
 export function FilterClothes(): JSX.Element {
     const [Shirtvisible, setShirtVisible] = useState<boolean>(true);
     const [SweatShirtvisible, setSweatShirtVisible] = useState<boolean>(true);
+    const [color, setColor] = useState<string>("all");
 
     function flipShirtVisbility(): void {
         setShirtVisible(!Shirtvisible);
@@ -22,10 +19,13 @@ export function FilterClothes(): JSX.Element {
 
     return (
         <div>
-            <Button onClick={flipShirtVisbility}>Shirt</Button>
-            {Shirtvisible && <ShirtDisplays></ShirtDisplays>}
-            <Button onClick={flipSweatShirtVisbility}>Sweatshirt</Button>
-            {SweatShirtvisible && <SweatShirtDisplays></SweatShirtDisplays>}
+            {<ColorFilter color={color} setColor={setColor}></ColorFilter>}
+            <Button onClick={flipSweatShirtVisbility}>SweatShirt</Button>
+            <Button onClick={flipShirtVisbility}>Shirts</Button>
+            {Shirtvisible && (
+                <SweatShirtDisplays color={color}></SweatShirtDisplays>
+            )}
+            {SweatShirtvisible && <ShirtDisplays color={color}></ShirtDisplays>}
         </div>
     );
 }
