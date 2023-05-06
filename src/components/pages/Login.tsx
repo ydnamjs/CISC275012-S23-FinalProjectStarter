@@ -1,19 +1,17 @@
 import React from "react";
 import NavBar from "../Navbar";
 import { Center, Text } from "@chakra-ui/react";
-import ProductListWomen from "../ProductListWomen";
 
-const Womens = () => {
+const Login = () => {
     return (
         <div className="background">
             <NavBar />
             <Center>
                 <Text as="b" fontSize="6xl">
-                    Womens Clothing
+                    Login
                 </Text>
             </Center>
-            <ProductListWomen />
         </div>
     );
 };
-export default Womens;
+export default Login;

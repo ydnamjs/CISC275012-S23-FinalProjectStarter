@@ -1,17 +1,14 @@
-import React, { Button, Stack } from "react-bootstrap";
-import { useShoppingCart } from "../context/ShoppingCartContext";
+import React, { Stack } from "react-bootstrap";
 import { prodM } from "./ProductListMen";
 import { prodW } from "./ProductListWomen";
-import formatMoney from "../utility/formatMoney";
 import { Image } from "@chakra-ui/react";
+import formatMoney from "../utility/formatMoney";
 
-type CartItemProps = {
+type CheckoutItemProps = {
     name: string;
     quantity: number;
 };
-
-export function CartItem({ name, quantity }: CartItemProps) {
-    const { removeFromCart } = useShoppingCart();
+export function CheckoutItem({ name, quantity }: CheckoutItemProps) {
     let item:
         | {
               name: string;
@@ -54,17 +51,6 @@ export function CartItem({ name, quantity }: CartItemProps) {
                 </div>
             </div>
             <div>{formatMoney(item.price * quantity)}</div>
-            <Button
-                variant="outline-danger"
-                size="sm"
-                onClick={() => {
-                    if (item != null) {
-                        removeFromCart(item.name);
-                    }
-                }}
-            >
-                &times;
-            </Button>
         </Stack>
     );
 }

@@ -12,16 +12,28 @@ import {
     Spacer,
     Stack,
     Text,
-    Image
+    Image,
+    AlertDialogFooter,
+    AlertDialogBody,
+    AlertDialogCloseButton,
+    AlertDialogHeader,
+    AlertDialogContent,
+    AlertDialog,
+    AlertDialogOverlay,
+    useDisclosure
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Cart from "../assets/cart.png";
+import AdminButton from "./AdminButton";
+import { useRef } from "react";
 
 function NavBar() {
     const [isAdmin, setPriv] = useState<boolean>(true);
     const { openCart, cartQuantity } = useShoppingCart();
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const cancelRef = useRef<HTMLButtonElement>(null);
 
     const navLinks = [
         { label: "Mens", path: "/men" },
@@ -56,7 +68,7 @@ function NavBar() {
                             px={{ base: 4, md: 6 }}
                             py={{ base: 2, md: 3 }}
                         >
-                            <i className="title">E F F O R T L E S S</i>
+                            <i className="title">E F F O R T L E S S </i>
                         </Text>
                     </Link>
                     <Box
@@ -75,7 +87,7 @@ function NavBar() {
                                         transition="background-color 0.3s ease"
                                         _hover={{
                                             bgGradient:
-                                                "linear(to-b, gray.900, gray.300)",
+                                                "linear(to-b, gray.800, gray.300)",
                                             color: "black"
                                         }}
                                     >
@@ -87,6 +99,8 @@ function NavBar() {
                     </Box>
                 </ButtonGroup>
                 <ButtonGroup>
+                    {!isAdmin ? <AdminButton></AdminButton> : null}
+                    <Spacer />
                     <Menu>
                         <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                             {!isAdmin ? "Admin" : "User"}
@@ -94,22 +108,97 @@ function NavBar() {
                         <MenuList>
                             <MenuItem
                                 onClick={() => {
-                                    alert("Now in User Mode");
+                                    {
+                                        onOpen();
+                                    }
                                     setPriv(true);
                                 }}
                             >
                                 User
                             </MenuItem>
+                            <AlertDialog
+                                motionPreset="slideInBottom"
+                                leastDestructiveRef={cancelRef}
+                                onClose={onClose}
+                                isOpen={isOpen}
+                                isCentered
+                            >
+                                <AlertDialogOverlay />
+
+                                <AlertDialogContent>
+                                    <AlertDialogHeader>
+                                        You are now in User Mode.
+                                    </AlertDialogHeader>
+                                    <AlertDialogCloseButton />
+                                    <AlertDialogFooter>
+                                        <Button
+                                            ref={cancelRef}
+                                            onClick={onClose}
+                                        >
+                                            Ok
+                                        </Button>
+                                    </AlertDialogFooter>
+                                </AlertDialogContent>
+                            </AlertDialog>
                             <MenuItem
                                 onClick={() => {
-                                    alert("Now in Admin Mode");
+                                    {
+                                        onOpen();
+                                    }
                                     setPriv(false);
                                 }}
                             >
                                 Admin
                             </MenuItem>
+                            <AlertDialog
+                                motionPreset="slideInBottom"
+                                leastDestructiveRef={cancelRef}
+                                onClose={onClose}
+                                isOpen={isOpen}
+                                isCentered
+                            >
+                                <AlertDialogOverlay />
+
+                                <AlertDialogContent>
+                                    <AlertDialogHeader>
+                                        You are now in Admin Mode.
+                                    </AlertDialogHeader>
+                                    <AlertDialogBody>
+                                        You now have Admin privileges.
+                                    </AlertDialogBody>
+                                    <AlertDialogCloseButton />
+                                    <AlertDialogFooter>
+                                        <Button
+                                            ref={cancelRef}
+                                            onClick={onClose}
+                                        >
+                                            Ok
+                                        </Button>
+                                    </AlertDialogFooter>
+                                </AlertDialogContent>
+                            </AlertDialog>
                         </MenuList>
                     </Menu>
+                    <Spacer />
+                    <Stack direction="row" spacing={5}>
+                        <Link to="/login">
+                            <Button
+                                as="span"
+                                fontWeight="bold"
+                                color="black"
+                                variant="ghost"
+                                fontSize={{ base: "md", md: "lg" }}
+                                transition="background-color 0.3s ease"
+                                _hover={{
+                                    bgGradient:
+                                        "linear(to-b, gray.800, gray.300)",
+                                    color: "black"
+                                }}
+                            >
+                                Log in/Register
+                            </Button>
+                        </Link>
+                    </Stack>
                     <Spacer />
                     <Stack spacing={3}>
                         <Button onClick={openCart}>

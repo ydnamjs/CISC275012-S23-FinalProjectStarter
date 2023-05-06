@@ -5,16 +5,20 @@ import { Button, Card, CardBody, Image } from "@chakra-ui/react";
 import { formatMoney } from "../utility/formatMoney";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
-interface ProductProps {
+type Product = {
     name: string;
     price: number;
+    stock: number;
+    sizes: string[];
     description: string;
     picture: string;
-}
+    category: string;
+};
 
-const Product: React.FC<ProductProps> = ({
+const Product: React.FC<Product> = ({
     name,
     price,
+    stock,
     description,
     picture
 }) => {
@@ -44,6 +48,7 @@ const Product: React.FC<ProductProps> = ({
                 <CardBody className="d-flex flex-column">
                     <span className="fs-2">{name}</span>
                     <span className="productDesc">{description}</span>
+                    <span>In Stock: {stock}</span>
                     <h1 className="mg-2 text-muted">{formatMoney(price)}</h1>
                     <div className="mt-auto">
                         <div

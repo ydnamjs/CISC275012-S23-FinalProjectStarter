@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import Product from "./Product";
@@ -13,73 +14,72 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-// eslint-disable-next-line prefer-const
-export let prodM = [
+export const prodW = [
     {
-        name: "UD Football Shirt",
+        name: "UD T-Shirt",
         price: 10,
         stock: 10,
-        description: "Support UD Football in this grey t-shirt!",
+        description: "Support UD in this grey t-shirt!",
         sizes: ["S", "M", "L"],
-        picture: "ud_shirt",
+        picture: "WTShirt",
         category: "Shirts"
     },
     {
-        name: "UD Crewneck",
+        name: "UD Sweater",
         price: 35,
         stock: 10,
-        description: "Support UD in this comfy  crewneck.",
+        description: "Support UD in this comfy sweater.",
         sizes: ["S", "M", "L"],
-        picture: "UDcrew",
+        picture: "Wcrew",
         category: "Shirts"
     },
     {
-        name: "Jeans",
+        name: "Ripped Jeans",
         price: 20,
         stock: 10,
-        description: "These breathable jeans are perfect for work or school.",
+        description: "These stylish jeans are perfect for any casual event.",
         sizes: ["S", "M", "L"],
-        picture: "jeans",
+        picture: "ripped",
         category: "Pants"
     },
     {
-        name: "Sweat-Pants",
+        name: "UD Sweatpants",
         price: 15,
         stock: 10,
-        description: "Enjoy the comfortability of these casual sweatpants.",
+        description: "Enjoy the comfortability of these UD sweatpants.",
         sizes: ["S", "M", "L"],
-        picture: "sweatpants",
+        picture: "UDswpants",
         category: "Pants"
     },
     {
-        name: "Nike Hoodie",
+        name: "Nike Sport Crewneck",
         price: 45,
         stock: 10,
-        description: "Look sporty with this breathable Nike athletic hoodie.",
+        description: "Look sporty with this breathable Nike Crew.",
         sizes: ["S", "M", "L"],
-        picture: "nikeHood",
-        category: "Hoodies"
+        picture: "SportSweater",
+        category: "Shirts"
     },
     {
-        name: "Apple T-Shirt",
+        name: "North Face Zip-Up",
         price: 25,
         stock: 10,
-        description: "Think different.",
+        description: "Go anywhere in this zip-up hoodie from North Face.",
         sizes: ["S", "M", "L"],
-        picture: "appleT",
-        category: "Shirts"
+        picture: "NFHood",
+        category: "Hoodies"
     }
 ];
 
 const filterOptions = ["All", "Shirts", "Pants", "Hoodies"];
 
-const ProductListMen = () => {
+const ProductListWomen = () => {
     const [selectedFilter, setSelectedFilter] = useState("All");
 
     const filteredProd =
         selectedFilter === "All"
-            ? prodM
-            : prodM.filter((item) => item.category === selectedFilter);
+            ? prodW
+            : prodW.filter((item) => item.category === selectedFilter);
     return (
         <div style={{ padding: 15 }}>
             <Center>
@@ -91,7 +91,6 @@ const ProductListMen = () => {
                     <MenuList>
                         {filterOptions.map((option) => (
                             <MenuItem
-                                key="category"
                                 onClick={() => {
                                     setSelectedFilter(option);
                                 }}
@@ -114,4 +113,4 @@ const ProductListMen = () => {
     );
 };
 
-export default ProductListMen;
+export default ProductListWomen;
