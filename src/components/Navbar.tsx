@@ -35,10 +35,7 @@ function NavBar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const cancelRef = useRef<HTMLButtonElement>(null);
 
-    const navLinks = [
-        { label: "Mens", path: "/men" },
-        { label: "Womens", path: "/Women" }
-    ];
+    const navLinks = [{ label: "Shop", path: "/men" }];
 
     return (
         <Box
