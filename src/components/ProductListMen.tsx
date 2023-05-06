@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import Product from "./Product";
@@ -14,7 +13,8 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-export const prodM = [
+// eslint-disable-next-line prefer-const
+export let prodM = [
     {
         name: "UD Football Shirt",
         price: 10,
@@ -91,6 +91,7 @@ const ProductListMen = () => {
                     <MenuList>
                         {filterOptions.map((option) => (
                             <MenuItem
+                                key="category"
                                 onClick={() => {
                                     setSelectedFilter(option);
                                 }}
