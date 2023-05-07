@@ -1,4 +1,4 @@
-import React, { Button, Stack } from "react-bootstrap";
+import React, { Stack } from "react-bootstrap";
 import { prodM } from "./ProductListMen";
 import { prodW } from "./ProductListWomen";
 import { Image } from "@chakra-ui/react";
