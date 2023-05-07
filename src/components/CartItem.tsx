@@ -2,7 +2,14 @@ import React, { Button, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { prodM, prodW } from "./ProductList";
 import formatMoney from "../utility/formatMoney";
-import { Image } from "@chakra-ui/react";
+import {
+    Image,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper,
+    NumberIncrementStepper,
+    NumberDecrementStepper
+} from "@chakra-ui/react";
 
 type CartItemProps = {
     name: string;
@@ -53,6 +60,19 @@ export function CartItem({ name, quantity }: CartItemProps) {
                 </div>
             </div>
             <div>{formatMoney(item.price * quantity)}</div>
+            <NumberInput
+                defaultValue={quantity}
+                min={1}
+                max={999}
+                size="sm"
+                maxW={20}
+            >
+                <NumberInputField />
+                <NumberInputStepper>
+                    <NumberIncrementStepper />
+                    <NumberDecrementStepper />
+                </NumberInputStepper>
+            </NumberInput>
             <Button
                 variant="outline-danger"
                 size="sm"

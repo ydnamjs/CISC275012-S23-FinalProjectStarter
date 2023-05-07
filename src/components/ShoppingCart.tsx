@@ -12,6 +12,7 @@ type ShoppingCartProps = {
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
     const { closeCart, cartItems } = useShoppingCart();
+
     return (
         <Offcanvas show={isOpen} onHide={closeCart} placement="end">
             <Offcanvas.Header closeButton>
@@ -44,7 +45,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                     </div>
                 </Stack>
                 <div style={{ textAlign: "right", paddingTop: 5 }}>
-                    <Link href="/homepage#/checkout">
+                    <Link href="/#/checkout">
                         <Button>Checkout</Button>
                     </Link>
                 </div>
