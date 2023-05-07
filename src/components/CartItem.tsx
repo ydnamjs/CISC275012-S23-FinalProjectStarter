@@ -1,7 +1,6 @@
 import React, { Button, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
-import { prodM } from "./ProductListMen";
-import { prodW } from "./ProductListWomen";
+import { prodM, prodW } from "./ProductList";
 import formatMoney from "../utility/formatMoney";
 import {
     Image,

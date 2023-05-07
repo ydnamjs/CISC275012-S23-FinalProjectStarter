@@ -3,8 +3,6 @@ import React from "react";
 import { CheckoutItem } from "../CheckoutItem";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
 import formatMoney from "../../utility/formatMoney";
-import { prodM } from "../ProductListMen";
-import { prodW } from "../ProductListWomen";
 import {
     Card,
     CardHeader,
@@ -16,6 +14,7 @@ import {
     Divider
 } from "@chakra-ui/react";
 import Navbar from "../Navbar";
+import { prodM, prodW } from "../ProductList";
 
 const OrderConfirmation = () => {
     const { cartItems } = useShoppingCart();

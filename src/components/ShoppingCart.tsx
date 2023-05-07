@@ -3,8 +3,7 @@ import React, { Button, Offcanvas, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
-import { prodM } from "./ProductListMen";
-import { prodW } from "./ProductListWomen";
+import { prodM, prodW } from "./ProductList";
 import { Link } from "@chakra-ui/react";
 
 type ShoppingCartProps = {
