@@ -5,12 +5,8 @@ import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
 import { prodM, prodW } from "./ProductList";
 import { Link } from "@chakra-ui/react";
-<<<<<<< HEAD
-import { Link as Link2 } from "react-router-dom";
-=======
 import CheckoutModal from "./Modal";
 import { useState } from "react";
->>>>>>> 93a17a8a3a57b1a78caec21862f9da8e3b30509a
 
 type ShoppingCartProps = {
     isOpen: boolean;
