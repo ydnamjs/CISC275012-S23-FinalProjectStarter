@@ -5,6 +5,8 @@ import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
 import { prodM, prodW } from "./ProductList";
 import { Link } from "@chakra-ui/react";
+import CheckoutModal from "./Modal";
+import { useState } from "react";
 
 type ShoppingCartProps = {
     isOpen: boolean;
@@ -12,6 +14,7 @@ type ShoppingCartProps = {
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
     const { closeCart, cartItems } = useShoppingCart();
+    const [openModal, setOpenModal] = useState(false);
 
     return (
         <Offcanvas show={isOpen} onHide={closeCart} placement="end">
@@ -48,6 +51,10 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                     <Link href="/#/checkout">
                         <Button>Checkout</Button>
                     </Link>
+                    <Button onClick={() => setOpenModal(!openModal)}>
+                        Checkout Modal
+                    </Button>
+                    {openModal && <CheckoutModal></CheckoutModal>}
                 </div>
             </Offcanvas.Body>
         </Offcanvas>

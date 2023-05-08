@@ -6,7 +6,7 @@ import Mens from "./components/pages/Mens";
 import Admin from "./components/pages/Admin";
 import Login from "./components/pages/Login";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
-import OrderConfirmation from "./components/pages/OrderConfirmation";
+import CheckoutModal from "./components/Modal";
 
 function App(): JSX.Element {
     return (
@@ -21,7 +21,7 @@ function App(): JSX.Element {
                             <Route path="/login" element={<Login />} />
                             <Route
                                 path="/checkout"
-                                element={<OrderConfirmation />}
+                                element={<CheckoutModal />}
                             />
                         </Routes>
                     </Router>
