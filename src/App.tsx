@@ -6,7 +6,6 @@ import Mens from "./components/pages/Mens";
 import Admin from "./components/pages/Admin";
 import Login from "./components/pages/Login";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
-import OrderConfirmation from "./components/pages/OrderConfirmation";
 import CheckoutModal from "./components/Modal";
 
 function App(): JSX.Element {

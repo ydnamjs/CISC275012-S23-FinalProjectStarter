@@ -3,9 +3,7 @@ import "./Main.css";
 import runners from "../assets/runners.png";
 import NavBar from "../components/Navbar";
 import { Image } from "@chakra-ui/react";
-
 import OrderConfirmation from "./pages/OrderConfirmation";
-import CheckoutModal from "./Modal";
 
 const FrontPage = () => {
     return (
