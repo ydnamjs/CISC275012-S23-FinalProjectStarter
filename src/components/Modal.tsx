@@ -6,16 +6,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 import formatMoney from "../utility/formatMoney";
 import { prodM, prodW } from "./ProductList";
 import { CheckoutItem } from "./CheckoutItem";
-import {
-    Card,
-    CardHeader,
-    Heading,
-    Center,
-    Text,
-    VStack,
-    Stack,
-    Divider
-} from "@chakra-ui/react";
+import { VStack, Stack, Divider } from "@chakra-ui/react";
 
 const usStates: string[] = [
     "Alabama",
