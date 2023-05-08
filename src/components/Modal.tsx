@@ -6,6 +6,16 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 import formatMoney from "../utility/formatMoney";
 import { prodM, prodW } from "./ProductList";
 import { CheckoutItem } from "./CheckoutItem";
+import {
+    Card,
+    CardHeader,
+    Heading,
+    Center,
+    Text,
+    VStack,
+    Stack,
+    Divider
+} from "@chakra-ui/react";
 
 const usStates: string[] = [
     "Alabama",
@@ -377,44 +387,57 @@ const CheckoutModal = () => {
                                 <div className="card-body">
                                     <div className="row">
                                         <div className="col-md-6">
-                                            {cartItems.map((item) => (
-                                                <CheckoutItem
-                                                    key={item.name}
-                                                    {...item}
-                                                />
-                                            ))}
-                                            <div className="ms-auto fw-bold fs-6">
-                                                Total:&nbsp;
-                                                {formatMoney(
-                                                    cartItems.reduce(
-                                                        (total, cartItem) => {
-                                                            let item =
-                                                                prodM.find(
-                                                                    (item) =>
-                                                                        item.name ===
-                                                                        cartItem.name
-                                                                );
-                                                            if (item == null) {
-                                                                item =
-                                                                    prodW.find(
-                                                                        (
-                                                                            item
-                                                                        ) =>
-                                                                            item.name ===
-                                                                            cartItem.name
+                                            <Stack gap={3}>
+                                                <VStack padding={10} rowGap={5}>
+                                                    {cartItems.map((item) => (
+                                                        <CheckoutItem
+                                                            key={item.name}
+                                                            {...item}
+                                                        />
+                                                    ))}
+                                                    <div className="ms-auto fw-bold fs-6">
+                                                        <Divider orientation="vertical" />
+                                                        Total:&nbsp;
+                                                        {formatMoney(
+                                                            cartItems.reduce(
+                                                                (
+                                                                    total,
+                                                                    cartItem
+                                                                ) => {
+                                                                    let item =
+                                                                        prodM.find(
+                                                                            (
+                                                                                item
+                                                                            ) =>
+                                                                                item.name ===
+                                                                                cartItem.name
+                                                                        );
+                                                                    if (
+                                                                        item ==
+                                                                        null
+                                                                    ) {
+                                                                        item =
+                                                                            prodW.find(
+                                                                                (
+                                                                                    item
+                                                                                ) =>
+                                                                                    item.name ===
+                                                                                    cartItem.name
+                                                                            );
+                                                                    }
+                                                                    return (
+                                                                        total +
+                                                                        (item?.price ||
+                                                                            0) *
+                                                                            cartItem.quantity
                                                                     );
-                                                            }
-                                                            return (
-                                                                total +
-                                                                (item?.price ||
-                                                                    0) *
-                                                                    cartItem.quantity
-                                                            );
-                                                        },
-                                                        0
-                                                    )
-                                                )}
-                                            </div>
+                                                                },
+                                                                0
+                                                            )
+                                                        )}
+                                                    </div>
+                                                </VStack>
+                                            </Stack>
                                         </div>
                                     </div>
                                 </div>
