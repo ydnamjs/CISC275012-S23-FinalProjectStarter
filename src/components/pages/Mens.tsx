@@ -1,7 +1,8 @@
 import React from "react";
 import NavBar from "../Navbar";
-import ProductListMen from "../ProductListMen";
+import "../ProductList";
 import { Center, Text } from "@chakra-ui/react";
+import ProductListWomen, { ProductListMen } from "../ProductList";
 
 const Mens = () => {
     return (
@@ -13,6 +14,12 @@ const Mens = () => {
                 </Text>
             </Center>
             <ProductListMen />
+            <Center>
+                <Text as="b" fontSize="6xl">
+                    Women{"'"}s Clothing
+                </Text>
+            </Center>
+            <ProductListWomen />
         </div>
     );
 };

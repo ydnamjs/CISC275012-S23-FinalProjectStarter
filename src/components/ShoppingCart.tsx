@@ -3,8 +3,7 @@ import React, { Button, Offcanvas, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
-import { prodM } from "./ProductListMen";
-import { prodW } from "./ProductListWomen";
+import { prodM, prodW } from "./ProductList";
 import { Link } from "@chakra-ui/react";
 import CheckoutModal from "./Modal";
 import { useState } from "react";
@@ -16,6 +15,7 @@ type ShoppingCartProps = {
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
     const { closeCart, cartItems } = useShoppingCart();
     const [openModal, setOpenModal] = useState(false);
+
     return (
         <Offcanvas show={isOpen} onHide={closeCart} placement="end">
             <Offcanvas.Header closeButton>
@@ -48,7 +48,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                     </div>
                 </Stack>
                 <div style={{ textAlign: "right", paddingTop: 5 }}>
-                    <Link href="/homepage#/checkout">
+                    <Link href="/#/checkout">
                         <Button>Checkout</Button>
                     </Link>
                     <Button onClick={() => setOpenModal(!openModal)}>

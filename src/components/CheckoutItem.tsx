@@ -1,6 +1,5 @@
 import React, { Stack } from "react-bootstrap";
-import { prodM } from "./ProductListMen";
-import { prodW } from "./ProductListWomen";
+import { prodM, prodW } from "./ProductList";
 import { Image } from "@chakra-ui/react";
 import formatMoney from "../utility/formatMoney";
 
