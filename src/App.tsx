@@ -1,11 +1,9 @@
 import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import Home from "./Home";
 import CartDisplay from "./CartDisplay";
 import Admin from "./Admin";
-import { FilterClothes } from "./FilterClothes";
 import { useState } from "react";
 import "./App.css";
 import Form from "./Components/Common/Form";
@@ -114,60 +112,38 @@ function App(): JSX.Element {
                             </ul>
                         </nav>
                         <ToastContainer />
-                        <Routes>
-                            <Route path="/" element={<Home />}></Route>
-                            <Route
-                                path="/cart"
-                                element={<CartDisplay />}
-                            ></Route>
-                            <Route
-                                path="/register"
-                                element={
-                                    <Form
-                                        title="Register"
-                                        setEmail={setEmail}
-                                        setPassword={setPassword}
-                                        handleAction={() => handleAction(2)}
-                                    />
-                                }
-                            ></Route>
-                            <Route
-                                path="/login"
-                                element={
-                                    <Form
-                                        title="Login"
-                                        setEmail={setEmail}
-                                        setPassword={setPassword}
-                                        handleAction={() => handleAction(1)}
-                                    />
-                                }
-                            ></Route>
-                            <Route path="/admin" element={<Admin />}></Route>
-                        </Routes>
                     </>
                     <div>Welcome </div>
-                    <div>
-                        <Container>
-                            <Row>
-                                <Col>
-                                    <p>logo</p>
-                                </Col>
-                                <Col>
-                                    <Button>Login</Button>
-                                </Col>
-                                <Col>
-                                    <Button>Checkout</Button>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </div>
                 </header>
-                <div>
-                    Filter Items: <FilterClothes></FilterClothes>
-                </div>
+                <Routes>
+                    <Route path="/" element={<Home />}></Route>
+                    <Route path="/cart" element={<CartDisplay />}></Route>
+                    <Route
+                        path="/register"
+                        element={
+                            <Form
+                                title="Register"
+                                setEmail={setEmail}
+                                setPassword={setPassword}
+                                handleAction={() => handleAction(2)}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/login"
+                        element={
+                            <Form
+                                title="Login"
+                                setEmail={setEmail}
+                                setPassword={setPassword}
+                                handleAction={() => handleAction(1)}
+                            />
+                        }
+                    ></Route>
+                    <Route path="/admin" element={<Admin />}></Route>
+                </Routes>
             </div>
         </>
     );
 }
-
 export default App;
