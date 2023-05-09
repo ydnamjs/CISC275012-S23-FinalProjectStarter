@@ -114,60 +114,38 @@ function App(): JSX.Element {
                             </ul>
                         </nav>
                         <ToastContainer />
-                        <Routes>
-                            <Route path="/" element={<Home />}></Route>
-                            <Route
-                                path="/cart"
-                                element={<CartDisplay />}
-                            ></Route>
-                            <Route
-                                path="/register"
-                                element={
-                                    <Form
-                                        title="Register"
-                                        setEmail={setEmail}
-                                        setPassword={setPassword}
-                                        handleAction={() => handleAction(2)}
-                                    />
-                                }
-                            ></Route>
-                            <Route
-                                path="/login"
-                                element={
-                                    <Form
-                                        title="Login"
-                                        setEmail={setEmail}
-                                        setPassword={setPassword}
-                                        handleAction={() => handleAction(1)}
-                                    />
-                                }
-                            ></Route>
-                            <Route path="/admin" element={<Admin />}></Route>
-                        </Routes>
                     </>
                     <div>Welcome </div>
-                    <div>
-                        <Container>
-                            <Row>
-                                <Col>
-                                    <p>logo</p>
-                                </Col>
-                                <Col>
-                                    <Button>Login</Button>
-                                </Col>
-                                <Col>
-                                    <Button>Checkout</Button>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </div>
                 </header>
-                <div>
-                    Filter Items: <FilterClothes></FilterClothes>
-                </div>
+                <Routes>
+                    <Route path="/" element={<Home />}></Route>
+                    <Route path="/cart" element={<CartDisplay />}></Route>
+                    <Route
+                        path="/register"
+                        element={
+                            <Form
+                                title="Register"
+                                setEmail={setEmail}
+                                setPassword={setPassword}
+                                handleAction={() => handleAction(2)}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/login"
+                        element={
+                            <Form
+                                title="Login"
+                                setEmail={setEmail}
+                                setPassword={setPassword}
+                                handleAction={() => handleAction(1)}
+                            />
+                        }
+                    ></Route>
+                    <Route path="/admin" element={<Admin />}></Route>
+                </Routes>
             </div>
         </>
     );
 }
-
 export default App;
