@@ -8,71 +8,91 @@ import shirt4 from "./images/shirt4.png";
 import shirt5 from "./images/shirt5.png";
 import shirt6 from "./images/shirt6.png";
 
-export function ShirtDisplays() {
+export function ShirtDisplays({ color }: { color: string }) {
     return (
         <div>
             <Container>
                 <Row>
                     <Col>
-                        <ClothingDisplay
-                            title={"Shirt One"}
-                            source={shirt1}
-                            height={200}
-                            width={200}
-                            alt={"Shirt one"}
-                        ></ClothingDisplay>
+                        {(color === "black" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Shirt One"}
+                                source={shirt1}
+                                height={200}
+                                width={200}
+                                alt={"Shirt one"}
+                                color={"black"}
+                            ></ClothingDisplay>
+                        )}
                     </Col>
                     <Col>
-                        <ClothingDisplay
-                            title={"Shirt Two"}
-                            source={shirt2}
-                            height={200}
-                            width={200}
-                            alt={"Shirt two"}
-                        ></ClothingDisplay>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <ClothingDisplay
-                            title={"Shirt Three"}
-                            source={shirt3}
-                            height={200}
-                            width={200}
-                            alt={"Shirt three"}
-                        ></ClothingDisplay>
-                    </Col>
-                    <Col>
-                        <ClothingDisplay
-                            title={"Shirt Four"}
-                            source={shirt4}
-                            height={200}
-                            width={200}
-                            alt={"Shirt four"}
-                        ></ClothingDisplay>
+                        {(color === "red" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Shirt Two"}
+                                source={shirt2}
+                                height={200}
+                                width={200}
+                                alt={"Shirt two"}
+                                color={"red"}
+                            ></ClothingDisplay>
+                        )}
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <ClothingDisplay
-                            title={"Shirt Five"}
-                            source={shirt5}
-                            height={200}
-                            width={200}
-                            alt={"Shirt five"}
-                        ></ClothingDisplay>
+                        {(color === "green" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Shirt Three"}
+                                source={shirt3}
+                                height={200}
+                                width={200}
+                                alt={"Shirt three"}
+                                color={"green"}
+                            ></ClothingDisplay>
+                        )}
                     </Col>
                     <Col>
-                        <ClothingDisplay
-                            title={"Shirt Six"}
-                            source={shirt6}
-                            height={200}
-                            width={200}
-                            alt={"Shirt six"}
-                        ></ClothingDisplay>
+                        {(color === "blue" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Shirt Four"}
+                                source={shirt4}
+                                height={200}
+                                width={200}
+                                alt={"Shirt four"}
+                                color={"blue"}
+                            ></ClothingDisplay>
+                        )}
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        {(color === "pink" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Shirt Five"}
+                                source={shirt5}
+                                height={200}
+                                width={200}
+                                alt={"Shirt five"}
+                                color={"pink"}
+                            ></ClothingDisplay>
+                        )}
+                    </Col>
+                    <Col>
+                        {(color === "yellow" || color === "all") && (
+                            <ClothingDisplay
+                                title={"Shirt Six"}
+                                source={shirt6}
+                                height={200}
+                                width={200}
+                                alt={"Shirt six"}
+                                color={"yellow"}
+                            ></ClothingDisplay>
+                        )}
                     </Col>
                 </Row>
             </Container>
         </div>
     );
 }
+
+export default ShirtDisplays;
