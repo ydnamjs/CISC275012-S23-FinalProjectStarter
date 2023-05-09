@@ -1,11 +1,9 @@
 import React from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import Home from "./Home";
 import CartDisplay from "./CartDisplay";
 import Admin from "./Admin";
-import { FilterClothes } from "./FilterClothes";
 import { useState } from "react";
 import "./App.css";
 import Form from "./Components/Common/Form";
