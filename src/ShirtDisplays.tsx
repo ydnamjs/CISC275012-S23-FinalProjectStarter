@@ -8,7 +8,23 @@ import shirt4 from "./images/shirt4.png";
 import shirt5 from "./images/shirt5.png";
 import shirt6 from "./images/shirt6.png";
 
-export function ShirtDisplays({ color }: { color: string }) {
+export function ShirtDisplays({
+    color,
+    stockOne,
+    stockTwo,
+    stockThree,
+    stockFour,
+    stockFive,
+    stockSix
+}: {
+    color: string;
+    stockOne: number;
+    stockTwo: number;
+    stockThree: number;
+    stockFour: number;
+    stockFive: number;
+    stockSix: number;
+}) {
     return (
         <div>
             <Container>
@@ -22,6 +38,7 @@ export function ShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt one"}
                                 color={"black"}
+                                stock={stockOne}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -34,6 +51,7 @@ export function ShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt two"}
                                 color={"red"}
+                                stock={stockTwo}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -48,6 +66,7 @@ export function ShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt three"}
                                 color={"green"}
+                                stock={stockThree}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -60,6 +79,7 @@ export function ShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt four"}
                                 color={"blue"}
+                                stock={stockFour}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -74,6 +94,7 @@ export function ShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt five"}
                                 color={"pink"}
+                                stock={stockFive}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -86,6 +107,7 @@ export function ShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt six"}
                                 color={"yellow"}
+                                stock={stockSix}
                             ></ClothingDisplay>
                         )}
                     </Col>
