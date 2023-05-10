@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import {
@@ -178,23 +180,32 @@ function NavBar() {
                     </Menu>
                     <Spacer />
                     <Stack direction="row" spacing={5}>
-                        <Link to="/login">
-                            <Button
-                                as="span"
-                                fontWeight="bold"
-                                color="black"
-                                variant="ghost"
-                                fontSize={{ base: "md", md: "lg" }}
-                                transition="background-color 0.3s ease"
-                                _hover={{
-                                    bgGradient:
-                                        "linear(to-b, gray.800, gray.300)",
-                                    color: "black"
-                                }}
-                            >
-                                Log in/Register
-                            </Button>
-                        </Link>
+                        {localStorage.getItem("username") &&
+                        localStorage.getItem("password") ? (
+                            <Link to="/logout">
+                                <Button>
+                                    Hello {localStorage.getItem("username")}
+                                </Button>
+                            </Link>
+                        ) : (
+                            <Link to="/register">
+                                <Button
+                                    as="span"
+                                    fontWeight="bold"
+                                    color="black"
+                                    variant="ghost"
+                                    fontSize={{ base: "md", md: "lg" }}
+                                    transition="background-color 0.3s ease"
+                                    _hover={{
+                                        bgGradient:
+                                            "linear(to-b, gray.800, gray.300)",
+                                        color: "black"
+                                    }}
+                                >
+                                    Register
+                                </Button>
+                            </Link>
+                        )}
                     </Stack>
                     <Spacer />
                     <Stack spacing={3}>
