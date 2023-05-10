@@ -23,6 +23,18 @@ function App(): JSX.Element {
     const [loginVisible, setLoginVisible] = useState(false);
     const [registerVisible, setRegisterVisible] = useState(false);
     const [logoutVisible, setLogoutVisible] = useState(true);
+    const [shirtOneStock, setShirtOneStock] = useState(2);
+    const [shirtTwoStock, setShirtTwoStock] = useState(2);
+    const [shirtThreeStock, setShirtThreeStock] = useState(2);
+    const [shirtFourStock, setShirtFourStock] = useState(2);
+    const [shirtFiveStock, setShirtFiveStock] = useState(2);
+    const [shirtSixStock, setShirtSixStock] = useState(2);
+    const [sweatshirtOneStock, setSweatshirtOneStock] = useState(2);
+    const [sweatshirtTwoStock, setSweatshirtTwoStock] = useState(2);
+    const [sweatshirtThreeStock, setSweatshirtThreeStock] = useState(2);
+    const [sweatshirtFourStock, setSweatshirtFourStock] = useState(2);
+    const [sweatshirtFiveStock, setSweatshirtFiveStock] = useState(2);
+    const [sweatshirtSixStock, setSweatshirtSixStock] = useState(2);
     const handleLogout = () => {
         sessionStorage.removeItem("Auth Token");
         navigate("/");
@@ -140,7 +152,37 @@ function App(): JSX.Element {
                             />
                         }
                     ></Route>
-                    <Route path="/admin" element={<Admin />}></Route>
+                    <Route
+                        path="/admin"
+                        element={
+                            <Admin
+                                stockOne={shirtOneStock}
+                                setStockOne={setShirtOneStock}
+                                stockTwo={shirtTwoStock}
+                                setStockTwo={setShirtTwoStock}
+                                stockThree={shirtThreeStock}
+                                setStockThree={setShirtThreeStock}
+                                stockFour={shirtFourStock}
+                                setStockFour={setShirtFourStock}
+                                stockFive={shirtFiveStock}
+                                setStockFive={setShirtFiveStock}
+                                stockSix={shirtSixStock}
+                                setStockSix={setShirtSixStock}
+                                sweatStockOne={sweatshirtOneStock}
+                                sweatSetStockOne={setSweatshirtOneStock}
+                                sweatStockTwo={sweatshirtTwoStock}
+                                sweatSetStockTwo={setSweatshirtTwoStock}
+                                sweatStockThree={sweatshirtThreeStock}
+                                sweatSetStockThree={setSweatshirtThreeStock}
+                                sweatStockFour={sweatshirtFourStock}
+                                sweatSetStockFour={setSweatshirtFourStock}
+                                sweatStockFive={sweatshirtFiveStock}
+                                sweatSetStockFive={setSweatshirtFiveStock}
+                                sweatStockSix={sweatshirtSixStock}
+                                sweatSetStockSix={setSweatshirtSixStock}
+                            />
+                        }
+                    ></Route>
                 </Routes>
             </div>
         </>
