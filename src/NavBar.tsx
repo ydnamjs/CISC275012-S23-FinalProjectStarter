@@ -128,7 +128,25 @@ function NavBar(): JSX.Element {
                     </>
                 </header>
                 <Routes>
-                    <Route path="/" element={<Home />}></Route>
+                    <Route
+                        path="/"
+                        element={
+                            <Home
+                                stockOne={shirtOneStock}
+                                stockTwo={shirtTwoStock}
+                                stockThree={shirtThreeStock}
+                                stockFour={shirtFourStock}
+                                stockFive={shirtFiveStock}
+                                stockSix={shirtSixStock}
+                                sweatStockOne={sweatshirtOneStock}
+                                sweatStockTwo={sweatshirtTwoStock}
+                                sweatStockThree={sweatshirtThreeStock}
+                                sweatStockFour={sweatshirtFourStock}
+                                sweatStockFive={sweatshirtFiveStock}
+                                sweatStockSix={sweatshirtSixStock}
+                            />
+                        }
+                    ></Route>
                     <Route path="/cart" element={<CartDisplay />}></Route>
                     <Route
                         path="/register"

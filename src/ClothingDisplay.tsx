@@ -7,7 +7,8 @@ export function ClothingDisplay({
     height,
     width,
     alt,
-    color
+    color,
+    stock
 }: {
     title: string;
     source: string;
@@ -15,6 +16,7 @@ export function ClothingDisplay({
     width: number;
     alt: string;
     color: string;
+    stock: number;
 }): JSX.Element {
     return (
         <div>
@@ -35,6 +37,7 @@ export function ClothingDisplay({
                     Detail
                 </Button>
             </div>
+            <p>Stock: {stock}</p>
             <p>Price: $2.00</p>
             <Button>Add to Cart</Button>
         </div>

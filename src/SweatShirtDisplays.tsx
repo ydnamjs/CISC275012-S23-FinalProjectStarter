@@ -8,7 +8,23 @@ import sweatshirt4 from "./images/sweatshirt4.png";
 import sweatshirt5 from "./images/sweatshirt5.png";
 import sweatshirt6 from "./images/sweatshirt6.png";
 
-export function SweatShirtDisplays({ color }: { color: string }) {
+export function SweatShirtDisplays({
+    color,
+    sweatStockOne,
+    sweatStockTwo,
+    sweatStockThree,
+    sweatStockFour,
+    sweatStockFive,
+    sweatStockSix
+}: {
+    color: string;
+    sweatStockOne: number;
+    sweatStockTwo: number;
+    sweatStockThree: number;
+    sweatStockFour: number;
+    sweatStockFive: number;
+    sweatStockSix: number;
+}) {
     return (
         <div>
             <Container>
@@ -22,6 +38,7 @@ export function SweatShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt one"}
                                 color={"black"}
+                                stock={sweatStockOne}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -34,6 +51,7 @@ export function SweatShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt two"}
                                 color={"blue"}
+                                stock={sweatStockTwo}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -48,6 +66,7 @@ export function SweatShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt three"}
                                 color={"red"}
+                                stock={sweatStockThree}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -60,6 +79,7 @@ export function SweatShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt four"}
                                 color={"green"}
+                                stock={sweatStockFour}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -74,6 +94,7 @@ export function SweatShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt five"}
                                 color={"purple"}
+                                stock={sweatStockFive}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -86,6 +107,7 @@ export function SweatShirtDisplays({ color }: { color: string }) {
                                 width={200}
                                 alt={"Shirt six"}
                                 color={"yellow"}
+                                stock={sweatStockSix}
                             ></ClothingDisplay>
                         )}
                     </Col>
