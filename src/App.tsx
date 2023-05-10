@@ -75,6 +75,7 @@ function App(): JSX.Element {
         <>
             <div className="App">
                 <header className="App-header">
+                    <div>Welcome </div>
                     <>
                         <nav>
                             <ul>
@@ -113,7 +114,6 @@ function App(): JSX.Element {
                         </nav>
                         <ToastContainer />
                     </>
-                    <div>Welcome </div>
                 </header>
                 <Routes>
                     <Route path="/" element={<Home />}></Route>
