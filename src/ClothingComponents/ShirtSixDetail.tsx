@@ -1,19 +1,11 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import sweatshirt4 from "./images/sweatshirt4.png";
+import shirt6 from "./images/shirt6.png";
 import "./App.css";
 
-function App(): JSX.Element {
+function ShirtSixDetail(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">
-                Sweatshirt Four Detail
-                <div>
-                    <Button>Back to All Products</Button>
-                    <Button>Login</Button>
-                    <Button>Cart</Button>
-                </div>
-            </header>
+        <div className="ShirtSix">
             <div>
                 <Container>
                     <Row>
@@ -23,13 +15,13 @@ function App(): JSX.Element {
                                     fontSize: "30px"
                                 }}
                             >
-                                Sweatshirt Four
+                                Shirt Six
                             </Col>
                             <img
-                                src={sweatshirt4}
+                                src={shirt6}
                                 height={400}
                                 width={400}
-                                alt={"Sweatshirt 4"}
+                                alt={"Shirt 6"}
                                 style={{
                                     border: "1px solid black",
                                     padding: "4px",
@@ -50,8 +42,8 @@ function App(): JSX.Element {
                                     fontSize: "50px"
                                 }}
                             >
-                                This is a magnificent and very exquisite
-                                sweatshirt. Made of the finest materials.
+                                This is a magnificent and very exquisite shirt.
+                                Made of the finest materials.
                             </p>
                             <p
                                 style={{
@@ -72,4 +64,4 @@ function App(): JSX.Element {
     );
 }
 
-export default App;
+export default ShirtSixDetail;

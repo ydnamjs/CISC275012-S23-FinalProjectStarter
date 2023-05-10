@@ -1,19 +1,11 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import shirt6 from "./images/shirt6.png";
+import shirt1 from "./images/shirt1.png";
 import "./App.css";
 
-function App(): JSX.Element {
+function ShirtOneDetail(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">
-                Shirt Six Detail
-                <div>
-                    <Button>Back to All Products</Button>
-                    <Button>Login</Button>
-                    <Button>Cart</Button>
-                </div>
-            </header>
+        <div className="ShirtOne">
             <div>
                 <Container>
                     <Row>
@@ -23,13 +15,13 @@ function App(): JSX.Element {
                                     fontSize: "30px"
                                 }}
                             >
-                                Shirt Six
+                                Shirt One
                             </Col>
                             <img
-                                src={shirt6}
+                                src={shirt1}
                                 height={400}
                                 width={400}
-                                alt={"Shirt 6"}
+                                alt={"Shirt 1"}
                                 style={{
                                     border: "1px solid black",
                                     padding: "4px",
@@ -72,4 +64,4 @@ function App(): JSX.Element {
     );
 }
 
-export default App;
+export default ShirtOneDetail;

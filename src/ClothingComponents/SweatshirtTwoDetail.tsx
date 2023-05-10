@@ -1,19 +1,11 @@
 import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import sweatshirt6 from "./images/sweatshirt6.png";
+import sweatshirt2 from "./images/sweatshirt2.png";
 import "./App.css";
 
-function App(): JSX.Element {
+function SweatshirtTwoDetailCopy(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">
-                Sweatshirt Six Detail
-                <div>
-                    <Button>Back to All Products</Button>
-                    <Button>Login</Button>
-                    <Button>Cart</Button>
-                </div>
-            </header>
+        <div className="SweatshirtTwoCopy">
             <div>
                 <Container>
                     <Row>
@@ -23,13 +15,13 @@ function App(): JSX.Element {
                                     fontSize: "30px"
                                 }}
                             >
-                                Sweatshirt Six
+                                Sweatshirt Two
                             </Col>
                             <img
-                                src={sweatshirt6}
+                                src={sweatshirt2}
                                 height={400}
                                 width={400}
-                                alt={"Sweatshirt 6"}
+                                alt={"Sweatshirt 2"}
                                 style={{
                                     border: "1px solid black",
                                     padding: "4px",
@@ -72,4 +64,4 @@ function App(): JSX.Element {
     );
 }
 
-export default App;
+export default SweatshirtTwoDetailCopy;
