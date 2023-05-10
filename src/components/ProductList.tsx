@@ -10,11 +10,7 @@ import {
     MenuButton,
     MenuItem,
     MenuList,
-    SimpleGrid,
-    FormControl,
-    FormLabel,
-    Input,
-    Textarea
+    SimpleGrid
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
