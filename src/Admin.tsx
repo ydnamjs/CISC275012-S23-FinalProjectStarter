@@ -1,8 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import StockEditor from "./StockEditor";
 import OrderViewer from "./OrderViewer";
-import { number } from "yup";
-import { useState } from "react";
 
 function Admin({
     stockOne,
