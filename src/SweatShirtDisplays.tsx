@@ -33,10 +33,11 @@ export function SweatShirtDisplays({
                         {(color === "black" || color === "all") && (
                             <ClothingDisplay
                                 title={"Sweatshirt One"}
+                                testid={"black"}
                                 source={sweatshirt1}
                                 height={200}
                                 width={200}
-                                alt={"Shirt one"}
+                                alt={"Sweatshirt"}
                                 color={"black"}
                                 stock={sweatStockOne}
                             ></ClothingDisplay>
@@ -46,10 +47,11 @@ export function SweatShirtDisplays({
                         {(color === "blue" || color === "all") && (
                             <ClothingDisplay
                                 title={"Sweatshirt Two"}
+                                testid={"blue"}
                                 source={sweatshirt2}
                                 height={200}
                                 width={200}
-                                alt={"Shirt two"}
+                                alt={"Sweatshirt"}
                                 color={"blue"}
                                 stock={sweatStockTwo}
                             ></ClothingDisplay>
@@ -61,10 +63,11 @@ export function SweatShirtDisplays({
                         {(color === "red" || color === "all") && (
                             <ClothingDisplay
                                 title={"Sweatshirt Three"}
+                                testid={"red"}
                                 source={sweatshirt3}
                                 height={200}
                                 width={200}
-                                alt={"Shirt three"}
+                                alt={"Sweatshirt"}
                                 color={"red"}
                                 stock={sweatStockThree}
                             ></ClothingDisplay>
@@ -74,10 +77,11 @@ export function SweatShirtDisplays({
                         {(color === "green" || color === "all") && (
                             <ClothingDisplay
                                 title={"Sweatshirt Four"}
+                                testid={"green"}
                                 source={sweatshirt4}
                                 height={200}
                                 width={200}
-                                alt={"Shirt four"}
+                                alt={"Sweatshirt"}
                                 color={"green"}
                                 stock={sweatStockFour}
                             ></ClothingDisplay>
@@ -89,10 +93,11 @@ export function SweatShirtDisplays({
                         {(color === "purple" || color === "all") && (
                             <ClothingDisplay
                                 title={"Sweatshirt Five"}
+                                testid={"purple"}
                                 source={sweatshirt5}
                                 height={200}
                                 width={200}
-                                alt={"Shirt five"}
+                                alt={"Sweatshirt"}
                                 color={"purple"}
                                 stock={sweatStockFive}
                             ></ClothingDisplay>
@@ -102,10 +107,11 @@ export function SweatShirtDisplays({
                         {(color === "yellow" || color === "all") && (
                             <ClothingDisplay
                                 title={"Sweatshirt Six"}
+                                testid={"yellow"}
                                 source={sweatshirt6}
                                 height={200}
                                 width={200}
-                                alt={"Shirt six"}
+                                alt={"Sweatshirt"}
                                 color={"yellow"}
                                 stock={sweatStockSix}
                             ></ClothingDisplay>

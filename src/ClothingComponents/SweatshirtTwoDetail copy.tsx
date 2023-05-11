@@ -26,10 +26,11 @@ function App(): JSX.Element {
                                 Sweatshirt Two
                             </Col>
                             <img
+                                data-testid={"blue"}
                                 src={sweatshirt2}
                                 height={400}
                                 width={400}
-                                alt={"Sweatshirt 2"}
+                                alt={"Sweatshirt"}
                                 style={{
                                     border: "1px solid black",
                                     padding: "4px",

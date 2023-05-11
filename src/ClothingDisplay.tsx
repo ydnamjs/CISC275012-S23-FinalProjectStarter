@@ -3,6 +3,7 @@ import { Button, Col } from "react-bootstrap";
 
 export function ClothingDisplay({
     title,
+    testid,
     source,
     height,
     width,
@@ -11,6 +12,7 @@ export function ClothingDisplay({
     stock
 }: {
     title: string;
+    testid: string;
     source: string;
     height: number;
     width: number;
@@ -22,6 +24,7 @@ export function ClothingDisplay({
         <div>
             <Col>{title}</Col>
             <img
+                data-testid={testid}
                 src={source}
                 height={height}
                 width={width}
