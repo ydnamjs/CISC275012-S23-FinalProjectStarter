@@ -16,7 +16,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import RegisterForm from "./Components/Common/RegisterForm";
 import LoginForm from "./Components/Common/LoginForm";
-import { getDatabase, ref, set, onValue } from "@firebase/database";
+import { getDatabase, ref, set, get } from "@firebase/database";
 
 function NavBar(): JSX.Element {
     const [email, setEmail] = useState("");
@@ -58,10 +58,17 @@ function NavBar(): JSX.Element {
     function displayUser(id: string): void {
         if (id) {
             const usernameRef = ref(database, "users/" + id + "/name");
-            onValue(usernameRef, (snapshot) => {
-                const data = snapshot.val();
-                setUsername(data);
-            });
+            get(usernameRef)
+                .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        setUsername(snapshot.val());
+                    } else {
+                        console.log("No data");
+                    }
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         } else {
             setUsername("");
         }
@@ -83,7 +90,7 @@ function NavBar(): JSX.Element {
         setLogoutVisible(!logoutVisible);
     }
     function loggedInText(data: string): string {
-        if (data) {
+        if (loginVisible && data) {
             return "Welcome " + data;
         } else {
             return "Please Log in";
@@ -91,7 +98,7 @@ function NavBar(): JSX.Element {
     }
     function loggedInAdmin(email2: string): boolean {
         const authentication = getAuth(app);
-        if (authentication.currentUser && isAdmin(email2)) {
+        if (loginVisible && authentication.currentUser && isAdmin(email2)) {
             return true;
         } else {
             return false;
