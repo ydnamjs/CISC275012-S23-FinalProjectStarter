@@ -6,7 +6,6 @@ import CartDisplay from "./CartDisplay";
 import Admin from "./Admin";
 import { useState } from "react";
 import "./App.css";
-import Form from "./Components/Common/Form";
 import { app } from "./firebase-config";
 import {
     getAuth,
@@ -15,10 +14,15 @@ import {
 } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import RegisterForm from "./Components/Common/RegisterForm";
+import LoginForm from "./Components/Common/LoginForm";
+import { getDatabase, ref, set, onValue } from "@firebase/database";
 
 function NavBar(): JSX.Element {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
+    const [address, setAddress] = useState("");
     const navigate = useNavigate();
     const [loginVisible, setLoginVisible] = useState(false);
     const [registerVisible, setRegisterVisible] = useState(false);
@@ -35,15 +39,73 @@ function NavBar(): JSX.Element {
     const [sweatshirtFourStock, setSweatshirtFourStock] = useState(2);
     const [sweatshirtFiveStock, setSweatshirtFiveStock] = useState(2);
     const [sweatshirtSixStock, setSweatshirtSixStock] = useState(2);
+    const adminList = ["skraus@udel.edu"];
+    const database = getDatabase();
+    function writeUserData(
+        userId: string,
+        name: string,
+        email: string,
+        password: string,
+        address: string
+    ) {
+        set(ref(database, "users/" + userId), {
+            name: name,
+            email: email,
+            password: password,
+            address: address
+        });
+    }
+    function displayUser(id: string): void {
+        if (id) {
+            const usernameRef = ref(database, "users/" + id + "/name");
+            onValue(usernameRef, (snapshot) => {
+                const data = snapshot.val();
+                setUsername(data);
+            });
+        } else {
+            setUsername("");
+        }
+    }
     const handleLogout = () => {
-        sessionStorage.removeItem("Auth Token");
-        navigate("/");
-        loggedIn();
+        const authentication = getAuth(app);
+        authentication.signOut().then(() => {
+            sessionStorage.removeItem("Auth Token");
+            sessionStorage.clear();
+            navigate("/");
+            loggedIn();
+            displayUser("");
+        });
+        isAdmin(email);
     };
     function loggedIn(): void {
         setLoginVisible(!loginVisible);
         setRegisterVisible(!registerVisible);
         setLogoutVisible(!logoutVisible);
+    }
+    function loggedInText(data: string): string {
+        if (data) {
+            return "Welcome " + data;
+        } else {
+            return "Please Log in";
+        }
+    }
+    function loggedInAdmin(email2: string): boolean {
+        const authentication = getAuth(app);
+        if (authentication.currentUser && isAdmin(email2)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function isAdmin(email2: string): boolean {
+        const admins = adminList.filter(
+            (admin: string): boolean => admin === email2
+        );
+        if (admins.length !== 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
     const handleAction = (id: number) => {
         const authentication = getAuth(app);
@@ -56,14 +118,15 @@ function NavBar(): JSX.Element {
                         response.user.refreshToken
                     );
                     loggedIn();
+                    isAdmin(email);
+                    displayUser(response.user.uid);
                 })
                 .catch((error) => {
-                    console.log(error.code);
                     if (error.code === "auth/wrong-password") {
-                        toast.error("Please check the Password");
+                        toast.error("Invalid Password");
                     }
                     if (error.code === "auth/user-not-found") {
-                        toast.error("Please check the Email");
+                        toast.error("Invalid Email");
                     }
                 });
         }
@@ -75,8 +138,21 @@ function NavBar(): JSX.Element {
                         "Auth Token",
                         response.user.refreshToken
                     );
+                    writeUserData(
+                        response.user.uid,
+                        username,
+                        email,
+                        password,
+                        address
+                    );
                 })
                 .catch((error) => {
+                    if (error.code === "auth/invalid-email") {
+                        toast.error("Invalid Email");
+                    }
+                    if (error.code === "auth/weak-password") {
+                        toast.error("Use a Stronger Password");
+                    }
                     if (error.code === "auth/email-already-in-use") {
                         toast.error("Email Already in Use");
                     }
@@ -87,7 +163,7 @@ function NavBar(): JSX.Element {
         <>
             <div className="App">
                 <header className="App-header">
-                    <div>Welcome </div>
+                    <div>{loggedInText(username)}</div>
                     <>
                         <nav>
                             <ul>
@@ -112,15 +188,20 @@ function NavBar(): JSX.Element {
                                 </li>
                                 <li>
                                     <Link
+                                        to="/admin"
+                                        hidden={!loggedInAdmin(email)}
+                                    >
+                                        Admin
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
                                         to="/"
                                         onClick={handleLogout}
                                         hidden={logoutVisible}
                                     >
                                         Logout
                                     </Link>
-                                </li>
-                                <li>
-                                    <Link to="/admin">Admin</Link>
                                 </li>
                             </ul>
                         </nav>
@@ -151,10 +232,12 @@ function NavBar(): JSX.Element {
                     <Route
                         path="/register"
                         element={
-                            <Form
+                            <RegisterForm
                                 title="Register"
                                 setEmail={setEmail}
                                 setPassword={setPassword}
+                                setUsername={setUsername}
+                                setAddress={setAddress}
                                 handleAction={() => handleAction(2)}
                             />
                         }
@@ -162,7 +245,7 @@ function NavBar(): JSX.Element {
                     <Route
                         path="/login"
                         element={
-                            <Form
+                            <LoginForm
                                 title="Login"
                                 setEmail={setEmail}
                                 setPassword={setPassword}

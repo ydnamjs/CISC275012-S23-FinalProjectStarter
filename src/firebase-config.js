@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -12,8 +13,11 @@ const firebaseConfig = {
     storageBucket: "team-2-e1bbd.appspot.com",
     messagingSenderId: "543462547536",
     appId: "1:543462547536:web:6f102e18d0901043cdb155",
-    measurementId: "G-XN08T4FJV0"
+    measurementId: "G-XN08T4FJV0",
+    databaseURL: "https://team-2-e1bbd-default-rtdb.firebaseio.com/"
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
+
+export const database = getDatabase(app);
