@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import Home from "./Home";
-import CartDisplay from "./CartDisplay";
 import Admin from "./Admin";
 import { useState } from "react";
 import "./App.css";
@@ -15,6 +14,7 @@ import {
 } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CartDisplay from "./CartDisplay";
 
 function NavBar(): JSX.Element {
     const [email, setEmail] = useState("");
@@ -35,6 +35,19 @@ function NavBar(): JSX.Element {
     const [sweatshirtFourStock, setSweatshirtFourStock] = useState(2);
     const [sweatshirtFiveStock, setSweatshirtFiveStock] = useState(2);
     const [sweatshirtSixStock, setSweatshirtSixStock] = useState(2);
+    const [shirtCart1, setShirtCart1] = useState(0);
+    const [shirtCart2, setShirtCart2] = useState(0);
+    const [shirtCart3, setShirtCart3] = useState(0);
+    const [shirtCart4, setShirtCart4] = useState(0);
+    const [shirtCart5, setShirtCart5] = useState(0);
+    const [shirtCart6, setShirtCart6] = useState(0);
+    const [sweatCart1, sweatSetCart1] = useState(0);
+    const [sweatCart2, sweatSetCart2] = useState(0);
+    const [sweatCart3, sweatSetCart3] = useState(0);
+    const [sweatCart4, sweatSetCart4] = useState(0);
+    const [sweatCart5, sweatSetCart5] = useState(0);
+    const [sweatCart6, sweatSetCart6] = useState(0);
+
     const handleLogout = () => {
         sessionStorage.removeItem("Auth Token");
         navigate("/");
@@ -147,7 +160,61 @@ function NavBar(): JSX.Element {
                             />
                         }
                     ></Route>
-                    <Route path="/cart" element={<CartDisplay />}></Route>
+                    <Route
+                        path="/cart"
+                        element={
+                            <CartDisplay
+                                shirtCart1={shirtCart1}
+                                setShirtCart1={setShirtCart1}
+                                shirtCart2={shirtCart2}
+                                setShirtCart2={setShirtCart2}
+                                shirtCart3={shirtCart3}
+                                setShirtCart3={setShirtCart3}
+                                shirtCart4={shirtCart4}
+                                setShirtCart4={setShirtCart4}
+                                shirtCart5={shirtCart5}
+                                setShirtCart5={setShirtCart5}
+                                shirtCart6={shirtCart6}
+                                setShirtCart6={setShirtCart6}
+                                sweatCart1={sweatCart1}
+                                sweatSetCart1={sweatSetCart1}
+                                sweatCart2={sweatCart2}
+                                sweatSetCart2={sweatSetCart2}
+                                sweatCart3={sweatCart3}
+                                sweatSetCart3={sweatSetCart3}
+                                sweatCart4={sweatCart4}
+                                sweatSetCart4={sweatSetCart4}
+                                sweatCart5={sweatCart5}
+                                sweatSetCart5={sweatSetCart5}
+                                sweatCart6={sweatCart6}
+                                sweatSetCart6={sweatSetCart6}
+                                stock1={shirtOneStock}
+                                setStock1={setShirtOneStock}
+                                stock2={shirtTwoStock}
+                                setStock2={setShirtTwoStock}
+                                stock3={shirtThreeStock}
+                                setStock3={setShirtThreeStock}
+                                stock4={shirtFourStock}
+                                setStock4={setShirtFourStock}
+                                stock5={shirtFiveStock}
+                                setStock5={setShirtFiveStock}
+                                stock6={shirtSixStock}
+                                setStock6={setShirtSixStock}
+                                sweatStock1={sweatshirtOneStock}
+                                sweatSetStock1={setSweatshirtOneStock}
+                                sweatStock2={sweatshirtTwoStock}
+                                sweatSetStock2={setSweatshirtTwoStock}
+                                sweatStock3={sweatshirtThreeStock}
+                                sweatSetStock3={setSweatshirtThreeStock}
+                                sweatStock4={sweatshirtFourStock}
+                                sweatSetStock4={setSweatshirtFourStock}
+                                sweatStock5={sweatshirtFiveStock}
+                                sweatSetStock5={setSweatshirtFiveStock}
+                                sweatStock6={sweatshirtSixStock}
+                                sweatSetStock6={setSweatshirtSixStock}
+                            />
+                        }
+                    ></Route>
                     <Route
                         path="/register"
                         element={
