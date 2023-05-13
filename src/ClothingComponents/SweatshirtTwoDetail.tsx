@@ -1,11 +1,22 @@
-import React from "react";
+/* eslint-disable indent */
+import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import sweatshirt2 from "./images/sweatshirt2.png";
+import sweatshirt1 from "./images/sweatshirt1.png";
 import "./App.css";
 
-function SweatshirtTwoDetailCopy(): JSX.Element {
+function SweatshirtTwoDetail({
+    sweatCart2,
+    sweatSetCart2,
+    sweatSetStock2,
+    sweatStock2
+}: {
+    sweatCart2: number;
+    sweatStock2: number;
+    sweatSetStock2: Dispatch<SetStateAction<number>>;
+    sweatSetCart2: Dispatch<SetStateAction<number>>;
+}): JSX.Element {
     return (
-        <div className="SweatshirtTwoCopy">
+        <div className="SweatshirtOne">
             <div>
                 <Container>
                     <Row>
@@ -15,14 +26,14 @@ function SweatshirtTwoDetailCopy(): JSX.Element {
                                     fontSize: "30px"
                                 }}
                             >
-                                Sweatshirt Two
+                                Sweatshirt One
                             </Col>
                             <img
-                                data-testid={"sweatshirt"}
-                                src={sweatshirt2}
+                                data-testid={"black"}
+                                src={sweatshirt1}
                                 height={400}
                                 width={400}
-                                alt={"Sweatshirt 2"}
+                                alt={"Sweatshirt"}
                                 style={{
                                     border: "1px solid black",
                                     padding: "4px",
@@ -53,10 +64,20 @@ function SweatshirtTwoDetailCopy(): JSX.Element {
                                     fontSize: "20px"
                                 }}
                             >
-                                Price: $2.00
+                                Price: $30.00
                             </p>
-                            <Button>Add to Cart</Button>
-                            <Button>Remove from Cart</Button>
+                            <Button
+                                onClick={
+                                    sweatStock2 > 0
+                                        ? () => {
+                                              sweatSetCart2(sweatCart2 + 1);
+                                              sweatSetStock2(sweatStock2 - 1);
+                                          }
+                                        : () => sweatSetCart2(sweatCart2)
+                                }
+                            >
+                                Add to Cart
+                            </Button>
                         </Col>
                     </Row>
                 </Container>
@@ -65,4 +86,4 @@ function SweatshirtTwoDetailCopy(): JSX.Element {
     );
 }
 
-export default SweatshirtTwoDetailCopy;
+export default SweatshirtTwoDetail;

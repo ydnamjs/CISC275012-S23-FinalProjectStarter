@@ -1,11 +1,22 @@
-import React from "react";
+/* eslint-disable indent */
+import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import shirt5 from "./images/shirt5.png";
+import shirt1 from "./images/shirt4.png";
 import "./App.css";
 
-function ShirtFiveDetail(): JSX.Element {
+function ShirtFiveDetail({
+    stock5,
+    setStock5,
+    shirtCart5,
+    setShirtCart5
+}: {
+    stock5: number;
+    setStock5: Dispatch<SetStateAction<number>>;
+    shirtCart5: number;
+    setShirtCart5: Dispatch<SetStateAction<number>>;
+}): JSX.Element {
     return (
-        <div className="ShirtFive">
+        <div className="ShirtFour">
             <div>
                 <Container>
                     <Row>
@@ -15,11 +26,11 @@ function ShirtFiveDetail(): JSX.Element {
                                     fontSize: "30px"
                                 }}
                             >
-                                Shirt Five
+                                Shirt Four
                             </Col>
                             <img
-                                data-testid={"pink"}
-                                src={shirt5}
+                                data-testid={"blue"}
+                                src={shirt1}
                                 height={400}
                                 width={400}
                                 alt={"Shirt"}
@@ -53,10 +64,20 @@ function ShirtFiveDetail(): JSX.Element {
                                     fontSize: "20px"
                                 }}
                             >
-                                Price: $2.00
+                                Price: $15.00
                             </p>
-                            <Button>Add to Cart</Button>
-                            <Button>Remove from Cart</Button>
+                            <Button
+                                onClick={
+                                    stock5 > 0
+                                        ? () => {
+                                              setShirtCart5(shirtCart5 + 1);
+                                              setStock5(stock5 - 1);
+                                          }
+                                        : () => setShirtCart5(shirtCart5)
+                                }
+                            >
+                                Add to Cart
+                            </Button>
                         </Col>
                     </Row>
                 </Container>
