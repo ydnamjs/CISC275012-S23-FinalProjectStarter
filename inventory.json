@@ -4,73 +4,85 @@
             "name": "shirt1",
             "type": "shirt",
             "color": "black",
-            "price": 15.0
+            "price": 15.0,
+            "image": "./images/shirt1.png"
         },
         {
             "name": "shirt2",
             "type": "shirt",
             "color": "red",
-            "price": 15.0
+            "price": 15.0,
+            "image": "./images/shirt2.png"
         },
         {
             "name": "shirt3",
             "type": "shirt",
             "color": "green",
-            "price": 15.0
+            "price": 15.0,
+            "image": "./images/shirt3.png"
         },
         {
             "name": "shirt4",
             "type": "shirt",
             "color": "blue",
-            "price": 15.0
+            "price": 15.0,
+            "image": "./images/shirt4.png"
         },
         {
             "name": "shirt5",
             "type": "shirt",
             "color": "pink",
-            "price": 15.0
+            "price": 15.0,
+            "image": "./images/shirt5.png"
         },
         {
             "name": "shirt6",
             "type": "shirt",
             "color": "yellow",
-            "price": 15.0
+            "price": 15.0,
+            "image": "./images/shirt6.png"
         },
         {
             "name": "sweatshirt1",
             "type": "sweatshirt",
             "color": "black",
-            "price": 30.0
+            "price": 30.0,
+            "image": "./images/sweatshirt1.png"
         },
         {
             "name": "sweatshirt2",
             "type": "sweatshirt",
             "color": "blue",
-            "price": 30.0
+            "price": 30.0,
+            "image": "./images/sweatshirt2.png"
         },
         {
             "name": "sweatshirt3",
             "type": "sweatshirt",
             "color": "red",
-            "price": 30.0
+            "price": 30.0,
+            "image": "./images/sweatshirt3.png"
         },
         {
             "name": "sweatshirt4",
             "type": "sweatshirt",
             "color": "green",
-            "price": 30.0
+            "price": 30.0,
+            "image": "./images/sweatshirt4.png"
         },
         {
             "name": "sweatshirt5",
             "type": "sweatshirt",
             "color": "purple",
-            "price": 30.0
+            "price": 30.0,
+            "image": "./images/sweatshirt5.png"
         },
         {
             "name": "sweatshirt6",
             "type": "sweatshirt",
             "color": "yellow",
-            "price": 30.0
+            "price": 30.0,
+            "image": "./images/sweatshirt6.png"
         }
     ]
 }
