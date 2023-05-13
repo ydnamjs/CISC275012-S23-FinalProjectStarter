@@ -9,7 +9,6 @@
         "@mui/material": "^5.12.3",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^12.1.5",
-        "@testing-library/user-event": "^13.5.0",
         "@types/jest": "^27.5.2",
         "@types/node": "^16.11.21",
         "@types/react": "^17.0.38",
@@ -64,6 +63,7 @@
         ]
     },
     "devDependencies": {
+        "@testing-library/user-event": "^14.4.3",
         "@types/react-toastify": "^4.1.0",
         "@typescript-eslint/eslint-plugin": "^5.10.1",
         "@typescript-eslint/parser": "^5.10.1",

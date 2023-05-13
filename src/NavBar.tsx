@@ -39,7 +39,7 @@ function NavBar(): JSX.Element {
     const [sweatshirtFourStock, setSweatshirtFourStock] = useState(2);
     const [sweatshirtFiveStock, setSweatshirtFiveStock] = useState(2);
     const [sweatshirtSixStock, setSweatshirtSixStock] = useState(2);
-    const adminList = ["skraus@udel.edu"];
+    const adminList = ["skraus@udel.edu", "gmelton@udel.edu"];
     const database = getDatabase();
     function writeUserData(
         userId: string,
