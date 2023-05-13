@@ -1,11 +1,22 @@
-import React from "react";
+/* eslint-disable indent */
+import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import sweatshirt3 from "./images/sweatshirt3.png";
+import sweatshirt1 from "./images/sweatshirt1.png";
 import "./App.css";
 
-function SweatshirtThreeDetail(): JSX.Element {
+function SweatshirtThreeDetail({
+    sweatCart3,
+    sweatSetCart3,
+    sweatSetStock3,
+    sweatStock3
+}: {
+    sweatCart3: number;
+    sweatStock3: number;
+    sweatSetStock3: Dispatch<SetStateAction<number>>;
+    sweatSetCart3: Dispatch<SetStateAction<number>>;
+}): JSX.Element {
     return (
-        <div className="SweatshirtThree">
+        <div className="SweatshirtOne">
             <div>
                 <Container>
                     <Row>
@@ -15,11 +26,11 @@ function SweatshirtThreeDetail(): JSX.Element {
                                     fontSize: "30px"
                                 }}
                             >
-                                Sweatshirt Three
+                                Sweatshirt One
                             </Col>
                             <img
-                                data-testid={"red"}
-                                src={sweatshirt3}
+                                data-testid={"black"}
+                                src={sweatshirt1}
                                 height={400}
                                 width={400}
                                 alt={"Sweatshirt"}
@@ -53,10 +64,20 @@ function SweatshirtThreeDetail(): JSX.Element {
                                     fontSize: "20px"
                                 }}
                             >
-                                Price: $2.00
+                                Price: $30.00
                             </p>
-                            <Button>Add to Cart</Button>
-                            <Button>Remove from Cart</Button>
+                            <Button
+                                onClick={
+                                    sweatStock3 > 0
+                                        ? () => {
+                                              sweatSetCart3(sweatCart3 + 1);
+                                              sweatSetStock3(sweatStock3 - 1);
+                                          }
+                                        : () => sweatSetCart3(sweatCart3)
+                                }
+                            >
+                                Add to Cart
+                            </Button>
                         </Col>
                     </Row>
                 </Container>

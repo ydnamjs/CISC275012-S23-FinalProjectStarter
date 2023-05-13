@@ -1,9 +1,20 @@
-import React from "react";
+/* eslint-disable indent */
+import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import shirt2 from "./images/shirt2.png";
 import "./App.css";
 
-function ShirtTwoDetail(): JSX.Element {
+function ShirtTwoDetail({
+    stock2,
+    setStock2,
+    shirtCart2,
+    setShirtCart2
+}: {
+    stock2: number;
+    shirtCart2: number;
+    setStock2: Dispatch<SetStateAction<number>>;
+    setShirtCart2: Dispatch<SetStateAction<number>>;
+}): JSX.Element {
     return (
         <div className="ShirtTwo">
             <div>
@@ -53,10 +64,20 @@ function ShirtTwoDetail(): JSX.Element {
                                     fontSize: "20px"
                                 }}
                             >
-                                Price: $2.00
+                                Price: $15.00
                             </p>
-                            <Button>Add to Cart</Button>
-                            <Button>Remove from Cart</Button>
+                            <Button
+                                onClick={
+                                    stock2 > 0
+                                        ? () => {
+                                              setShirtCart2(shirtCart2 + 1);
+                                              setStock2(stock2 - 1);
+                                          }
+                                        : () => setShirtCart2(shirtCart2)
+                                }
+                            >
+                                Add to Cart
+                            </Button>
                         </Col>
                     </Row>
                 </Container>
