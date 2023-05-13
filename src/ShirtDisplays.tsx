@@ -33,10 +33,11 @@ export function ShirtDisplays({
                         {(color === "black" || color === "all") && (
                             <ClothingDisplay
                                 title={"Shirt One"}
+                                testid={"black"}
                                 source={shirt1}
                                 height={200}
                                 width={200}
-                                alt={"Shirt one"}
+                                alt={"Shirt"}
                                 color={"black"}
                                 stock={stockOne}
                             ></ClothingDisplay>
@@ -46,10 +47,11 @@ export function ShirtDisplays({
                         {(color === "red" || color === "all") && (
                             <ClothingDisplay
                                 title={"Shirt Two"}
+                                testid={"red"}
                                 source={shirt2}
                                 height={200}
                                 width={200}
-                                alt={"Shirt two"}
+                                alt={"Shirt"}
                                 color={"red"}
                                 stock={stockTwo}
                             ></ClothingDisplay>
@@ -61,10 +63,11 @@ export function ShirtDisplays({
                         {(color === "green" || color === "all") && (
                             <ClothingDisplay
                                 title={"Shirt Three"}
+                                testid={"green"}
                                 source={shirt3}
                                 height={200}
                                 width={200}
-                                alt={"Shirt three"}
+                                alt={"Shirt"}
                                 color={"green"}
                                 stock={stockThree}
                             ></ClothingDisplay>
@@ -74,10 +77,11 @@ export function ShirtDisplays({
                         {(color === "blue" || color === "all") && (
                             <ClothingDisplay
                                 title={"Shirt Four"}
+                                testid={"blue"}
                                 source={shirt4}
                                 height={200}
                                 width={200}
-                                alt={"Shirt four"}
+                                alt={"Shirt"}
                                 color={"blue"}
                                 stock={stockFour}
                             ></ClothingDisplay>
@@ -89,10 +93,11 @@ export function ShirtDisplays({
                         {(color === "pink" || color === "all") && (
                             <ClothingDisplay
                                 title={"Shirt Five"}
+                                testid={"pink"}
                                 source={shirt5}
                                 height={200}
                                 width={200}
-                                alt={"Shirt five"}
+                                alt={"Shirt"}
                                 color={"pink"}
                                 stock={stockFive}
                             ></ClothingDisplay>
@@ -102,10 +107,11 @@ export function ShirtDisplays({
                         {(color === "yellow" || color === "all") && (
                             <ClothingDisplay
                                 title={"Shirt Six"}
+                                testid={"yellow"}
                                 source={shirt6}
                                 height={200}
                                 width={200}
-                                alt={"Shirt six"}
+                                alt={"Shirt"}
                                 color={"yellow"}
                                 stock={stockSix}
                             ></ClothingDisplay>

@@ -18,6 +18,7 @@ function SweatshirtTwoDetailCopy(): JSX.Element {
                                 Sweatshirt Two
                             </Col>
                             <img
+                                data-testid={"sweatshirt"}
                                 src={sweatshirt2}
                                 height={400}
                                 width={400}

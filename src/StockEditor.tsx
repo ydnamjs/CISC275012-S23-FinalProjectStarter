@@ -85,7 +85,10 @@ function StockEditor({
                             ></img>
                             <div>
                                 <p>Total stock: {stock1}</p>
-                                <Button onClick={() => setStock1(stock1 + 1)}>
+                                <Button
+                                    onClick={() => setStock1(stock1 + 1)}
+                                    data-testid="addStock1"
+                                >
                                     Add one to Stock
                                 </Button>
                                 <Button
@@ -94,6 +97,7 @@ function StockEditor({
                                             ? () => setStock1(stock1)
                                             : () => setStock1(stock1 - 1)
                                     }
+                                    data-testid="subStock1"
                                 >
                                     Remove one from Stock
                                 </Button>

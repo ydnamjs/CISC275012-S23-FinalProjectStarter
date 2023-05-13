@@ -18,10 +18,11 @@ function ShirtSixDetail(): JSX.Element {
                                 Shirt Six
                             </Col>
                             <img
+                                data-testid={"yellow"}
                                 src={shirt6}
                                 height={400}
                                 width={400}
-                                alt={"Shirt 6"}
+                                alt={"Shirt"}
                                 style={{
                                     border: "1px solid black",
                                     padding: "4px",

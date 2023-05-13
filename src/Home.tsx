@@ -32,25 +32,23 @@ export function Home({
 }): JSX.Element {
     return (
         <div className="Home">
-            <p>
-                <div>
-                    Filter Items:{" "}
-                    <FilterClothes
-                        stockOne={stockOne}
-                        stockTwo={stockTwo}
-                        stockThree={stockThree}
-                        stockFour={stockFour}
-                        stockFive={stockFive}
-                        stockSix={stockSix}
-                        sweatStockOne={sweatStockOne}
-                        sweatStockTwo={sweatStockTwo}
-                        sweatStockThree={sweatStockThree}
-                        sweatStockFour={sweatStockFour}
-                        sweatStockFive={sweatStockFive}
-                        sweatStockSix={sweatStockSix}
-                    ></FilterClothes>
-                </div>
-            </p>
+            <div>
+                Filter Items:{" "}
+                <FilterClothes
+                    stockOne={stockOne}
+                    stockTwo={stockTwo}
+                    stockThree={stockThree}
+                    stockFour={stockFour}
+                    stockFive={stockFive}
+                    stockSix={stockSix}
+                    sweatStockOne={sweatStockOne}
+                    sweatStockTwo={sweatStockTwo}
+                    sweatStockThree={sweatStockThree}
+                    sweatStockFour={sweatStockFour}
+                    sweatStockFive={sweatStockFive}
+                    sweatStockSix={sweatStockSix}
+                ></FilterClothes>
+            </div>
         </div>
     );
 }
