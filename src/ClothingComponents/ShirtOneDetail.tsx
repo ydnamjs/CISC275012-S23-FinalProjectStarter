@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import shirt1 from "./images/shirt1.png";
@@ -5,12 +6,14 @@ import "./App.css";
 
 function ShirtOneDetail({
     stock1,
+    setStock1,
     setShirtCart1,
     shirtCart1
 }: {
     stock1: number;
     shirtCart1: number;
     setShirtCart1: Dispatch<SetStateAction<number>>;
+    setStock1: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     return (
         <div className="ShirtOne">
@@ -66,13 +69,15 @@ function ShirtOneDetail({
                             <Button
                                 onClick={
                                     stock1 > 0
-                                        ? () => setShirtCart1(shirtCart1 + 1)
+                                        ? () => {
+                                              setShirtCart1(shirtCart1 + 1);
+                                              setStock1(stock1 - 1);
+                                          }
                                         : () => setShirtCart1(shirtCart1)
                                 }
                             >
                                 Add to Cart
                             </Button>
-                            <Button>Remove from Cart</Button>
                         </Col>
                     </Row>
                 </Container>
