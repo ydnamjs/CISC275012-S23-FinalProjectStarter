@@ -61,7 +61,7 @@ function ShirtOneDetail({
                                     fontSize: "20px"
                                 }}
                             >
-                                Price: $2.00
+                                Price: $15.00
                             </p>
                             <Button
                                 onClick={
