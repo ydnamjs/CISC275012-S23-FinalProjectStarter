@@ -35,8 +35,6 @@ function NavBar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const cancelRef = useRef<HTMLButtonElement>(null);
 
-    const navLinks = [{ label: "Shop", path: "/shop" }];
-
     return (
         <Box
             as="nav"
@@ -73,25 +71,23 @@ function NavBar() {
                         mr={{ base: 0, md: 10 }}
                     >
                         <Stack direction="row" spacing={5}>
-                            {navLinks.map((link) => (
-                                <Link key={link.path} to={link.path}>
-                                    <Button
-                                        as="span"
-                                        fontWeight="bold"
-                                        color="black"
-                                        variant="ghost"
-                                        fontSize={{ base: "md", md: "lg" }}
-                                        transition="background-color 0.3s ease"
-                                        _hover={{
-                                            bgGradient:
-                                                "linear(to-b, gray.800, gray.300)",
-                                            color: "black"
-                                        }}
-                                    >
-                                        {link.label}
-                                    </Button>
-                                </Link>
-                            ))}
+                            <Link to="/shop">
+                                <Button
+                                    as="span"
+                                    fontWeight="bold"
+                                    color="black"
+                                    variant="ghost"
+                                    fontSize={{ base: "md", md: "lg" }}
+                                    transition="background-color 0.3s ease"
+                                    _hover={{
+                                        bgGradient:
+                                            "linear(to-b, gray.800, gray.300)",
+                                        color: "black"
+                                    }}
+                                >
+                                    Shop
+                                </Button>
+                            </Link>
                         </Stack>
                     </Box>
                 </ButtonGroup>
@@ -181,7 +177,7 @@ function NavBar() {
                                     Hello {localStorage.getItem("username")}
                                 </MenuButton>
                                 <MenuList>
-                                    <Link to="/logout">
+                                    <Link to="#/logout">
                                         <MenuItem
                                             onClick={() => {
                                                 onOpen();
