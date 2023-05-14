@@ -5,6 +5,8 @@ import Home from "./Home";
 import Admin from "./Admin";
 import { useState } from "react";
 import "./App.css";
+import logo from "./images/logo.png";
+import "./Home.css";
 import { app } from "./firebase-config";
 import {
     getAuth,
@@ -182,6 +184,9 @@ function NavBar(): JSX.Element {
     return (
         <>
             <div className="App">
+                <div id="logo">
+                    <img src={logo} height={250} width={350} alt={"logo"}></img>
+                </div>
                 <header className="App-header">
                     <div>{loggedInText(username)}</div>
                     <>
