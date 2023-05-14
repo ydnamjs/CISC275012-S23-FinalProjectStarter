@@ -54,7 +54,7 @@ export function ClothingDisplay({
                     stock > 0
                         ? () => {
                               setCart(cart + 1);
-                              setStock(cart - 1);
+                              setStock(stock - 1);
                           }
                         : () => setCart(cart)
                 }

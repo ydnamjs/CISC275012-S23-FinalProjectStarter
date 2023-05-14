@@ -130,7 +130,7 @@ export function FilterClothes({
                     sweatStockFive={sweatStockFive}
                     sweatStockSix={sweatStockSix}
                     sweatCart1={sweatCart1}
-                    sweatCart2={sweatCart3}
+                    sweatCart2={sweatCart2}
                     sweatCart3={sweatCart3}
                     sweatCart4={sweatCart4}
                     sweatCart5={sweatCart5}
