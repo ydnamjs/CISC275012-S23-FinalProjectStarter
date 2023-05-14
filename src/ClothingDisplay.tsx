@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable indent */
+import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col } from "react-bootstrap";
 
 export function ClothingDisplay({
@@ -9,7 +10,10 @@ export function ClothingDisplay({
     width,
     alt,
     color,
-    stock
+    stock,
+    cart,
+    setCart,
+    setStock
 }: {
     title: string;
     testid: string;
@@ -19,6 +23,9 @@ export function ClothingDisplay({
     alt: string;
     color: string;
     stock: number;
+    cart: number;
+    setCart: Dispatch<SetStateAction<number>>;
+    setStock: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     return (
         <div>
@@ -41,8 +48,19 @@ export function ClothingDisplay({
                 </Button>
             </div>
             <p>Stock: {stock}</p>
-            <p>Price: $2.00</p>
-            <Button>Add to Cart</Button>
+            <p>Price: $15.00</p>
+            <Button
+                onClick={
+                    stock > 0
+                        ? () => {
+                              setCart(cart + 1);
+                              setStock(stock - 1);
+                          }
+                        : () => setCart(cart)
+                }
+            >
+                Add to Cart
+            </Button>
         </div>
     );
 }

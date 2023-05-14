@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { ClothingDisplay } from "./ClothingDisplay";
 import shirt1 from "./images/shirt1.png";
@@ -15,7 +15,25 @@ export function ShirtDisplays({
     stockThree,
     stockFour,
     stockFive,
-    stockSix
+    stockSix,
+    shirtCart1,
+    shirtCart2,
+    shirtCart3,
+    shirtCart4,
+    shirtCart5,
+    shirtCart6,
+    setShirtCart1,
+    setShirtCart2,
+    setShirtCart3,
+    setShirtCart4,
+    setShirtCart5,
+    setShirtCart6,
+    setStock1,
+    setStock2,
+    setStock3,
+    setStock4,
+    setStock5,
+    setStock6
 }: {
     color: string;
     stockOne: number;
@@ -24,6 +42,24 @@ export function ShirtDisplays({
     stockFour: number;
     stockFive: number;
     stockSix: number;
+    shirtCart1: number;
+    shirtCart2: number;
+    shirtCart3: number;
+    shirtCart4: number;
+    shirtCart5: number;
+    shirtCart6: number;
+    setShirtCart1: Dispatch<SetStateAction<number>>;
+    setShirtCart2: Dispatch<SetStateAction<number>>;
+    setShirtCart3: Dispatch<SetStateAction<number>>;
+    setShirtCart4: Dispatch<SetStateAction<number>>;
+    setShirtCart5: Dispatch<SetStateAction<number>>;
+    setShirtCart6: Dispatch<SetStateAction<number>>;
+    setStock1: Dispatch<SetStateAction<number>>;
+    setStock2: Dispatch<SetStateAction<number>>;
+    setStock3: Dispatch<SetStateAction<number>>;
+    setStock4: Dispatch<SetStateAction<number>>;
+    setStock5: Dispatch<SetStateAction<number>>;
+    setStock6: Dispatch<SetStateAction<number>>;
 }) {
     return (
         <div>
@@ -40,6 +76,9 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"black"}
                                 stock={stockOne}
+                                cart={shirtCart1}
+                                setCart={setShirtCart1}
+                                setStock={setStock1}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -54,6 +93,9 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"red"}
                                 stock={stockTwo}
+                                cart={shirtCart2}
+                                setCart={setShirtCart2}
+                                setStock={setStock2}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -70,6 +112,9 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"green"}
                                 stock={stockThree}
+                                cart={shirtCart3}
+                                setCart={setShirtCart3}
+                                setStock={setStock3}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -84,6 +129,9 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"blue"}
                                 stock={stockFour}
+                                cart={shirtCart4}
+                                setCart={setShirtCart4}
+                                setStock={setStock4}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -100,6 +148,9 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"pink"}
                                 stock={stockFive}
+                                cart={shirtCart5}
+                                setCart={setShirtCart5}
+                                setStock={setStock5}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -114,6 +165,9 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"yellow"}
                                 stock={stockSix}
+                                cart={shirtCart6}
+                                setCart={setShirtCart6}
+                                setStock={setStock6}
                             ></ClothingDisplay>
                         )}
                     </Col>
