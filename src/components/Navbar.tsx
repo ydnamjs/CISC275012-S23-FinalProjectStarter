@@ -176,11 +176,22 @@ function NavBar() {
                     <Stack direction="row" spacing={5}>
                         {localStorage.getItem("username") &&
                         localStorage.getItem("password") ? (
-                            <Link to="/logout">
-                                <Button>
+                            <Menu>
+                                <MenuButton as={Button}>
                                     Hello {localStorage.getItem("username")}
-                                </Button>
-                            </Link>
+                                </MenuButton>
+                                <MenuList>
+                                    <Link to="/logout">
+                                        <MenuItem
+                                            onClick={() => {
+                                                onOpen();
+                                            }}
+                                        >
+                                            Logout
+                                        </MenuItem>
+                                    </Link>
+                                </MenuList>
+                            </Menu>
                         ) : (
                             <Link to="/login">
                                 <Button
