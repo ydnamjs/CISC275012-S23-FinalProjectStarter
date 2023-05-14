@@ -250,6 +250,42 @@ function NavBar(): JSX.Element {
                                 sweatStockFour={sweatshirtFourStock}
                                 sweatStockFive={sweatshirtFiveStock}
                                 sweatStockSix={sweatshirtSixStock}
+                                shirtCart1={shirtCart1}
+                                shirtCart2={shirtCart2}
+                                shirtCart3={shirtCart3}
+                                shirtCart4={shirtCart4}
+                                shirtCart5={shirtCart5}
+                                shirtCart6={shirtCart6}
+                                setShirtCart1={setShirtCart1}
+                                setShirtCart3={setShirtCart2}
+                                setShirtCart2={setShirtCart3}
+                                setShirtCart4={setShirtCart4}
+                                setShirtCart5={setShirtCart5}
+                                setShirtCart6={setShirtCart6}
+                                setStock1={setShirtOneStock}
+                                setStock2={setShirtTwoStock}
+                                setStock3={setShirtThreeStock}
+                                setStock4={setShirtFourStock}
+                                setStock5={setShirtFiveStock}
+                                setStock6={setShirtSixStock}
+                                sweatCart1={sweatCart1}
+                                sweatCart2={sweatCart3}
+                                sweatCart3={sweatCart3}
+                                sweatCart4={sweatCart4}
+                                sweatCart5={sweatCart5}
+                                sweatCart6={sweatCart6}
+                                sweatSetCart1={sweatSetCart1}
+                                sweatSetCart2={sweatSetCart2}
+                                sweatSetCart3={sweatSetCart3}
+                                sweatSetCart4={sweatSetCart4}
+                                sweatSetCart5={sweatSetCart5}
+                                sweatSetCart6={sweatSetCart6}
+                                sweatSetStock1={setSweatshirtOneStock}
+                                sweatSetStock2={setSweatshirtTwoStock}
+                                sweatSetStock3={setShirtThreeStock}
+                                sweatSetStock4={setSweatshirtFourStock}
+                                sweatSetStock5={setShirtFiveStock}
+                                sweatSetStock6={setSweatshirtSixStock}
                             />
                         }
                     ></Route>
