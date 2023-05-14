@@ -40,6 +40,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"black"}
                                 stock={stockOne}
+                                price={"$15.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -54,6 +55,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"red"}
                                 stock={stockTwo}
+                                price={"$15.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -70,6 +72,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"green"}
                                 stock={stockThree}
+                                price={"$15.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -84,6 +87,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"blue"}
                                 stock={stockFour}
+                                price={"$15.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -100,6 +104,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"pink"}
                                 stock={stockFive}
+                                price={"$15.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -114,6 +119,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"yellow"}
                                 stock={stockSix}
+                                price={"$15.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>

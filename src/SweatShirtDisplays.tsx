@@ -40,6 +40,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"black"}
                                 stock={sweatStockOne}
+                                price={"$30.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -54,6 +55,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"blue"}
                                 stock={sweatStockTwo}
+                                price={"$30.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -70,6 +72,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"red"}
                                 stock={sweatStockThree}
+                                price={"$30.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -84,6 +87,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"green"}
                                 stock={sweatStockFour}
+                                price={"$30.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -100,6 +104,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"purple"}
                                 stock={sweatStockFive}
+                                price={"$30.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -114,6 +119,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"yellow"}
                                 stock={sweatStockSix}
+                                price={"$30.00 USD"}
                             ></ClothingDisplay>
                         )}
                     </Col>
