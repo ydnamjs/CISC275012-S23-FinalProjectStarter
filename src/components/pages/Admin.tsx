@@ -39,23 +39,35 @@ const Admin = () => {
                         </Center>
                         <div>
                             <Text as="b" fontSize="4xl">
-                                add Product Form
+                                Add Product Form
                             </Text>
+                            <br></br>
                             <span>
-                                <h1>Add to mens List</h1>
+                                <Text as="b" fontSize="2xl">
+                                    Add to Mens List
+                                </Text>
                                 <AddMensProduct />
-                                <h1>Add to womens List</h1>
+                                <br></br>
+                                <Text as="b" fontSize="2xl">
+                                    Add to Womens List
+                                </Text>
                                 <AddWomensProduct />
                             </span>
                         </div>
+                        <br></br>
                         <div>
                             <Text as="b" fontSize="4xl">
                                 Remove Product
                             </Text>
+                            <br></br>
                             <span>
-                                <h1>mens</h1>
+                                <Text as="b" fontSize="2xl">
+                                    Mens
+                                </Text>
                                 <RemoveMensProduct />
-                                <h2>womens</h2>
+                                <Text as="b" fontSize="2xl">
+                                    Womens
+                                </Text>
                                 <RemoveWomensProduct />
                             </span>
                         </div>

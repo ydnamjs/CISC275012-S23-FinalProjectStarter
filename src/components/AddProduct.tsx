@@ -75,7 +75,7 @@ export const AddWomensProduct = () => {
                     />
                 </FormControl>
                 <FormControl id="sizes" isRequired>
-                    <FormLabel>Sizes (separate with commas)</FormLabel>
+                    <FormLabel>Sizes (Separate with Commas)</FormLabel>
                     <Input
                         value={sizes}
                         onChange={(e) => setSizes(e.target.value)}
@@ -88,6 +88,7 @@ export const AddWomensProduct = () => {
                         onChange={(e) => setPicture(e.target.value)}
                     />
                 </FormControl>
+                <br></br>
                 <Button type="submit">Add Product</Button>
             </SimpleGrid>
         </form>
@@ -161,7 +162,7 @@ const AddMensProduct = () => {
                     />
                 </FormControl>
                 <FormControl id="sizes" isRequired>
-                    <FormLabel>Sizes (separate with commas)</FormLabel>
+                    <FormLabel>Sizes (Separate with Commas)</FormLabel>
                     <Input
                         value={sizes}
                         onChange={(e) => setSizes(e.target.value)}
@@ -174,6 +175,7 @@ const AddMensProduct = () => {
                         onChange={(e) => setPicture(e.target.value)}
                     />
                 </FormControl>
+                <br></br>
                 <Button type="submit">Add Product</Button>
             </SimpleGrid>
         </form>

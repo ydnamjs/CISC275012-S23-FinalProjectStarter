@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-extra-parens */
-import React, { useState } from "react";
+import React from "react";
 import {
     Box,
     Button,
@@ -28,16 +28,14 @@ import { Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Cart from "../assets/cart.png";
-import AdminButton from "./AdminButton";
 import { useRef } from "react";
 
 function NavBar() {
-    const [isAdmin, setPriv] = useState<boolean>(true);
     const { openCart, cartQuantity } = useShoppingCart();
     const { isOpen, onOpen, onClose } = useDisclosure();
     const cancelRef = useRef<HTMLButtonElement>(null);
 
-    const navLinks = [{ label: "Shop", path: "/men" }];
+    const navLinks = [{ label: "Shop", path: "/shop" }];
 
     return (
         <Box
@@ -98,23 +96,20 @@ function NavBar() {
                     </Box>
                 </ButtonGroup>
                 <ButtonGroup>
-                    {!isAdmin ? <AdminButton></AdminButton> : null}
-                    <Spacer />
                     <Menu>
                         <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-                            {!isAdmin ? "Admin" : "User"}
+                            Roles
                         </MenuButton>
                         <MenuList>
-                            <MenuItem
-                                onClick={() => {
-                                    {
+                            <Link to="/">
+                                <MenuItem
+                                    onClick={() => {
                                         onOpen();
-                                    }
-                                    setPriv(true);
-                                }}
-                            >
-                                User
-                            </MenuItem>
+                                    }}
+                                >
+                                    User
+                                </MenuItem>
+                            </Link>
                             <AlertDialog
                                 motionPreset="slideInBottom"
                                 leastDestructiveRef={cancelRef}
@@ -139,16 +134,15 @@ function NavBar() {
                                     </AlertDialogFooter>
                                 </AlertDialogContent>
                             </AlertDialog>
-                            <MenuItem
-                                onClick={() => {
-                                    {
+                            <Link to="/admin">
+                                <MenuItem
+                                    onClick={() => {
                                         onOpen();
-                                    }
-                                    setPriv(false);
-                                }}
-                            >
-                                Admin
-                            </MenuItem>
+                                    }}
+                                >
+                                    Admin
+                                </MenuItem>
+                            </Link>
                             <AlertDialog
                                 motionPreset="slideInBottom"
                                 leastDestructiveRef={cancelRef}
@@ -188,7 +182,7 @@ function NavBar() {
                                 </Button>
                             </Link>
                         ) : (
-                            <Link to="/register">
+                            <Link to="/login">
                                 <Button
                                     as="span"
                                     fontWeight="bold"
@@ -202,7 +196,7 @@ function NavBar() {
                                         color: "black"
                                     }}
                                 >
-                                    Register
+                                    Login
                                 </Button>
                             </Link>
                         )}
