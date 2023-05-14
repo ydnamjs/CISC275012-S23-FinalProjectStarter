@@ -26,7 +26,15 @@ function Admin({
     sweatStockFive,
     sweatSetStockFive,
     sweatStockSix,
-    sweatSetStockSix
+    sweatSetStockSix,
+    emailOrder,
+    setEmailOrder,
+    firstNameOrder,
+    setFirstNameOrder,
+    lastNameOrder,
+    setLastNameOrder,
+    addressOrder,
+    setAddressOrder
 }: {
     stockOne: number;
     setStockOne: Dispatch<SetStateAction<number>>;
@@ -52,12 +60,29 @@ function Admin({
     sweatSetStockFive: Dispatch<SetStateAction<number>>;
     sweatStockSix: number;
     sweatSetStockSix: Dispatch<SetStateAction<number>>;
+    emailOrder: string;
+    setEmailOrder: Dispatch<SetStateAction<string>>;
+    firstNameOrder: string;
+    setFirstNameOrder: Dispatch<SetStateAction<string>>;
+    lastNameOrder: string;
+    setLastNameOrder: Dispatch<SetStateAction<string>>;
+    addressOrder: string;
+    setAddressOrder: Dispatch<SetStateAction<string>>;
 }): JSX.Element {
     return (
         <>
             <div>
                 <header>Orders</header>
-                <OrderViewer />
+                <OrderViewer
+                    emailOrder={emailOrder}
+                    setEmailOrder={setEmailOrder}
+                    firstNameOrder={firstNameOrder}
+                    setFirstNameOrder={setFirstNameOrder}
+                    lastNameOrder={lastNameOrder}
+                    setLastNameOrder={setLastNameOrder}
+                    addressOrder={addressOrder}
+                    setAddressOrder={setAddressOrder}
+                />
             </div>
             <div>
                 <header>Stock</header>

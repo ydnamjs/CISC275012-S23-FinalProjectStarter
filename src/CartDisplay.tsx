@@ -15,6 +15,7 @@ import sweatshirt5 from "./images/sweatshirt5.png";
 import sweatshirt6 from "./images/sweatshirt6.png";
 import "./App.css";
 import React from "react";
+import CheckoutPopup from "./checkoutPopup";
 
 function CartDisplay({
     shirtCart1,
@@ -64,7 +65,15 @@ function CartDisplay({
     sweatStock5,
     sweatSetStock5,
     sweatStock6,
-    sweatSetStock6
+    sweatSetStock6,
+    emailOrder,
+    setEmailOrder,
+    firstNameOrder,
+    setFirstNameOrder,
+    lastNameOrder,
+    setLastNameOrder,
+    addressOrder,
+    setAddressOrder
 }: {
     shirtCart1: number;
     setShirtCart1: Dispatch<SetStateAction<number>>;
@@ -114,6 +123,14 @@ function CartDisplay({
     sweatSetStock5: Dispatch<SetStateAction<number>>;
     sweatStock6: number;
     sweatSetStock6: Dispatch<SetStateAction<number>>;
+    emailOrder: string;
+    setEmailOrder: Dispatch<SetStateAction<string>>;
+    firstNameOrder: string;
+    setFirstNameOrder: Dispatch<SetStateAction<string>>;
+    lastNameOrder: string;
+    setLastNameOrder: Dispatch<SetStateAction<string>>;
+    addressOrder: string;
+    setAddressOrder: Dispatch<SetStateAction<string>>;
 }): JSX.Element {
     return (
         <div className="CartDisplay">
@@ -653,6 +670,16 @@ function CartDisplay({
                     </p>
                 </Container>
             </div>
+            <CheckoutPopup
+                emailOrder={emailOrder}
+                setEmailOrder={setEmailOrder}
+                firstNameOrder={firstNameOrder}
+                setFirstNameOrder={setFirstNameOrder}
+                lastNameOrder={lastNameOrder}
+                setLastNameOrder={setLastNameOrder}
+                addressOrder={addressOrder}
+                setAddressOrder={setAddressOrder}
+            ></CheckoutPopup>
         </div>
     );
 }

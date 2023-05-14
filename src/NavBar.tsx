@@ -65,6 +65,10 @@ function NavBar(): JSX.Element {
     const [sweatCart4, sweatSetCart4] = useState(0);
     const [sweatCart5, sweatSetCart5] = useState(0);
     const [sweatCart6, sweatSetCart6] = useState(0);
+    const [emailOrder, setEmailOrder] = useState("");
+    const [firstNameOrder, setFirstNameOrder] = useState("");
+    const [lastNameOrder, setLastNameOrder] = useState("");
+    const [addressOrder, setAddressOrder] = useState("");
 
     const adminList = [
         "skraus@udel.edu",
@@ -363,6 +367,14 @@ function NavBar(): JSX.Element {
                                 sweatSetStock5={setSweatshirtFiveStock}
                                 sweatStock6={sweatshirtSixStock}
                                 sweatSetStock6={setSweatshirtSixStock}
+                                emailOrder={emailOrder}
+                                setEmailOrder={setEmailOrder}
+                                firstNameOrder={firstNameOrder}
+                                setFirstNameOrder={setFirstNameOrder}
+                                lastNameOrder={lastNameOrder}
+                                setLastNameOrder={setLastNameOrder}
+                                addressOrder={addressOrder}
+                                setAddressOrder={setAddressOrder}
                             />
                         }
                     ></Route>
@@ -418,6 +430,14 @@ function NavBar(): JSX.Element {
                                 sweatSetStockFive={setSweatshirtFiveStock}
                                 sweatStockSix={sweatshirtSixStock}
                                 sweatSetStockSix={setSweatshirtSixStock}
+                                emailOrder={emailOrder}
+                                setEmailOrder={setEmailOrder}
+                                firstNameOrder={firstNameOrder}
+                                setFirstNameOrder={setFirstNameOrder}
+                                lastNameOrder={lastNameOrder}
+                                setLastNameOrder={setLastNameOrder}
+                                addressOrder={addressOrder}
+                                setAddressOrder={setAddressOrder}
                             />
                         }
                     ></Route>
