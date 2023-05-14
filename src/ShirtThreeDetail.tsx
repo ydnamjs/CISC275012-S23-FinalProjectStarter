@@ -26,7 +26,7 @@ function ShirtThreeDetail({
                                     fontSize: "30px"
                                 }}
                             >
-                                Shirt One
+                                Shirt Three
                             </Col>
                             <img
                                 data-testid={"green"}

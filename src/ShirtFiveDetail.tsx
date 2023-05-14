@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import shirt1 from "./images/shirt4.png";
+import shirt1 from "./images/shirt5.png";
 import "./App.css";
 
 function ShirtFiveDetail({
@@ -26,7 +26,7 @@ function ShirtFiveDetail({
                                     fontSize: "30px"
                                 }}
                             >
-                                Shirt Four
+                                Shirt Five
                             </Col>
                             <img
                                 data-testid={"blue"}
