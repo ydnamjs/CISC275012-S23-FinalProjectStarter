@@ -4,7 +4,7 @@ import "../ProductList";
 import { Center, Text } from "@chakra-ui/react";
 import ProductListWomen, { ProductListMen } from "../ProductList";
 
-const Mens = () => {
+const Shop = () => {
     return (
         <div className="background">
             <NavBar />
@@ -23,4 +23,4 @@ const Mens = () => {
         </div>
     );
 };
-export default Mens;
+export default Shop;
