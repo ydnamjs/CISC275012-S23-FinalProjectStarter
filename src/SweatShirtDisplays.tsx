@@ -80,6 +80,7 @@ export function SweatShirtDisplays({
                                 cart={sweatCart1}
                                 setCart={sweatSetCart1}
                                 setStock={sweatSetStock1}
+                                path="/SweatshirtOne"
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -98,6 +99,7 @@ export function SweatShirtDisplays({
                                 cart={sweatCart2}
                                 setCart={sweatSetCart2}
                                 setStock={sweatSetStock2}
+                                path="/SweatshirtTwo"
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -118,6 +120,7 @@ export function SweatShirtDisplays({
                                 cart={sweatCart3}
                                 setCart={sweatSetCart3}
                                 setStock={sweatSetStock3}
+                                path="/SweatshirtThree"
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -136,6 +139,7 @@ export function SweatShirtDisplays({
                                 cart={sweatCart4}
                                 setCart={sweatSetCart4}
                                 setStock={sweatSetStock4}
+                                path="/SweatshirtFour"
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -156,6 +160,7 @@ export function SweatShirtDisplays({
                                 cart={sweatCart5}
                                 setCart={sweatSetCart5}
                                 setStock={sweatSetStock5}
+                                path="/SweatshirtFive"
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -174,6 +179,7 @@ export function SweatShirtDisplays({
                                 cart={sweatCart6}
                                 setCart={sweatSetCart6}
                                 setStock={sweatSetStock6}
+                                path="/SweatshirtSix"
                             ></ClothingDisplay>
                         )}
                     </Col>

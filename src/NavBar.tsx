@@ -19,6 +19,18 @@ import CartDisplay from "./CartDisplay";
 import RegisterForm from "./Components/Common/RegisterForm";
 import LoginForm from "./Components/Common/LoginForm";
 import { getDatabase, ref, set, get } from "@firebase/database";
+import ShirtOneDetail from "./ShirtOneDetail";
+import ShirtTwoDetail from "./ShirtTwoDetail";
+import ShirtThreeDetail from "./ShirtThreeDetail";
+import ShirtFourDetail from "./ShirtFourDetail";
+import ShirtFiveDetail from "./ShirtFiveDetail";
+import ShirtSixDetail from "./ShirtSixDetail";
+import SweatshirtOneDetail from "./SweatshirtOneDetail";
+import SweatshirtTwoDetail from "./SweatshirtTwoDetail";
+import SweatshirtThreeDetail from "./SweatshirtThreeDetail";
+import SweatshirtFourDetail from "./SweatshirtFourDetail";
+import SweatshirtFiveDetail from "./SweatshirtFiveDetail";
+import SweatshirtSixDetail from "./SweatshirtSixDetail";
 
 function NavBar(): JSX.Element {
     const [email, setEmail] = useState("");
@@ -54,7 +66,11 @@ function NavBar(): JSX.Element {
     const [sweatCart5, sweatSetCart5] = useState(0);
     const [sweatCart6, sweatSetCart6] = useState(0);
 
-    const adminList = ["skraus@udel.edu", "gmelton@udel.edu"];
+    const adminList = [
+        "skraus@udel.edu",
+        "gmelton@udel.edu",
+        "rjsexton@udel.edu"
+    ];
     const database = getDatabase();
     function writeUserData(
         userId: string,
@@ -401,6 +417,138 @@ function NavBar(): JSX.Element {
                                 sweatSetStockFive={setSweatshirtFiveStock}
                                 sweatStockSix={sweatshirtSixStock}
                                 sweatSetStockSix={setSweatshirtSixStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/ShirtOne"
+                        element={
+                            <ShirtOneDetail
+                                stock1={shirtOneStock}
+                                shirtCart1={shirtCart1}
+                                setShirtCart1={setShirtCart1}
+                                setStock1={setShirtOneStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/ShirtTwo"
+                        element={
+                            <ShirtTwoDetail
+                                stock2={shirtTwoStock}
+                                shirtCart2={shirtCart2}
+                                setShirtCart2={setShirtCart2}
+                                setStock2={setShirtTwoStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/ShirtThree"
+                        element={
+                            <ShirtThreeDetail
+                                stock3={shirtThreeStock}
+                                shirtCart3={shirtCart3}
+                                setShirtCart3={setShirtCart3}
+                                setStock3={setShirtThreeStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/ShirtFour"
+                        element={
+                            <ShirtFourDetail
+                                stock4={shirtFourStock}
+                                shirtCart4={shirtCart4}
+                                setShirtCart4={setShirtCart4}
+                                setStock4={setShirtFourStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/ShirtFive"
+                        element={
+                            <ShirtFiveDetail
+                                stock5={shirtFiveStock}
+                                shirtCart5={shirtCart5}
+                                setShirtCart5={setShirtCart5}
+                                setStock5={setShirtFiveStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/ShirtSix"
+                        element={
+                            <ShirtSixDetail
+                                stock6={shirtSixStock}
+                                shirtCart6={shirtCart6}
+                                setShirtCart6={setShirtCart6}
+                                setStock6={setShirtSixStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/SweatshirtOne"
+                        element={
+                            <SweatshirtOneDetail
+                                sweatStock1={sweatshirtOneStock}
+                                sweatCart1={sweatCart1}
+                                sweatSetCart1={sweatSetCart1}
+                                sweatSetStock1={setSweatshirtOneStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/SweatshirtTwo"
+                        element={
+                            <SweatshirtTwoDetail
+                                sweatStock2={sweatshirtTwoStock}
+                                sweatCart2={sweatCart2}
+                                sweatSetCart2={sweatSetCart2}
+                                sweatSetStock2={setSweatshirtTwoStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/SweatshirtThree"
+                        element={
+                            <SweatshirtThreeDetail
+                                sweatStock3={sweatshirtThreeStock}
+                                sweatCart3={sweatCart3}
+                                sweatSetCart3={sweatSetCart3}
+                                sweatSetStock3={setSweatshirtThreeStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/SweatshirtFour"
+                        element={
+                            <SweatshirtFourDetail
+                                sweatStock4={sweatshirtFourStock}
+                                sweatCart4={sweatCart4}
+                                sweatSetCart4={sweatSetCart4}
+                                sweatSetStock4={setSweatshirtFourStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/SweatshirtFive"
+                        element={
+                            <SweatshirtFiveDetail
+                                sweatStock5={sweatshirtFiveStock}
+                                sweatCart5={sweatCart5}
+                                sweatSetCart5={sweatSetCart5}
+                                sweatSetStock5={setSweatshirtFiveStock}
+                            />
+                        }
+                    ></Route>
+                    <Route
+                        path="/SweatshirtSix"
+                        element={
+                            <SweatshirtSixDetail
+                                sweatStock6={sweatshirtSixStock}
+                                sweatCart6={sweatCart6}
+                                sweatSetCart6={sweatSetCart6}
+                                sweatSetStock6={setSweatshirtSixStock}
                             />
                         }
                     ></Route>
