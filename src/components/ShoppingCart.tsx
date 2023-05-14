@@ -69,7 +69,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                                 )}
                             </div>
                             <div style={{ textAlign: "right", paddingTop: 5 }}>
-                                <Link href="Team-1/#/checkout">
+                                <Link href=" /#/checkout">
                                     <Button>Checkout</Button>
                                 </Link>
                             </div>
