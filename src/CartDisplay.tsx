@@ -192,8 +192,8 @@ function CartDisplay({
                                         shirtCart2 <= 0
                                             ? () => setShirtCart2(shirtCart2)
                                             : () => {
-                                                  setShirtCart1(shirtCart1 - 1);
-                                                  setStock1(stock1 + 1);
+                                                  setShirtCart2(shirtCart2 - 1);
+                                                  setStock2(stock2 + 1);
                                               }
                                     }
                                 >
@@ -272,7 +272,7 @@ function CartDisplay({
                                 <Button
                                     onClick={
                                         shirtCart4 <= 0
-                                            ? () => setShirtCart1(shirtCart4)
+                                            ? () => setShirtCart4(shirtCart4)
                                             : () => {
                                                   setShirtCart4(shirtCart4 - 1);
                                                   setStock4(stock4 + 1);
@@ -444,7 +444,7 @@ function CartDisplay({
                                         sweatCart2 <= 0
                                             ? () => sweatSetCart2(sweatCart2)
                                             : () => {
-                                                  sweatSetCart2(sweatCart1 - 1);
+                                                  sweatSetCart2(sweatCart2 - 1);
                                                   sweatSetStock2(
                                                       sweatStock2 + 1
                                                   );
@@ -491,7 +491,7 @@ function CartDisplay({
                                             ? () => sweatSetCart3(sweatCart3)
                                             : () => {
                                                   sweatSetCart3(sweatCart3 - 1);
-                                                  sweatSetStock1(
+                                                  sweatSetStock3(
                                                       sweatStock3 + 1
                                                   );
                                               }
