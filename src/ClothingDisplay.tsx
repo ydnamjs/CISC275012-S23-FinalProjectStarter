@@ -11,7 +11,7 @@ export function ClothingDisplay({
     alt,
     color,
     stock,
-    price
+    price,
     cart,
     setCart,
     setStock
