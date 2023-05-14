@@ -69,7 +69,8 @@ function NavBar(): JSX.Element {
     const adminList = [
         "skraus@udel.edu",
         "gmelton@udel.edu",
-        "rjsexton@udel.edu"
+        "rjsexton@udel.edu",
+        "giadiaz@udel.edu"
     ];
     const database = getDatabase();
     function writeUserData(
