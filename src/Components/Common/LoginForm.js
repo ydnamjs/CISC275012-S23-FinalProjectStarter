@@ -24,12 +24,14 @@ export default function BasicTextFields({
                 autoComplete="off"
             >
                 <TextField
+                    data-testid="email-input"
                     id="email"
                     label="Enter the Email"
                     variant="outlined"
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <TextField
+                    data-testid="password-input"
                     id="password"
                     label="Enter the Password"
                     variant="outlined"
