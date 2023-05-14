@@ -57,7 +57,11 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     }
     function decreaseQuantity(name: string) {
         setCartItems((currItems) => {
-            if (currItems.find((item) => item.name === name)?.quantity === 1) {
+            if (currItems.find((item) => item.name === name) == null) {
+                return [...currItems, { name, quantity: 1 }];
+            } else if (
+                currItems.find((item) => item.name === name)?.quantity === 1
+            ) {
                 return currItems.filter((item) => item.name !== name);
             } else {
                 return currItems.map((item) => {
