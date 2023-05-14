@@ -202,7 +202,11 @@ function NavBar(): JSX.Element {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/login" hidden={loginVisible}>
+                                    <Link
+                                        to="/login"
+                                        hidden={loginVisible}
+                                        data-testid="login-page"
+                                    >
                                         Login
                                     </Link>
                                 </li>
@@ -210,6 +214,7 @@ function NavBar(): JSX.Element {
                                     <Link
                                         to="/admin"
                                         hidden={!loggedInAdmin(email)}
+                                        role="admin-link"
                                     >
                                         Admin
                                     </Link>
