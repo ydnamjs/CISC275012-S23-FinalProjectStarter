@@ -11,6 +11,7 @@ export function ClothingDisplay({
     alt,
     color,
     stock,
+    price
     cart,
     setCart,
     setStock
@@ -23,6 +24,7 @@ export function ClothingDisplay({
     alt: string;
     color: string;
     stock: number;
+    price: string;
     cart: number;
     setCart: Dispatch<SetStateAction<number>>;
     setStock: Dispatch<SetStateAction<number>>;
@@ -48,6 +50,8 @@ export function ClothingDisplay({
                 </Button>
             </div>
             <p>Stock: {stock}</p>
+            <p>Price: {price}</p>
+            <Button>Add to Cart</Button>
             <p>Price: $15.00</p>
             <Button
                 onClick={

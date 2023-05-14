@@ -76,6 +76,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"black"}
                                 stock={stockOne}
+                                price={"$15.00 USD"}
                                 cart={shirtCart1}
                                 setCart={setShirtCart1}
                                 setStock={setStock1}
@@ -93,6 +94,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"red"}
                                 stock={stockTwo}
+                                price={"$15.00 USD"}
                                 cart={shirtCart2}
                                 setCart={setShirtCart2}
                                 setStock={setStock2}
@@ -112,6 +114,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"green"}
                                 stock={stockThree}
+                                price={"$15.00 USD"}
                                 cart={shirtCart3}
                                 setCart={setShirtCart3}
                                 setStock={setStock3}
@@ -129,6 +132,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"blue"}
                                 stock={stockFour}
+                                price={"$15.00 USD"}
                                 cart={shirtCart4}
                                 setCart={setShirtCart4}
                                 setStock={setStock4}
@@ -148,6 +152,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"pink"}
                                 stock={stockFive}
+                                price={"$15.00 USD"}
                                 cart={shirtCart5}
                                 setCart={setShirtCart5}
                                 setStock={setStock5}
@@ -165,6 +170,7 @@ export function ShirtDisplays({
                                 alt={"Shirt"}
                                 color={"yellow"}
                                 stock={stockSix}
+                                price={"$15.00 USD"}
                                 cart={shirtCart6}
                                 setCart={setShirtCart6}
                                 setStock={setStock6}

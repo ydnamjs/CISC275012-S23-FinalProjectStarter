@@ -76,6 +76,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"black"}
                                 stock={sweatStockOne}
+                                price={"$30.00 USD"}
                                 cart={sweatCart1}
                                 setCart={sweatSetCart1}
                                 setStock={sweatSetStock1}
@@ -93,6 +94,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"blue"}
                                 stock={sweatStockTwo}
+                                price={"$30.00 USD"}
                                 cart={sweatCart2}
                                 setCart={sweatSetCart2}
                                 setStock={sweatSetStock2}
@@ -112,6 +114,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"red"}
                                 stock={sweatStockThree}
+                                price={"$30.00 USD"}
                                 cart={sweatCart3}
                                 setCart={sweatSetCart3}
                                 setStock={sweatSetStock3}
@@ -129,6 +132,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"green"}
                                 stock={sweatStockFour}
+                                price={"$30.00 USD"}
                                 cart={sweatCart4}
                                 setCart={sweatSetCart4}
                                 setStock={sweatSetStock4}
@@ -148,6 +152,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"purple"}
                                 stock={sweatStockFive}
+                                price={"$30.00 USD"}
                                 cart={sweatCart5}
                                 setCart={sweatSetCart5}
                                 setStock={sweatSetStock5}
@@ -165,6 +170,7 @@ export function SweatShirtDisplays({
                                 alt={"Sweatshirt"}
                                 color={"yellow"}
                                 stock={sweatStockSix}
+                                price={"$30.00 USD"}
                                 cart={sweatCart6}
                                 setCart={sweatSetCart6}
                                 setStock={sweatSetStock6}

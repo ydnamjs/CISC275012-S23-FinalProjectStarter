@@ -1,6 +1,8 @@
 import React, { Dispatch, SetStateAction } from "react";
 //import { Button } from "react-bootstrap";
 import "./App.css";
+//import logo from "./images/logo.png";
+import "./Home.css";
 import { FilterClothes } from "./FilterClothes";
 
 export function Home({
@@ -104,6 +106,9 @@ export function Home({
 }): JSX.Element {
     return (
         <div className="Home">
+            {/* <div id="logo">
+                <img src={logo}></img>
+            </div> */}
             <div>
                 Filter Items:{" "}
                 <FilterClothes
