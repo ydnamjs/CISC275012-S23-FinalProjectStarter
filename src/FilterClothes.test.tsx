@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { FilterClothes } from "./FilterClothes";
 //import { ColorFilter } from "./ColorFilter";
 //import { ClothingDisplay } from "./ClothingDisplay";
@@ -85,92 +85,148 @@ describe("FilterClothes Component tests, covering Inventory MVP element", () => 
     test("When yellow is selected, all yellow clothing is displayed", async () => {
         const select = screen.getByRole("combobox");
         userEvent.selectOptions(select, "yellow");
-        const yellowClothes = screen.queryAllByTestId("yellow");
-        expect(yellowClothes).toHaveLength(2);
 
-        //check other shirts and other sweatshirts to make sure nothing else is there
-        const nonOtherShirt = screen.queryAllByAltText("Shirt");
-        const nonOtherSweatShirt = screen.queryAllByAltText("Sweatshirt");
-        expect(nonOtherShirt).toHaveLength(1);
-        expect(nonOtherSweatShirt).toHaveLength(1);
+        // Wait for the color filter to take effect
+        await waitFor(() => {
+            const yellowClothes = screen.queryAllByTestId("yellow");
+            expect(yellowClothes).toHaveLength(2);
+
+            // Check other shirts and sweatshirts to make sure nothing else is there
+            const nonYellowShirts = screen
+                .queryAllByAltText("Shirt")
+                .filter((shirt) => !yellowClothes.includes(shirt));
+            const nonYellowSweatshirts = screen
+                .queryAllByAltText("Sweatshirt")
+                .filter((sweatshirt) => !yellowClothes.includes(sweatshirt));
+            expect(nonYellowShirts).toHaveLength(0);
+            expect(nonYellowSweatshirts).toHaveLength(0);
+        });
     });
 
     test("When red is selected, all red clothing is displayed", async () => {
         const select = screen.getByRole("combobox");
         userEvent.selectOptions(select, "red");
-        const redClothes = screen.queryAllByTestId("red");
-        expect(redClothes).toHaveLength(2);
 
-        //check other shirts and other sweatshirts to make sure nothing else is there
-        const nonOtherShirt = screen.queryAllByAltText("Shirt");
-        const nonOtherSweatShirt = screen.queryAllByAltText("Sweatshirt");
-        expect(nonOtherShirt).toHaveLength(1);
-        expect(nonOtherSweatShirt).toHaveLength(1);
+        // Wait for the color filter to take effect
+        await waitFor(() => {
+            const redClothes = screen.queryAllByTestId("red");
+            expect(redClothes).toHaveLength(2);
+
+            // Check other shirts and sweatshirts to make sure nothing else is there
+            const nonRedShirts = screen
+                .queryAllByAltText("Shirt")
+                .filter((shirt) => !redClothes.includes(shirt));
+            const nonRedSweatshirts = screen
+                .queryAllByAltText("Sweatshirt")
+                .filter((sweatshirt) => !redClothes.includes(sweatshirt));
+            expect(nonRedShirts).toHaveLength(0);
+            expect(nonRedSweatshirts).toHaveLength(0);
+        });
     });
 
     test("When blue is selected, all blue clothing is displayed", async () => {
         const select = screen.getByRole("combobox");
         userEvent.selectOptions(select, "blue");
-        const blueClothes = screen.queryAllByTestId("blue");
-        expect(blueClothes).toHaveLength(2);
 
-        ///check other shirts and other sweatshirts to make sure nothing else is there
-        const nonOtherShirt = screen.queryAllByAltText("Shirt");
-        const nonOtherSweatShirt = screen.queryAllByAltText("Sweatshirt");
-        expect(nonOtherShirt).toHaveLength(1);
-        expect(nonOtherSweatShirt).toHaveLength(1);
+        // Wait for the color filter to take effect
+        await waitFor(() => {
+            const blueClothes = screen.queryAllByTestId("blue");
+            expect(blueClothes).toHaveLength(2);
+
+            // Check other shirts and sweatshirts to make sure nothing else is there
+            const nonBlueShirts = screen
+                .queryAllByAltText("Shirt")
+                .filter((shirt) => !blueClothes.includes(shirt));
+            const nonBlueSweatshirts = screen
+                .queryAllByAltText("Sweatshirt")
+                .filter((sweatshirt) => !blueClothes.includes(sweatshirt));
+            expect(nonBlueShirts).toHaveLength(0);
+            expect(nonBlueSweatshirts).toHaveLength(0);
+        });
     });
 
     test("When black is selected, all black clothing is displayed", async () => {
         const select = screen.getByRole("combobox");
         userEvent.selectOptions(select, "black");
-        const blackClothes = screen.queryAllByTestId("black");
-        expect(blackClothes).toHaveLength(2);
 
-        ///check other shirts and other sweatshirts to make sure nothing else is there
-        const nonOtherShirt = screen.queryAllByAltText("Shirt");
-        const nonOtherSweatShirt = screen.queryAllByAltText("Sweatshirt");
-        expect(nonOtherShirt).toHaveLength(1);
-        expect(nonOtherSweatShirt).toHaveLength(1);
+        // Wait for the color filter to take effect
+        await waitFor(() => {
+            const blackClothes = screen.queryAllByTestId("black");
+            expect(blackClothes).toHaveLength(2);
+
+            // Check other shirts and sweatshirts to make sure nothing else is there
+            const nonBlackShirts = screen
+                .queryAllByAltText("Shirt")
+                .filter((shirt) => !blackClothes.includes(shirt));
+            const nonBlackSweatshirts = screen
+                .queryAllByAltText("Sweatshirt")
+                .filter((sweatshirt) => !blackClothes.includes(sweatshirt));
+            expect(nonBlackShirts).toHaveLength(0);
+            expect(nonBlackSweatshirts).toHaveLength(0);
+        });
     });
 
     test("When purple is selected, all purple clothing is displayed", async () => {
         const select = screen.getByRole("combobox");
         userEvent.selectOptions(select, "purple");
-        const purpleClothes = screen.queryAllByTestId("purple");
-        expect(purpleClothes).toHaveLength(1);
 
-        ///check other shirts and other sweatshirts to make sure nothing else is there
-        const nonOtherShirt = screen.queryAllByAltText("Shirt");
-        const nonOtherSweatShirt = screen.queryAllByAltText("Sweatshirt");
-        expect(nonOtherShirt).toHaveLength(0);
-        expect(nonOtherSweatShirt).toHaveLength(1);
+        // Wait for the color filter to take effect
+        await waitFor(() => {
+            const purpleClothes = screen.queryAllByTestId("purple");
+            expect(purpleClothes).toHaveLength(1);
+
+            // Check other shirts and sweatshirts to make sure nothing else is there
+            const nonPurpleShirts = screen
+                .queryAllByAltText("Shirt")
+                .filter((shirt) => !purpleClothes.includes(shirt));
+            const nonPurpleSweatshirts = screen
+                .queryAllByAltText("Sweatshirt")
+                .filter((sweatshirt) => !purpleClothes.includes(sweatshirt));
+            expect(nonPurpleShirts).toHaveLength(0);
+            expect(nonPurpleSweatshirts).toHaveLength(0);
+        });
     });
 
     test("When pink is selected, all pink clothing is displayed", async () => {
         const select = screen.getByRole("combobox");
         userEvent.selectOptions(select, "pink");
-        const pinkClothes = screen.queryAllByTestId("pink");
-        expect(pinkClothes).toHaveLength(1);
 
-        ///check other shirts and other sweatshirts to make sure nothing else is there
-        const nonOtherShirt = screen.queryAllByAltText("Shirt");
-        const nonOtherSweatShirt = screen.queryAllByAltText("Sweatshirt");
-        expect(nonOtherShirt).toHaveLength(1);
-        expect(nonOtherSweatShirt).toHaveLength(0);
+        // Wait for the color filter to take effect
+        await waitFor(() => {
+            const pinkClothes = screen.queryAllByTestId("pink");
+            expect(pinkClothes).toHaveLength(1);
+
+            // Check other shirts and sweatshirts to make sure nothing else is there
+            const nonPinkShirts = screen
+                .queryAllByAltText("Shirt")
+                .filter((shirt) => !pinkClothes.includes(shirt));
+            const nonPinkSweatshirts = screen
+                .queryAllByAltText("Sweatshirt")
+                .filter((sweatshirt) => !pinkClothes.includes(sweatshirt));
+            expect(nonPinkShirts).toHaveLength(0);
+            expect(nonPinkSweatshirts).toHaveLength(0);
+        });
     });
 
     test("When green is selected, all green clothing is displayed", async () => {
         const select = screen.getByRole("combobox");
         userEvent.selectOptions(select, "green");
-        const greenClothes = screen.queryAllByTestId("green");
-        expect(greenClothes).toHaveLength(2);
 
-        ///check other shirts and other sweatshirts to make sure nothing else is there
-        const nonOtherShirt = screen.queryAllByAltText("Shirt");
-        const nonOtherSweatShirt = screen.queryAllByAltText("Sweatshirt");
-        expect(nonOtherShirt).toHaveLength(1);
-        expect(nonOtherSweatShirt).toHaveLength(1);
+        // Wait for the color filter to take effect
+        await waitFor(() => {
+            const greenClothes = screen.queryAllByTestId("green");
+            expect(greenClothes).toHaveLength(2);
+
+            // Check other shirts and sweatshirts to make sure nothing else is there
+            const nonGreenShirts = screen
+                .queryAllByAltText("Shirt")
+                .filter((shirt) => !greenClothes.includes(shirt));
+            const nonGreenSweatshirts = screen
+                .queryAllByAltText("Sweatshirt")
+                .filter((sweatshirt) => !greenClothes.includes(sweatshirt));
+            expect(nonGreenShirts).toHaveLength(0);
+            expect(nonGreenSweatshirts).toHaveLength(0);
+        });
     });
 
     test("When all is selected, all all clothing is displayed", async () => {
