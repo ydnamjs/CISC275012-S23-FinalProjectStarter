@@ -1,9 +1,5 @@
-import React, { Dispatch, SetStateAction } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
-import shirt1 from "./images/shirt1.png";
-import shirt2 from "./images/shirt2.png";
-import sweatshirt1 from "./images/sweatshirt1.png";
-import sweatshirt2 from "./images/sweatshirt2.png";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Button, Container } from "react-bootstrap";
 import "./App.css";
 
 function OrderViewer({
@@ -14,7 +10,9 @@ function OrderViewer({
     lastNameOrder,
     setLastNameOrder,
     addressOrder,
-    setAddressOrder
+    setAddressOrder,
+    submitOrder,
+    setSubmitOrder
 }: {
     emailOrder: string;
     setEmailOrder: Dispatch<SetStateAction<string>>;
@@ -24,115 +22,71 @@ function OrderViewer({
     setLastNameOrder: Dispatch<SetStateAction<string>>;
     addressOrder: string;
     setAddressOrder: Dispatch<SetStateAction<string>>;
+    submitOrder: number;
+    setSubmitOrder: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
+    const [orderArray, setOrderArray] = useState<JSX.Element[]>([]);
+
+    function OrderForm(): JSX.Element {
+        return (
+            <div>
+                <div>
+                    <p>first name: {firstNameOrder}</p>
+                    <p>last name:{lastNameOrder}</p>
+                    <p>address: {addressOrder}</p>
+                    <p>email: {emailOrder}</p>
+                </div>
+                <div>
+                    <Button>Cancel Order</Button>
+                </div>
+            </div>
+        );
+    }
+
+    function OrderCreated(): JSX.Element {
+        if (submitOrder === 1) {
+            useEffect(() => {
+                setSubmitOrder(0);
+            });
+            useEffect(() => {
+                setOrderArray((orderArray) =>
+                    orderArray.concat(<OrderForm></OrderForm>)
+                );
+            });
+
+            useEffect(() => {
+                setEmailOrder("");
+            });
+            useEffect(() => {
+                setFirstNameOrder("");
+            });
+            useEffect(() => {
+                setLastNameOrder("");
+            });
+            useEffect(() => {
+                setAddressOrder("");
+            });
+            return <OrderDisplay></OrderDisplay>;
+        } else {
+            return <OrderDisplay></OrderDisplay>;
+        }
+    }
+
+    function OrderDisplay(): JSX.Element {
+        return (
+            <>
+                {orderArray.map((order: JSX.Element, index: number) => (
+                    <div key={index}>{order}</div>
+                ))}
+            </>
+        );
+    }
+
     return (
         <div className="OrderViewer">
             <div>
                 <Container>
-                    <Row>
-                        <Col>
-                            <img
-                                src={shirt1}
-                                height={100}
-                                width={100}
-                                alt={"Shirt 1"}
-                                style={{
-                                    border: "1px solid black",
-                                    padding: "4px",
-                                    fontSize: "20px"
-                                }}
-                            ></img>
-                            <div>
-                                <Button
-                                    style={{
-                                        fontSize: "10px"
-                                    }}
-                                >
-                                    Detail
-                                </Button>
-                                <p>Total amount: N/A</p>
-                                <Button>Add one to Cart</Button>
-                                <Button>Remove one from Cart</Button>
-                            </div>
-                        </Col>
-                        <Col>
-                            <img
-                                src={shirt2}
-                                height={100}
-                                width={100}
-                                alt={"Shirt 2"}
-                                style={{
-                                    border: "1px solid black",
-                                    padding: "4px",
-                                    fontSize: "20px"
-                                }}
-                            ></img>
-                            <div>
-                                <Button
-                                    style={{
-                                        fontSize: "10px"
-                                    }}
-                                >
-                                    Detail
-                                </Button>
-                                <p>Total amount: N/A</p>
-                                <Button>Add one to Cart</Button>
-                                <Button>Remove one from Cart</Button>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <img
-                                src={sweatshirt1}
-                                height={100}
-                                width={100}
-                                alt={"Sweatshirt 1"}
-                                style={{
-                                    border: "1px solid black",
-                                    padding: "4px",
-                                    fontSize: "20px"
-                                }}
-                            ></img>
-                            <div>
-                                <Button
-                                    style={{
-                                        fontSize: "10px"
-                                    }}
-                                >
-                                    Detail
-                                </Button>
-                                <p>Total amount: N/A</p>
-                                <Button>Add one to Cart</Button>
-                                <Button>Remove one from Cart</Button>
-                            </div>
-                        </Col>
-                        <Col>
-                            <img
-                                src={sweatshirt2}
-                                height={100}
-                                width={100}
-                                alt={"Sweatshirt 2"}
-                                style={{
-                                    border: "1px solid black",
-                                    padding: "4px",
-                                    fontSize: "20px"
-                                }}
-                            ></img>
-                            <div>
-                                <Button
-                                    style={{
-                                        fontSize: "10px"
-                                    }}
-                                >
-                                    Detail
-                                </Button>
-                                <p>Total amount: N/A</p>
-                                <Button>Add one to Cart</Button>
-                                <Button>Remove one from Cart</Button>
-                            </div>
-                        </Col>
-                    </Row>
+                    <OrderCreated></OrderCreated>
                 </Container>
             </div>
         </div>

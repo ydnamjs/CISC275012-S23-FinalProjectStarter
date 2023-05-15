@@ -57,7 +57,9 @@ function cartEditor({
     lastNameOrder,
     setLastNameOrder,
     addressOrder,
-    setAddressOrder
+    setAddressOrder,
+    submitOrder,
+    setSubmitOrder
 }: {
     shirtCart1: number;
     setShirtCart1: Dispatch<SetStateAction<number>>;
@@ -115,6 +117,8 @@ function cartEditor({
     setLastNameOrder: Dispatch<SetStateAction<string>>;
     addressOrder: string;
     setAddressOrder: Dispatch<SetStateAction<string>>;
+    submitOrder: number;
+    setSubmitOrder: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     return (
         <>
@@ -177,6 +181,8 @@ function cartEditor({
                     setLastNameOrder={setLastNameOrder}
                     addressOrder={addressOrder}
                     setAddressOrder={setAddressOrder}
+                    submitOrder={submitOrder}
+                    setSubmitOrder={setSubmitOrder}
                 />
             </div>
         </>

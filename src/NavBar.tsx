@@ -57,6 +57,7 @@ function NavBar(): JSX.Element {
     const [firstNameOrder, setFirstNameOrder] = useState("");
     const [lastNameOrder, setLastNameOrder] = useState("");
     const [addressOrder, setAddressOrder] = useState("");
+    const [submitOrder, setSubmitOrder] = useState(0);
 
     const adminList = ["skraus@udel.edu", "gmelton@udel.edu"];
     const database = getDatabase();
@@ -358,6 +359,8 @@ function NavBar(): JSX.Element {
                                 setLastNameOrder={setLastNameOrder}
                                 addressOrder={addressOrder}
                                 setAddressOrder={setAddressOrder}
+                                submitOrder={submitOrder}
+                                setSubmitOrder={setSubmitOrder}
                             />
                         }
                     ></Route>
@@ -421,6 +424,8 @@ function NavBar(): JSX.Element {
                                 setLastNameOrder={setLastNameOrder}
                                 addressOrder={addressOrder}
                                 setAddressOrder={setAddressOrder}
+                                submitOrder={submitOrder}
+                                setSubmitOrder={setSubmitOrder}
                             />
                         }
                     ></Route>
