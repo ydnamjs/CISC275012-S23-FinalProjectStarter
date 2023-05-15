@@ -548,7 +548,7 @@ function CartDisplay({
                                 </Button>
                                 <Button
                                     onClick={
-                                        sweatCart1 <= 0
+                                        sweatCart4 <= 0
                                             ? () => sweatSetCart4(sweatCart4)
                                             : () => {
                                                   sweatSetCart4(sweatCart4 - 1);

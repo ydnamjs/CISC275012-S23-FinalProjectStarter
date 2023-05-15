@@ -56,7 +56,7 @@ export function ClothingDisplay({
                 </Link>
             </div>
             <p>Stock: {stock}</p>
-            <p>Price: {price}</p>=
+            <p>Price: {price}</p>
             <Button
                 onClick={
                     stock > 0

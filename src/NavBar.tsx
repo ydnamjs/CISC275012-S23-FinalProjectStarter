@@ -283,8 +283,8 @@ function NavBar(): JSX.Element {
                                 shirtCart5={shirtCart5}
                                 shirtCart6={shirtCart6}
                                 setShirtCart1={setShirtCart1}
-                                setShirtCart3={setShirtCart2}
-                                setShirtCart2={setShirtCart3}
+                                setShirtCart2={setShirtCart2}
+                                setShirtCart3={setShirtCart3}
                                 setShirtCart4={setShirtCart4}
                                 setShirtCart5={setShirtCart5}
                                 setShirtCart6={setShirtCart6}
@@ -308,9 +308,9 @@ function NavBar(): JSX.Element {
                                 sweatSetCart6={sweatSetCart6}
                                 sweatSetStock1={setSweatshirtOneStock}
                                 sweatSetStock2={setSweatshirtTwoStock}
-                                sweatSetStock3={setShirtThreeStock}
+                                sweatSetStock3={setSweatshirtThreeStock}
                                 sweatSetStock4={setSweatshirtFourStock}
-                                sweatSetStock5={setShirtFiveStock}
+                                sweatSetStock5={setSweatshirtFiveStock}
                                 sweatSetStock6={setSweatshirtSixStock}
                             />
                         }
