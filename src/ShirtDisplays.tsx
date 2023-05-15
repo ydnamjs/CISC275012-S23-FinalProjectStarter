@@ -80,6 +80,7 @@ export function ShirtDisplays({
                                 cart={shirtCart1}
                                 setCart={setShirtCart1}
                                 setStock={setStock1}
+                                path="/ShirtOne"
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -98,6 +99,7 @@ export function ShirtDisplays({
                                 cart={shirtCart2}
                                 setCart={setShirtCart2}
                                 setStock={setStock2}
+                                path="/ShirtTwo"
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -118,6 +120,7 @@ export function ShirtDisplays({
                                 cart={shirtCart3}
                                 setCart={setShirtCart3}
                                 setStock={setStock3}
+                                path="/ShirtThree"
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -136,6 +139,7 @@ export function ShirtDisplays({
                                 cart={shirtCart4}
                                 setCart={setShirtCart4}
                                 setStock={setStock4}
+                                path="/ShirtFour"
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -156,6 +160,7 @@ export function ShirtDisplays({
                                 cart={shirtCart5}
                                 setCart={setShirtCart5}
                                 setStock={setStock5}
+                                path="/ShirtFive"
                             ></ClothingDisplay>
                         )}
                     </Col>
@@ -174,6 +179,7 @@ export function ShirtDisplays({
                                 cart={shirtCart6}
                                 setCart={setShirtCart6}
                                 setStock={setStock6}
+                                path="/ShirtSix"
                             ></ClothingDisplay>
                         )}
                     </Col>

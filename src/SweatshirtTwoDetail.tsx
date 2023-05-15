@@ -1,19 +1,19 @@
 /* eslint-disable indent */
 import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import sweatshirt1 from "./images/sweatshirt1.png";
+import sweatshirt1 from "./images/sweatshirt2.png";
 import "./App.css";
 
-function SweatshirtThreeDetail({
-    sweatCart3,
-    sweatSetCart3,
-    sweatSetStock3,
-    sweatStock3
+function SweatshirtTwoDetail({
+    sweatCart2,
+    sweatSetCart2,
+    sweatSetStock2,
+    sweatStock2
 }: {
-    sweatCart3: number;
-    sweatStock3: number;
-    sweatSetStock3: Dispatch<SetStateAction<number>>;
-    sweatSetCart3: Dispatch<SetStateAction<number>>;
+    sweatCart2: number;
+    sweatStock2: number;
+    sweatSetStock2: Dispatch<SetStateAction<number>>;
+    sweatSetCart2: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     return (
         <div className="SweatshirtOne">
@@ -26,7 +26,7 @@ function SweatshirtThreeDetail({
                                     fontSize: "30px"
                                 }}
                             >
-                                Sweatshirt One
+                                Sweatshirt Two
                             </Col>
                             <img
                                 data-testid={"black"}
@@ -68,12 +68,12 @@ function SweatshirtThreeDetail({
                             </p>
                             <Button
                                 onClick={
-                                    sweatStock3 > 0
+                                    sweatStock2 > 0
                                         ? () => {
-                                              sweatSetCart3(sweatCart3 + 1);
-                                              sweatSetStock3(sweatStock3 - 1);
+                                              sweatSetCart2(sweatCart2 + 1);
+                                              sweatSetStock2(sweatStock2 - 1);
                                           }
-                                        : () => sweatSetCart3(sweatCart3)
+                                        : () => sweatSetCart2(sweatCart2)
                                 }
                             >
                                 Add to Cart
@@ -86,4 +86,4 @@ function SweatshirtThreeDetail({
     );
 }
 
-export default SweatshirtThreeDetail;
+export default SweatshirtTwoDetail;

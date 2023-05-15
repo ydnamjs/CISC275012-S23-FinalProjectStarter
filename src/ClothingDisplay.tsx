@@ -1,6 +1,8 @@
 /* eslint-disable indent */
 import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./App.css";
 
 export function ClothingDisplay({
     title,
@@ -14,7 +16,8 @@ export function ClothingDisplay({
     price,
     cart,
     setCart,
-    setStock
+    setStock,
+    path
 }: {
     title: string;
     testid: string;
@@ -28,6 +31,7 @@ export function ClothingDisplay({
     cart: number;
     setCart: Dispatch<SetStateAction<number>>;
     setStock: Dispatch<SetStateAction<number>>;
+    path: string;
 }): JSX.Element {
     return (
         <div>
@@ -41,13 +45,15 @@ export function ClothingDisplay({
                 color={color}
             ></img>
             <div>
-                <Button
-                    style={{
-                        fontSize: "10px"
-                    }}
-                >
-                    Detail
-                </Button>
+                <Link to={path}>
+                    <Button
+                        style={{
+                            fontSize: "10px"
+                        }}
+                    >
+                        Detail
+                    </Button>
+                </Link>
             </div>
             <p>Stock: {stock}</p>
             <p>Price: {price}</p>

@@ -49,7 +49,15 @@ function cartEditor({
     sweatStock5,
     sweatSetStock5,
     sweatStock6,
-    sweatSetStock6
+    sweatSetStock6,
+    emailOrder,
+    setEmailOrder,
+    firstNameOrder,
+    setFirstNameOrder,
+    lastNameOrder,
+    setLastNameOrder,
+    addressOrder,
+    setAddressOrder
 }: {
     shirtCart1: number;
     setShirtCart1: Dispatch<SetStateAction<number>>;
@@ -99,6 +107,14 @@ function cartEditor({
     sweatSetStock5: Dispatch<SetStateAction<number>>;
     sweatStock6: number;
     sweatSetStock6: Dispatch<SetStateAction<number>>;
+    emailOrder: string;
+    setEmailOrder: Dispatch<SetStateAction<string>>;
+    firstNameOrder: string;
+    setFirstNameOrder: Dispatch<SetStateAction<string>>;
+    lastNameOrder: string;
+    setLastNameOrder: Dispatch<SetStateAction<string>>;
+    addressOrder: string;
+    setAddressOrder: Dispatch<SetStateAction<string>>;
 }): JSX.Element {
     return (
         <>
@@ -153,6 +169,14 @@ function cartEditor({
                     sweatSetStock5={sweatSetStock5}
                     sweatStock6={sweatStock6}
                     sweatSetStock6={sweatSetStock6}
+                    emailOrder={emailOrder}
+                    setEmailOrder={setEmailOrder}
+                    firstNameOrder={firstNameOrder}
+                    setFirstNameOrder={setFirstNameOrder}
+                    lastNameOrder={lastNameOrder}
+                    setLastNameOrder={setLastNameOrder}
+                    addressOrder={addressOrder}
+                    setAddressOrder={setAddressOrder}
                 />
             </div>
         </>

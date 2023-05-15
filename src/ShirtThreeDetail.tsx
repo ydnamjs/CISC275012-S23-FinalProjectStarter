@@ -1,22 +1,22 @@
 /* eslint-disable indent */
 import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import shirt1 from "./images/shirt4.png";
+import shirt1 from "./images/shirt3.png";
 import "./App.css";
 
-function ShirtSixDetail({
-    stock6,
-    setStock6,
-    shirtCart6,
-    setShirtCart6
+function ShirtThreeDetail({
+    stock3,
+    shirtCart3,
+    setStock3,
+    setShirtCart3
 }: {
-    stock6: number;
-    setStock6: Dispatch<SetStateAction<number>>;
-    shirtCart6: number;
-    setShirtCart6: Dispatch<SetStateAction<number>>;
+    stock3: number;
+    shirtCart3: number;
+    setStock3: Dispatch<SetStateAction<number>>;
+    setShirtCart3: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     return (
-        <div className="ShirtFour">
+        <div className="ShirtThree">
             <div>
                 <Container>
                     <Row>
@@ -26,10 +26,10 @@ function ShirtSixDetail({
                                     fontSize: "30px"
                                 }}
                             >
-                                Shirt Four
+                                Shirt Three
                             </Col>
                             <img
-                                data-testid={"blue"}
+                                data-testid={"green"}
                                 src={shirt1}
                                 height={400}
                                 width={400}
@@ -68,12 +68,12 @@ function ShirtSixDetail({
                             </p>
                             <Button
                                 onClick={
-                                    stock6 > 0
+                                    stock3 > 0
                                         ? () => {
-                                              setShirtCart6(shirtCart6 + 1);
-                                              setStock6(stock6 - 1);
+                                              setShirtCart3(shirtCart3 + 1);
+                                              setStock3(stock3 - 1);
                                           }
-                                        : () => setShirtCart6(shirtCart6)
+                                        : () => setShirtCart3(shirtCart3)
                                 }
                             >
                                 Add to Cart
@@ -86,4 +86,4 @@ function ShirtSixDetail({
     );
 }
 
-export default ShirtSixDetail;
+export default ShirtThreeDetail;

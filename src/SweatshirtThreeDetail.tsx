@@ -1,22 +1,22 @@
 /* eslint-disable indent */
 import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import shirt1 from "./images/shirt4.png";
+import sweatshirt1 from "./images/sweatshirt3.png";
 import "./App.css";
 
-function ShirtFiveDetail({
-    stock5,
-    setStock5,
-    shirtCart5,
-    setShirtCart5
+function SweatshirtThreeDetail({
+    sweatCart3,
+    sweatSetCart3,
+    sweatSetStock3,
+    sweatStock3
 }: {
-    stock5: number;
-    setStock5: Dispatch<SetStateAction<number>>;
-    shirtCart5: number;
-    setShirtCart5: Dispatch<SetStateAction<number>>;
+    sweatCart3: number;
+    sweatStock3: number;
+    sweatSetStock3: Dispatch<SetStateAction<number>>;
+    sweatSetCart3: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     return (
-        <div className="ShirtFour">
+        <div className="SweatshirtOne">
             <div>
                 <Container>
                     <Row>
@@ -26,14 +26,14 @@ function ShirtFiveDetail({
                                     fontSize: "30px"
                                 }}
                             >
-                                Shirt Four
+                                Sweatshirt Three
                             </Col>
                             <img
-                                data-testid={"blue"}
-                                src={shirt1}
+                                data-testid={"black"}
+                                src={sweatshirt1}
                                 height={400}
                                 width={400}
-                                alt={"Shirt"}
+                                alt={"Sweatshirt"}
                                 style={{
                                     border: "1px solid black",
                                     padding: "4px",
@@ -54,8 +54,8 @@ function ShirtFiveDetail({
                                     fontSize: "50px"
                                 }}
                             >
-                                This is a magnificent and very exquisite shirt.
-                                Made of the finest materials.
+                                This is a magnificent and very exquisite
+                                sweatshirt. Made of the finest materials.
                             </p>
                             <p
                                 style={{
@@ -64,16 +64,16 @@ function ShirtFiveDetail({
                                     fontSize: "20px"
                                 }}
                             >
-                                Price: $15.00
+                                Price: $30.00
                             </p>
                             <Button
                                 onClick={
-                                    stock5 > 0
+                                    sweatStock3 > 0
                                         ? () => {
-                                              setShirtCart5(shirtCart5 + 1);
-                                              setStock5(stock5 - 1);
+                                              sweatSetCart3(sweatCart3 + 1);
+                                              sweatSetStock3(sweatStock3 - 1);
                                           }
-                                        : () => setShirtCart5(shirtCart5)
+                                        : () => sweatSetCart3(sweatCart3)
                                 }
                             >
                                 Add to Cart
@@ -86,4 +86,4 @@ function ShirtFiveDetail({
     );
 }
 
-export default ShirtFiveDetail;
+export default SweatshirtThreeDetail;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import shirt1 from "./images/shirt1.png";
 import shirt2 from "./images/shirt2.png";
@@ -6,7 +6,25 @@ import sweatshirt1 from "./images/sweatshirt1.png";
 import sweatshirt2 from "./images/sweatshirt2.png";
 import "./App.css";
 
-function OrderViewer(): JSX.Element {
+function OrderViewer({
+    emailOrder,
+    setEmailOrder,
+    firstNameOrder,
+    setFirstNameOrder,
+    lastNameOrder,
+    setLastNameOrder,
+    addressOrder,
+    setAddressOrder
+}: {
+    emailOrder: string;
+    setEmailOrder: Dispatch<SetStateAction<string>>;
+    firstNameOrder: string;
+    setFirstNameOrder: Dispatch<SetStateAction<string>>;
+    lastNameOrder: string;
+    setLastNameOrder: Dispatch<SetStateAction<string>>;
+    addressOrder: string;
+    setAddressOrder: Dispatch<SetStateAction<string>>;
+}): JSX.Element {
     return (
         <div className="OrderViewer">
             <div>

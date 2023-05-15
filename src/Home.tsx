@@ -106,9 +106,6 @@ export function Home({
 }): JSX.Element {
     return (
         <div className="Home">
-            {/* <div id="logo">
-                <img src={logo}></img>
-            </div> */}
             <div>
                 Filter Items:{" "}
                 <FilterClothes
