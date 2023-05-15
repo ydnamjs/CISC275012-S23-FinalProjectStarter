@@ -18,10 +18,11 @@ import Navbar from "../Navbar";
 import { prodM, prodW } from "../ProductList";
 import ".././OrderConfirmation.css";
 import "../Modal";
+import Shipping from "../../assets/location_icon.png";
+import creditCard from "../../assets/cc_icon.png";
+import Delivery from "../../assets/delivery_icon.png";
+
 const OrderConfirmation = () => {
-    const shipping = "src/assets/location_icon.png";
-    const creditCard = "src/assets/cc_icon.png";
-    const delivery = "/Users/kevinchau/Team-1/src/assets/delivery_icon.png";
     const date = new Date();
     const showTime = date.getHours() + ":" + date.getMinutes();
     const currDate = date.toLocaleDateString();
@@ -61,31 +62,49 @@ const OrderConfirmation = () => {
                 </div>
                 <div className="container">
                     <div className="box">
-                        <Image
-                            src={shipping}
-                            boxSize={5}
-                            alt="Shopping Cart"
-                            objectFit="cover"
-                        ></Image>
-                        <b>Shipping</b>
+                        <Center>
+                            <Image
+                                src={Shipping}
+                                boxSize={10}
+                                alt="Shopping Cart"
+                                objectFit="cover"
+                            ></Image>
+                            <b>Shipping</b>
+                        </Center>
+                        {localStorage.getItem("FirstName")}
+                        {localStorage.getItem("LastName")}
+                        {localStorage.getItem("Address1")}
+                        {localStorage.getItem("Address2")}
+                        {localStorage.getItem("State")}
+                        {localStorage.getItem("City")}
+                        {localStorage.getItem("Zip")}
                     </div>
                     <div className="box">
-                        <Image
-                            src={creditCard}
-                            boxSize={5}
-                            alt="Shopping Cart"
-                            objectFit="cover"
-                        ></Image>
-                        <b>Billing Details</b>
+                        <Center>
+                            <Image
+                                src={creditCard}
+                                boxSize={10}
+                                alt="Shopping Cart"
+                                objectFit="cover"
+                            ></Image>
+                            <b>Billing Details</b>
+                        </Center>
+                        {localStorage.getItem("Name")}
+                        {localStorage.getItem("CardNum")}
+                        {localStorage.getItem("Security")}
+                        {localStorage.getItem("ExpirationMonth")}
+                        {localStorage.getItem("ExpirationYear")}
                     </div>
                     <div className="box">
-                        <Image
-                            src={delivery}
-                            boxSize={5}
-                            alt="Shopping Cart"
-                            objectFit="cover"
-                        ></Image>
-                        <b>Shipping Method</b>
+                        <Center>
+                            <Image
+                                src={Delivery}
+                                boxSize={10}
+                                alt="Shopping Cart"
+                                objectFit="cover"
+                            ></Image>
+                            <b>Shipping Method</b>
+                        </Center>
                     </div>
                 </div>
                 <Card>
