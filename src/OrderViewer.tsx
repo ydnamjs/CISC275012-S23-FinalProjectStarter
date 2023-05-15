@@ -26,34 +26,36 @@ function OrderViewer({
     setSubmitOrder: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     const [orderArray, setOrderArray] = useState<JSX.Element[]>([]);
+    const [hiddenArray, setHiddenArray] = useState<boolean>(false);
+    let newArray = [...orderArray];
 
     function OrderForm(): JSX.Element {
         return (
             <div>
-                <div>
-                    <p>first name: {firstNameOrder}</p>
-                    <p>last name:{lastNameOrder}</p>
-                    <p>address: {addressOrder}</p>
-                    <p>email: {emailOrder}</p>
-                </div>
-                <div>
-                    <Button>Cancel Order</Button>
-                </div>
+                <p>first name: {firstNameOrder}</p>
+                <p>last name:{lastNameOrder}</p>
+                <p>address: {addressOrder}</p>
+                <p>email: {emailOrder}</p>
+                <Button onClick={() => hidden()}>Cancel Order</Button>
             </div>
         );
     }
 
+    function hidden(): void {
+        setHiddenArray(true);
+    }
     function OrderCreated(): JSX.Element {
         if (submitOrder === 1) {
+            newArray = [
+                ...orderArray,
+                <OrderForm key={firstNameOrder}></OrderForm>
+            ];
             useEffect(() => {
                 setSubmitOrder(0);
             });
             useEffect(() => {
-                setOrderArray((orderArray) =>
-                    orderArray.concat(<OrderForm></OrderForm>)
-                );
+                setOrderArray(newArray);
             });
-
             useEffect(() => {
                 setEmailOrder("");
             });
@@ -73,19 +75,23 @@ function OrderViewer({
     }
 
     function OrderDisplay(): JSX.Element {
-        return (
-            <>
-                {orderArray.map((order: JSX.Element, index: number) => (
-                    <div key={index}>{order}</div>
-                ))}
-            </>
-        );
+        if (orderArray.length >= 1) {
+            return (
+                <>
+                    {orderArray.map((order: JSX.Element, index: number) => (
+                        <div key={index}>{order}</div>
+                    ))}
+                </>
+            );
+        } else {
+            return <Button>No orders</Button>;
+        }
     }
 
     return (
         <div className="OrderViewer">
             <div>
-                <Container>
+                <Container hidden={hiddenArray}>
                     <OrderCreated></OrderCreated>
                 </Container>
             </div>
