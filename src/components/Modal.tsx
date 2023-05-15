@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./Navbar";
 import PaymentInformation from "./PaymentInformation";
+import { Link } from "react-router-dom";
 
-import OrderConfirmation from "./pages/OrderConfirmation";
 import {
     Button,
+    Center,
     FormControl,
     FormLabel,
     Input,
@@ -13,58 +14,62 @@ import {
 } from "@chakra-ui/react";
 
 const usStates: string[] = [
-    "Alabama",
-    "Alaska",
-    "Arizona",
-    "Arkansas",
-    "California",
-    "Colorado",
-    "Connecticut",
-    "Delaware",
-    "Florida",
-    "Georgia",
-    "Hawaii",
-    "Idaho",
-    "Illinois",
-    "Indiana",
-    "Iowa",
-    "Kansas",
-    "Kentucky",
-    "Louisiana",
-    "Maine",
-    "Maryland",
-    "Massachusetts",
-    "Michigan",
-    "Minnesota",
-    "Mississippi",
-    "Missouri",
-    "Montana",
-    "Nebraska",
-    "Nevada",
-    "New Hampshire",
-    "New Jersey",
-    "New Mexico",
-    "New York",
-    "North Carolina",
-    "North Dakota",
-    "Ohio",
-    "Oklahoma",
-    "Oregon",
-    "Pennsylvania",
-    "Rhode Island",
-    "South Carolina",
-    "South Dakota",
-    "Tennessee",
-    "Texas",
-    "Utah",
-    "Vermont",
-    "Virginia",
-    "Washington",
-    "West Virginia",
-    "Wisconsin",
-    "Wyoming"
+    "AL",
+    "AK",
+    "AZ",
+    "AR",
+    "CA",
+    "CO",
+    "CT",
+    "DE",
+    "FL",
+    "GA",
+    "HI",
+    "ID",
+    "IL",
+    "IN",
+    "IA",
+    "KS",
+    "KY",
+    "LA",
+    "ME",
+    "MD",
+    "MA",
+    "MI",
+    "MN",
+    "MS",
+    "MO",
+    "MT",
+    "NE",
+    "NV",
+    "NH",
+    "NJ",
+    "NM",
+    "NY",
+    "NC",
+    "ND",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VT",
+    "VA",
+    "WA",
+    "WV",
+    "WI",
+    "WY"
 ];
 
+const shippingMethods: string[] = [
+    "U.S. Standard (5-7 business days): $7.95",
+    "U.S. Expedited (1 Day): $14.95"
+];
 export function CheckoutModal() {
     const userRef = React.useRef<HTMLInputElement>(null);
     const [Fname, setFName] = useState("");
@@ -76,6 +81,10 @@ export function CheckoutModal() {
     const [city, setCity] = useState("");
     const [state, setState] = useState("");
     const [zip, setZip] = useState("");
+    const [shipping, setShipping] = useState(
+        "U.S. Standard (5-7 business days): $7.95"
+    );
+    const [confirm, setConfirmation] = useState(false);
 
     useEffect(() => {
         if (userRef.current != null) {
@@ -94,6 +103,7 @@ export function CheckoutModal() {
         localStorage.setItem("City", city);
         localStorage.setItem("State", state);
         localStorage.setItem("Zip", zip);
+        localStorage.setItem("Shipping", shipping);
     };
 
     return (
@@ -221,7 +231,6 @@ export function CheckoutModal() {
                                                             type="text"
                                                             id="Address2"
                                                             ref={userRef}
-                                                            required
                                                             aria-describedby="Addr2note"
                                                             value={addr2}
                                                             onChange={(e) =>
@@ -314,6 +323,47 @@ export function CheckoutModal() {
                                                         ></Input>
                                                     </div>
                                                 </div>
+                                                <div className="col-md-6">
+                                                    <div className="form-group mb-3">
+                                                        <div>
+                                                            <FormLabel>
+                                                                Shipping
+                                                            </FormLabel>
+                                                            <Select
+                                                                id="Shipping"
+                                                                required
+                                                                aria-describedby="ShippingNote"
+                                                                className="col-md-4"
+                                                                value={shipping}
+                                                                onChange={(e) =>
+                                                                    setShipping(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            >
+                                                                {shippingMethods.map(
+                                                                    (
+                                                                        method
+                                                                    ) => (
+                                                                        <option
+                                                                            key={
+                                                                                method
+                                                                            }
+                                                                            value={
+                                                                                method
+                                                                            }
+                                                                        >
+                                                                            {
+                                                                                method
+                                                                            }
+                                                                        </option>
+                                                                    )
+                                                                )}
+                                                            </Select>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -322,10 +372,25 @@ export function CheckoutModal() {
                         </div>
                     </div>
                 </FormControl>
-                <Button type="submit">Confirm</Button>
+                <Center>
+                    <Button
+                        type="submit"
+                        onClick={() => setConfirmation(!confirm)}
+                    >
+                        {confirm ? (
+                            <div>Confirmed!</div>
+                        ) : (
+                            <div>Confirm details!</div>
+                        )}
+                    </Button>
+                </Center>
             </form>
             <PaymentInformation></PaymentInformation>
-            <OrderConfirmation></OrderConfirmation>
+            <Center>
+                <Link to="/confirmation">
+                    <Button>Place Order</Button>
+                </Link>
+            </Center>
         </div>
     );
 }

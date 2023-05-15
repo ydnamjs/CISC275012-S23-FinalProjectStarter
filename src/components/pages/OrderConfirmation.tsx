@@ -28,6 +28,23 @@ const OrderConfirmation = () => {
     const currDate = date.toLocaleDateString();
     const { cartItems } = useShoppingCart();
 
+    let totalPrice = cartItems.reduce((totalPrice, cartItem) => {
+        let item = prodM.find((item) => item.name === cartItem.name);
+        if (item == null) {
+            item = prodW.find((item) => item.name === cartItem.name);
+        }
+        return totalPrice + (item?.price || 0) * cartItem.quantity;
+    }, 0);
+
+    const shippingMethod = localStorage.getItem("Shipping");
+    let shippingCost = 0;
+    if (shippingMethod === "U.S. Expedited (1 Day): $14.95") {
+        shippingCost = 14.95;
+    } else {
+        shippingCost = 7.95;
+    }
+    totalPrice += shippingCost;
+
     return (
         <div>
             <Navbar></Navbar>
@@ -42,8 +59,9 @@ const OrderConfirmation = () => {
                 </Center>
                 <Center>
                     <Text>
-                        We sent an email to <b></b> with your order confirmation
-                        and receipt.
+                        We sent an email to{" "}
+                        <b>{localStorage.getItem("Email")}</b> with your order
+                        confirmation and receipt.
                     </Text>
                 </Center>
                 <Center>
@@ -60,27 +78,39 @@ const OrderConfirmation = () => {
                         </p>
                     </Center>
                 </div>
-                <div className="container">
-                    <div className="box">
-                        <Center>
+                <Center>
+                    <div className="container">
+                        <div className="box">
                             <Image
                                 src={Shipping}
                                 boxSize={10}
                                 alt="Shopping Cart"
                                 objectFit="cover"
                             ></Image>
+
                             <b>Shipping</b>
-                        </Center>
-                        {localStorage.getItem("FirstName")}
-                        {localStorage.getItem("LastName")}
-                        {localStorage.getItem("Address1")}
-                        {localStorage.getItem("Address2")}
-                        {localStorage.getItem("State")}
-                        {localStorage.getItem("City")}
-                        {localStorage.getItem("Zip")}
-                    </div>
-                    <div className="box">
-                        <Center>
+                            <div>
+                                <p>
+                                    <b>
+                                        {localStorage.getItem("FirstName")}{" "}
+                                        {localStorage.getItem("LastName")}
+                                    </b>
+                                    <p>
+                                        Phone: {localStorage.getItem("Number")}
+                                    </p>
+                                </p>
+                            </div>
+                            <p>
+                                {localStorage.getItem("Address1")}
+                                {localStorage.getItem("Address2")}
+                            </p>
+                            <p>
+                                {localStorage.getItem("City")}
+                                {","} {localStorage.getItem("State")}{" "}
+                                {localStorage.getItem("Zip")}
+                            </p>
+                        </div>
+                        <div className="box">
                             <Image
                                 src={creditCard}
                                 boxSize={10}
@@ -88,15 +118,18 @@ const OrderConfirmation = () => {
                                 objectFit="cover"
                             ></Image>
                             <b>Billing Details</b>
-                        </Center>
-                        {localStorage.getItem("Name")}
-                        {localStorage.getItem("CardNum")}
-                        {localStorage.getItem("Security")}
-                        {localStorage.getItem("ExpirationMonth")}
-                        {localStorage.getItem("ExpirationYear")}
-                    </div>
-                    <div className="box">
-                        <Center>
+                            <p>
+                                <p>
+                                    <p>
+                                        <b>Cardholder:</b>{" "}
+                                        {localStorage.getItem("Name")}
+                                    </p>
+                                </p>
+                                <b>Card Number:</b>{" "}
+                                {localStorage.getItem("CardNum")}{" "}
+                            </p>
+                        </div>
+                        <div className="box">
                             <Image
                                 src={Delivery}
                                 boxSize={10}
@@ -104,9 +137,11 @@ const OrderConfirmation = () => {
                                 objectFit="cover"
                             ></Image>
                             <b>Shipping Method</b>
-                        </Center>
+                            <p>Preferred Method:</p>
+                            <p>{shippingMethod}</p>
+                        </div>
                     </div>
-                </div>
+                </Center>
                 <Card>
                     <CardHeader>
                         <Heading size="md">Order Overview</Heading>
@@ -118,9 +153,10 @@ const OrderConfirmation = () => {
                     ))}
                     <div className="ms-auto fw-bold fs-6">
                         <Divider orientation="vertical" />
-                        Total:&nbsp;
+                        <p>Shipping: {shippingCost}</p>
+                        Subtotal:&nbsp;
                         {formatMoney(
-                            cartItems.reduce((total, cartItem) => {
+                            cartItems.reduce((totalPrice, cartItem) => {
                                 let item = prodM.find(
                                     (item) => item.name === cartItem.name
                                 );
@@ -130,11 +166,15 @@ const OrderConfirmation = () => {
                                     );
                                 }
                                 return (
-                                    total +
+                                    totalPrice +
                                     (item?.price || 0) * cartItem.quantity
                                 );
                             }, 0)
                         )}
+                        <div>
+                            Total: {"$"}
+                            {totalPrice}
+                        </div>
                     </div>
                 </VStack>
             </Stack>
