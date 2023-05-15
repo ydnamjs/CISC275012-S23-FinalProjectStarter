@@ -1,10 +1,16 @@
 /* eslint-disable no-extra-parens */
-import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
 import NavBar from "./Navbar";
 import PaymentInformation from "./PaymentInformation";
 
 import OrderConfirmation from "./pages/OrderConfirmation";
+import {
+    Button,
+    FormControl,
+    FormLabel,
+    Input,
+    Select
+} from "@chakra-ui/react";
 
 const usStates: string[] = [
     "Alabama",
@@ -59,7 +65,8 @@ const usStates: string[] = [
     "Wyoming"
 ];
 
-const CheckoutModal = () => {
+export function CheckoutModal() {
+    const userRef = React.useRef<HTMLInputElement>(null);
     const [Fname, setFName] = useState("");
     const [Lname, setLName] = useState("");
     const [email, setEmail] = useState("");
@@ -70,182 +77,243 @@ const CheckoutModal = () => {
     const [state, setState] = useState("");
     const [zip, setZip] = useState("");
 
-    function updateFName(event: React.ChangeEvent<HTMLInputElement>) {
-        setFName(event.target.value);
-    }
-    function updateLastName(event: React.ChangeEvent<HTMLInputElement>) {
-        setLName(event.target.value);
-    }
-    function updateEmail(event: React.ChangeEvent<HTMLInputElement>) {
-        setEmail(event.target.value);
-    }
-    function updateNumber(event: React.ChangeEvent<HTMLInputElement>) {
-        setNumber(event.target.value);
-    }
-    function updateAddr1(event: React.ChangeEvent<HTMLInputElement>) {
-        setAddr1(event.target.value);
-    }
-    function updateAddr2(event: React.ChangeEvent<HTMLInputElement>) {
-        setAddr2(event.target.value);
-    }
-    function updateCity(event: React.ChangeEvent<HTMLInputElement>) {
-        setCity(event.target.value);
-    }
-    function updateState(event: React.ChangeEvent<HTMLSelectElement>) {
-        setState(event.target.value);
-    }
-    function updateZip(event: React.ChangeEvent<HTMLInputElement>) {
-        setZip(event.target.value);
-    }
+    useEffect(() => {
+        if (userRef.current != null) {
+            userRef.current.focus();
+        }
+    }, []);
+
+    const handleSubmit = async (e: { preventDefault: () => void }) => {
+        e.preventDefault();
+        localStorage.setItem("FirstName", Fname);
+        localStorage.setItem("LastName", Lname);
+        localStorage.setItem("Email", email);
+        localStorage.setItem("Number", number);
+        localStorage.setItem("Address1", addr1);
+        localStorage.setItem("Address2", addr2);
+        localStorage.setItem("City", city);
+        localStorage.setItem("State", state);
+        localStorage.setItem("Zip", zip);
+    };
 
     return (
         <div>
             <NavBar></NavBar>
-            <div className="py-4">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-7">
-                            <div className="card">
-                                <div className="card-header">
-                                    <h4>Shipping Information</h4>
-                                </div>
-                                <div className="card-body">
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <div className="form-group mb-3">
-                                                <Form.Group controlId="formFName">
-                                                    <Form.Label>
-                                                        First Name
-                                                    </Form.Label>
-                                                    <Form.Control
-                                                        value={Fname}
-                                                        onChange={updateFName}
-                                                    ></Form.Control>
-                                                </Form.Group>
-                                            </div>
+            <form onSubmit={handleSubmit}>
+                <FormControl>
+                    <div className="py-4">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-7">
+                                    <div className="card">
+                                        <div className="card-header">
+                                            <h4>Shipping Information</h4>
                                         </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group mb-3">
-                                                <Form.Group controlId="formLName">
-                                                    <Form.Label>
-                                                        Last Name
-                                                    </Form.Label>
-                                                    <Form.Control
-                                                        value={Lname}
-                                                        onChange={
-                                                            updateLastName
-                                                        }
-                                                    ></Form.Control>
-                                                </Form.Group>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group mb-3">
-                                                <Form.Group controlId="formEmail">
-                                                    <Form.Label>
-                                                        Email Address
-                                                    </Form.Label>
-                                                    <Form.Control
-                                                        value={email}
-                                                        onChange={updateEmail}
-                                                    ></Form.Control>
-                                                </Form.Group>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group mb-3">
-                                                <Form.Group controlId="formNumber">
-                                                    <Form.Label>
-                                                        Phone Number
-                                                    </Form.Label>
-                                                    <Form.Control
-                                                        value={number}
-                                                        onChange={updateNumber}
-                                                    ></Form.Control>
-                                                </Form.Group>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <Form.Group controlId="formAddr1">
-                                                <Form.Label>
-                                                    Address Line 1
-                                                </Form.Label>
-                                                <Form.Control
-                                                    value={addr1}
-                                                    onChange={updateAddr1}
-                                                ></Form.Control>
-                                            </Form.Group>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group mb-3">
-                                                <Form.Group controlId="formAddr1">
-                                                    <Form.Label>
-                                                        Address Line 2
-                                                    </Form.Label>
-                                                    <Form.Control
-                                                        value={addr2}
-                                                        onChange={updateAddr2}
-                                                    ></Form.Control>
-                                                </Form.Group>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group mb-3">
-                                                <Form.Group controlId="formAddr1">
-                                                    <Form.Label>
-                                                        City
-                                                    </Form.Label>
-                                                    <Form.Control
-                                                        value={city}
-                                                        onChange={updateCity}
-                                                    ></Form.Control>
-                                                </Form.Group>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group mb-3">
-                                                <div>
-                                                    <Form.Group controlId="userEmotions">
-                                                        <Form.Label>
-                                                            State
-                                                        </Form.Label>
-                                                        <Form.Select
-                                                            className="col-md-4"
-                                                            value={state}
-                                                            onChange={
-                                                                updateState
-                                                            }
-                                                        >
-                                                            {usStates.map(
-                                                                (state) => (
-                                                                    <option
-                                                                        key={
-                                                                            state
-                                                                        }
-                                                                        value={
-                                                                            state
-                                                                        }
-                                                                    >
-                                                                        {state}
-                                                                    </option>
+                                        <div className="card-body">
+                                            <div className="row">
+                                                <div className="col-md-6">
+                                                    <div className="form-group mb-3">
+                                                        <FormLabel htmlFor="FirstName">
+                                                            First Name
+                                                        </FormLabel>
+                                                        <Input
+                                                            type="text"
+                                                            id="FirstName"
+                                                            ref={userRef}
+                                                            required
+                                                            aria-describedby="fnamenote"
+                                                            onChange={(e) =>
+                                                                setFName(
+                                                                    e.target
+                                                                        .value
                                                                 )
-                                                            )}
-                                                        </Form.Select>
-                                                    </Form.Group>
+                                                            }
+                                                        ></Input>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="form-group mb-3">
-                                                <Form.Group controlId="formAddr1">
-                                                    <Form.Label>
-                                                        Zipcode
-                                                    </Form.Label>
-                                                    <Form.Control
-                                                        value={zip}
-                                                        onChange={updateZip}
-                                                    ></Form.Control>
-                                                </Form.Group>
+                                                <div className="col-md-6">
+                                                    <div className="form-group mb-3">
+                                                        <FormLabel htmlFor="LastName">
+                                                            Last Name
+                                                        </FormLabel>
+                                                        <Input
+                                                            type="text"
+                                                            id="LastName"
+                                                            ref={userRef}
+                                                            required
+                                                            aria-describedby="Lnamenote"
+                                                            value={Lname}
+                                                            onChange={(e) =>
+                                                                setLName(
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        ></Input>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="form-group mb-3">
+                                                        <FormLabel>
+                                                            Email Address
+                                                        </FormLabel>
+                                                        <Input
+                                                            type="text"
+                                                            id="Email"
+                                                            ref={userRef}
+                                                            required
+                                                            aria-describedby="Emailnote"
+                                                            value={email}
+                                                            onChange={(e) =>
+                                                                setEmail(
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        ></Input>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="form-group mb-3">
+                                                        <FormLabel>
+                                                            Phone Number
+                                                        </FormLabel>
+                                                        <Input
+                                                            type="text"
+                                                            id="Number"
+                                                            ref={userRef}
+                                                            required
+                                                            aria-describedby="Numbernote"
+                                                            value={number}
+                                                            onChange={(e) =>
+                                                                setNumber(
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        ></Input>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <FormLabel>
+                                                        Address Line 1
+                                                    </FormLabel>
+                                                    <Input
+                                                        type="text"
+                                                        id="Addresss1"
+                                                        ref={userRef}
+                                                        required
+                                                        aria-describedby="Addr1note"
+                                                        value={addr1}
+                                                        onChange={(e) =>
+                                                            setAddr1(
+                                                                e.target.value
+                                                            )
+                                                        }
+                                                    ></Input>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="form-group mb-3">
+                                                        <FormLabel>
+                                                            Address Line 2
+                                                        </FormLabel>
+                                                        <Input
+                                                            type="text"
+                                                            id="Address2"
+                                                            ref={userRef}
+                                                            required
+                                                            aria-describedby="Addr2note"
+                                                            value={addr2}
+                                                            onChange={(e) =>
+                                                                setAddr2(
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        ></Input>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="form-group mb-3">
+                                                        <FormLabel>
+                                                            City
+                                                        </FormLabel>
+                                                        <Input
+                                                            type="text"
+                                                            id="City"
+                                                            ref={userRef}
+                                                            required
+                                                            aria-describedby="Citynote"
+                                                            value={city}
+                                                            onChange={(e) =>
+                                                                setCity(
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        ></Input>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="form-group mb-3">
+                                                        <div>
+                                                            <FormLabel>
+                                                                State
+                                                            </FormLabel>
+                                                            <Select
+                                                                id="State"
+                                                                required
+                                                                aria-describedby="Statenote"
+                                                                className="col-md-4"
+                                                                value={state}
+                                                                onChange={(e) =>
+                                                                    setState(
+                                                                        e.target
+                                                                            .value
+                                                                    )
+                                                                }
+                                                            >
+                                                                {usStates.map(
+                                                                    (state) => (
+                                                                        <option
+                                                                            key={
+                                                                                state
+                                                                            }
+                                                                            value={
+                                                                                state
+                                                                            }
+                                                                        >
+                                                                            {
+                                                                                state
+                                                                            }
+                                                                        </option>
+                                                                    )
+                                                                )}
+                                                            </Select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div className="form-group mb-3">
+                                                        <FormLabel>
+                                                            Zipcode
+                                                        </FormLabel>
+                                                        <Input
+                                                            type="text"
+                                                            id="Zip"
+                                                            ref={userRef}
+                                                            required
+                                                            aria-describedby="Zipnote"
+                                                            value={zip}
+                                                            onChange={(e) =>
+                                                                setZip(
+                                                                    e.target
+                                                                        .value
+                                                                )
+                                                            }
+                                                        ></Input>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -253,12 +321,13 @@ const CheckoutModal = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </FormControl>
+                <Button type="submit">Confirm</Button>
+            </form>
             <PaymentInformation></PaymentInformation>
             <OrderConfirmation></OrderConfirmation>
         </div>
     );
-};
+}
 
 export default CheckoutModal;

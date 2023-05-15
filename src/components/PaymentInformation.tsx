@@ -1,5 +1,12 @@
+/* eslint-disable no-extra-parens */
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import {
+    FormControl,
+    Input,
+    Select,
+    FormLabel,
+    Button
+} from "@chakra-ui/react";
 
 const expYears: number[] = [
     2024, 2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032
@@ -20,89 +27,82 @@ const expMonths: string[] = [
 ];
 
 const PaymentInformation = () => {
+    const userRef = React.useRef<HTMLInputElement>(null);
+    const [name, setName] = useState("");
     const [cardNum, setCardNum] = useState("");
-    function updateCardNum(event: React.ChangeEvent<HTMLInputElement>) {
-        setCardNum(event.target.value);
-    }
+    const [security, setSecurity] = useState("");
+    const [expMonth, setExpMonth] = useState("");
+    const [expYear, setExpYear] = useState("");
+
+    const handleSubmit = async (e: { preventDefault: () => void }) => {
+        e.preventDefault();
+        localStorage.setItem("Name", name);
+        localStorage.setItem("CardNum", cardNum);
+        localStorage.setItem("SecurityNum", security);
+        localStorage.setItem("ExpirationMonth", expMonth);
+        localStorage.setItem("ExpirationYear", expYear);
+    };
     return (
         <div>
-            <div className="py-4">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-7">
-                            <div className="card">
-                                <div className="card-header">
-                                    <h4>Payment Details</h4>
-                                </div>
-                                <div className="card-body">
-                                    <div className="row">
-                                        <div className="col-md-6"></div>
-                                    </div>
-                                    <div className="col-md-14">
-                                        <div className="form-group mb-3">
-                                            <Form.Group>
-                                                <Form.Label>
-                                                    Cardholder Name
-                                                </Form.Label>
-                                                <Form.Control></Form.Control>
-                                            </Form.Group>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-14">
-                                        <div className="form-group mb-3">
-                                            <Form.Group>
-                                                <Form.Label>
-                                                    Card Number
-                                                </Form.Label>
-                                                <Form.Control
-                                                    value={cardNum}
-                                                    onChange={updateCardNum}
-                                                ></Form.Control>
-                                            </Form.Group>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-2">
-                                        <div>
-                                            <Form.Group>
-                                                <Form.Label>
-                                                    Security Code
-                                                </Form.Label>
-                                                <Form.Control></Form.Control>
-                                                <Form.Label>
-                                                    Expiration Month
-                                                </Form.Label>
-                                                <Form.Select>
-                                                    {expMonths.map((month) => (
-                                                        <option
-                                                            key={month}
-                                                            value={month}
-                                                        >
-                                                            {month}
-                                                        </option>
-                                                    ))}
-                                                </Form.Select>
-                                                <Form.Label>
-                                                    Expiration Year
-                                                </Form.Label>
-                                                <Form.Select>
-                                                    {expYears.map((year) => (
-                                                        <option
-                                                            key={year}
-                                                            value={year}
-                                                        >
-                                                            {year}
-                                                        </option>
-                                                    ))}
-                                                </Form.Select>
-                                            </Form.Group>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <form onSubmit={handleSubmit}>
+                <FormControl>
+                    <h4>Payment Details</h4>
+                    <FormLabel>Cardholder Name</FormLabel>
+                    <Input
+                        type="text"
+                        id="Name"
+                        ref={userRef}
+                        required
+                        aria-describedby="Namenote"
+                        onChange={(e) => setName(e.target.value)}
+                    ></Input>
+                    <FormLabel>Card Number</FormLabel>
+                    <Input
+                        type="text"
+                        id="CardNum"
+                        ref={userRef}
+                        required
+                        aria-describedby="CardNumnote"
+                        onChange={(e) => setCardNum(e.target.value)}
+                    ></Input>
+                    <FormLabel>Security Code</FormLabel>
+                    <Input
+                        type="text"
+                        id="Security"
+                        ref={userRef}
+                        required
+                        aria-describedby="Securitynote"
+                        onChange={(e) => setSecurity(e.target.value)}
+                    ></Input>
+                    <FormLabel>Expiration Month</FormLabel>
+                    <Select
+                        id="ExpirationMonth"
+                        required
+                        aria-describedby="ExpMonthnote"
+                        onChange={(e) => setExpMonth(e.target.value)}
+                    >
+                        {expMonths.map((month) => (
+                            <option key={month} value={month}>
+                                {month}
+                            </option>
+                        ))}
+                    </Select>
+                    <FormLabel>Expiration Year</FormLabel>
+                    <Select
+                        id="ExpirationYear"
+                        required
+                        aria-describedby="ExpYearnote"
+                        onChange={(e) => setExpYear(e.target.value)}
+                    >
+                        {expYears.map((year) => (
+                            <option key={year} value={year}>
+                                {year}
+                            </option>
+                        ))}
+                    </Select>
+                </FormControl>
+                <Button type="submit">Confirm</Button>
+            </form>
         </div>
     );
 };
