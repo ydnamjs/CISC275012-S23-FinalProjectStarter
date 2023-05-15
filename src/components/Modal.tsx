@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import NavBar from "./Navbar";
 import PaymentInformation from "./PaymentInformation";
+
 import OrderConfirmation from "./pages/OrderConfirmation";
 
 const usStates: string[] = [
@@ -57,6 +58,7 @@ const usStates: string[] = [
     "Wisconsin",
     "Wyoming"
 ];
+
 const CheckoutModal = () => {
     const [Fname, setFName] = useState("");
     const [Lname, setLName] = useState("");
@@ -254,17 +256,7 @@ const CheckoutModal = () => {
                 </div>
             </div>
             <PaymentInformation></PaymentInformation>
-            <OrderConfirmation
-                Fname={Fname}
-                Lname={Lname}
-                email={email}
-                number={number}
-                addr1={addr1}
-                addr2={addr2}
-                city={city}
-                state={state}
-                zip={zip}
-            ></OrderConfirmation>
+            <OrderConfirmation></OrderConfirmation>
         </div>
     );
 };
