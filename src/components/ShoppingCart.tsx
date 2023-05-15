@@ -1,10 +1,9 @@
 /* eslint-disable no-extra-parens */
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { CartItem } from "./CartItem";
 import formatMoney from "../utility/formatMoney";
 import { prodM, prodW } from "./ProductList";
-import CheckoutModal from "./Modal";
 import {
     Button,
     Drawer,
@@ -24,7 +23,6 @@ type ShoppingCartProps = {
 
 export function ShoppingCart({ isOpen }: ShoppingCartProps) {
     const { closeCart, cartItems } = useShoppingCart();
-    const [openModal, setOpenModal] = useState(false);
     const btnRef = useRef<HTMLButtonElement>(null);
 
     return (
@@ -73,10 +71,6 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                                     <Button>Checkout</Button>
                                 </Link>
                             </div>
-                            <Button onClick={() => setOpenModal(!openModal)}>
-                                Checkout Modal
-                            </Button>
-                            {openModal && <CheckoutModal></CheckoutModal>}
                         </Stack>
                     </DrawerBody>
 

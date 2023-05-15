@@ -33,6 +33,7 @@ const PaymentInformation = () => {
     const [security, setSecurity] = useState("");
     const [expMonth, setExpMonth] = useState("");
     const [expYear, setExpYear] = useState("");
+    const [confirm, setConfirmation] = useState(false);
 
     const handleSubmit = async (e: { preventDefault: () => void }) => {
         e.preventDefault();
@@ -44,9 +45,10 @@ const PaymentInformation = () => {
     };
     return (
         <div>
+            <h4>Payment Details</h4>
+
             <form onSubmit={handleSubmit}>
                 <FormControl>
-                    <h4>Payment Details</h4>
                     <FormLabel>Cardholder Name</FormLabel>
                     <Input
                         type="text"
@@ -101,7 +103,13 @@ const PaymentInformation = () => {
                         ))}
                     </Select>
                 </FormControl>
-                <Button type="submit">Confirm</Button>
+                <Button type="submit" onClick={() => setConfirmation(!confirm)}>
+                    {confirm ? (
+                        <div>Confirmed!</div>
+                    ) : (
+                        <div>Confirm details!</div>
+                    )}
+                </Button>
             </form>
         </div>
     );

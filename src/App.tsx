@@ -9,6 +9,7 @@ import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import CheckoutModal from "./components/Modal";
 import Logout from "./components/Logout";
 import Login from "./components/pages/Login";
+import OrderConfirmation from "./components/pages/OrderConfirmation";
 
 function App(): JSX.Element {
     return (
@@ -30,6 +31,10 @@ function App(): JSX.Element {
                                 element={<CheckoutModal />}
                             />
                             <Route path="/logout" element={<Logout />} />
+                            <Route
+                                path="/confirmation"
+                                element={<OrderConfirmation />}
+                            />
                         </Routes>
                     </Router>
                 </React.StrictMode>
