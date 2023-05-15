@@ -34,7 +34,9 @@ function Admin({
     lastNameOrder,
     setLastNameOrder,
     addressOrder,
-    setAddressOrder
+    setAddressOrder,
+    submitOrder,
+    setSubmitOrder
 }: {
     stockOne: number;
     setStockOne: Dispatch<SetStateAction<number>>;
@@ -68,21 +70,27 @@ function Admin({
     setLastNameOrder: Dispatch<SetStateAction<string>>;
     addressOrder: string;
     setAddressOrder: Dispatch<SetStateAction<string>>;
+    submitOrder: number;
+    setSubmitOrder: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     return (
-        <>
+        <div>
             <div>
                 <header>Orders</header>
-                <OrderViewer
-                    emailOrder={emailOrder}
-                    setEmailOrder={setEmailOrder}
-                    firstNameOrder={firstNameOrder}
-                    setFirstNameOrder={setFirstNameOrder}
-                    lastNameOrder={lastNameOrder}
-                    setLastNameOrder={setLastNameOrder}
-                    addressOrder={addressOrder}
-                    setAddressOrder={setAddressOrder}
-                />
+                {
+                    <OrderViewer
+                        emailOrder={emailOrder}
+                        setEmailOrder={setEmailOrder}
+                        firstNameOrder={firstNameOrder}
+                        setFirstNameOrder={setFirstNameOrder}
+                        lastNameOrder={lastNameOrder}
+                        setLastNameOrder={setLastNameOrder}
+                        addressOrder={addressOrder}
+                        setAddressOrder={setAddressOrder}
+                        submitOrder={submitOrder}
+                        setSubmitOrder={setSubmitOrder}
+                    />
+                }
             </div>
             <div>
                 <header>Stock</header>
@@ -113,7 +121,7 @@ function Admin({
                     sweatSetStock6={sweatSetStockSix}
                 />
             </div>
-        </>
+        </div>
     );
 }
 

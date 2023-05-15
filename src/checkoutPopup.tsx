@@ -1,29 +1,31 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import CheckoutForm from "./Components/Common/CheckoutForm";
 import { Button } from "react-bootstrap";
-//import BasicTextFields from "./Components/Common/CheckoutForm";
-//import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 function CheckoutPopup({
-    emailOrder,
     setEmailOrder,
-    firstNameOrder,
     setFirstNameOrder,
-    lastNameOrder,
     setLastNameOrder,
-    addressOrder,
-    setAddressOrder
+    setAddressOrder,
+    setSubmitOrder
 }: {
-    emailOrder: string;
+    // emailOrder: string;
     setEmailOrder: Dispatch<SetStateAction<string>>;
-    firstNameOrder: string;
+    //  firstNameOrder: string;
     setFirstNameOrder: Dispatch<SetStateAction<string>>;
-    lastNameOrder: string;
+    //  lastNameOrder: string;
     setLastNameOrder: Dispatch<SetStateAction<string>>;
-    addressOrder: string;
+    // addressOrder: string;
     setAddressOrder: Dispatch<SetStateAction<string>>;
+    //  submitOrder: number;
+    setSubmitOrder: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     const [isOpen, setIsOpen] = useState(false);
+
+    function sendOrder(): void {
+        setSubmitOrder(1);
+        setIsOpen(false);
+    }
 
     return (
         <div>
@@ -37,12 +39,10 @@ function CheckoutPopup({
                             setFirstName={setFirstNameOrder}
                             setLastName={setLastNameOrder}
                             setAddress={setAddressOrder}
-                            //handleAction={() => handleAction(3)}
+                            // handleAction={() => handleAction(3)}
                         ></CheckoutForm>
                     </div>
-                    <Button onClick={() => setIsOpen(false)}>
-                        Submit Order
-                    </Button>
+                    <Button onClick={() => sendOrder()}>Submit Order</Button>
                 </div>
             )}
         </div>

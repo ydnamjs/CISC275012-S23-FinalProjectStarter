@@ -66,14 +66,16 @@ function CartDisplay({
     sweatSetStock5,
     sweatStock6,
     sweatSetStock6,
-    emailOrder,
+    // emailOrder,
     setEmailOrder,
-    firstNameOrder,
+    //firstNameOrder,
     setFirstNameOrder,
-    lastNameOrder,
+    //lastNameOrder,
     setLastNameOrder,
-    addressOrder,
-    setAddressOrder
+    // addressOrder,
+    setAddressOrder,
+    //submitOrder,
+    setSubmitOrder
 }: {
     shirtCart1: number;
     setShirtCart1: Dispatch<SetStateAction<number>>;
@@ -131,6 +133,8 @@ function CartDisplay({
     setLastNameOrder: Dispatch<SetStateAction<string>>;
     addressOrder: string;
     setAddressOrder: Dispatch<SetStateAction<string>>;
+    submitOrder: number;
+    setSubmitOrder: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     return (
         <div className="CartDisplay">
@@ -671,14 +675,16 @@ function CartDisplay({
                 </Container>
             </div>
             <CheckoutPopup
-                emailOrder={emailOrder}
+                //  emailOrder={emailOrder}
                 setEmailOrder={setEmailOrder}
-                firstNameOrder={firstNameOrder}
+                //  firstNameOrder={firstNameOrder}
                 setFirstNameOrder={setFirstNameOrder}
-                lastNameOrder={lastNameOrder}
+                //  lastNameOrder={lastNameOrder}
                 setLastNameOrder={setLastNameOrder}
-                addressOrder={addressOrder}
+                //  addressOrder={addressOrder}
                 setAddressOrder={setAddressOrder}
+                //  submitOrder={submitOrder}
+                setSubmitOrder={setSubmitOrder}
             ></CheckoutPopup>
         </div>
     );
