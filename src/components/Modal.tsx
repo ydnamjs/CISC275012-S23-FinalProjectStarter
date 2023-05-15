@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import NavBar from "./Navbar";
 import PaymentInformation from "./PaymentInformation";
-
 import OrderConfirmation from "./pages/OrderConfirmation";
 
 const usStates: string[] = [
@@ -59,16 +58,21 @@ const usStates: string[] = [
     "Wyoming"
 ];
 
-const CheckoutModal = () => {
-    const [Fname, setFName] = useState("");
-    const [Lname, setLName] = useState("");
-    const [email, setEmail] = useState("");
-    const [number, setNumber] = useState("");
-    const [addr1, setAddr1] = useState("");
-    const [addr2, setAddr2] = useState("");
-    const [city, setCity] = useState("");
-    const [state, setState] = useState("");
-    const [zip, setZip] = useState("");
+type StateProps = {
+    Fname: string;
+    Lname: string;
+};
+
+function CheckoutModal() {
+    const [Fname, setFName] = useState<string>("");
+    const [Lname, setLName] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [number, setNumber] = useState<string>("");
+    const [addr1, setAddr1] = useState<string>("");
+    const [addr2, setAddr2] = useState<string>("");
+    const [city, setCity] = useState<string>("");
+    const [state, setState] = useState<string>("");
+    const [zip, setZip] = useState<string>("");
 
     function updateFName(event: React.ChangeEvent<HTMLInputElement>) {
         setFName(event.target.value);
@@ -256,9 +260,9 @@ const CheckoutModal = () => {
                 </div>
             </div>
             <PaymentInformation></PaymentInformation>
-            <OrderConfirmation></OrderConfirmation>
+            <OrderConfirmation />
         </div>
     );
-};
+}
 
 export default CheckoutModal;
