@@ -18,7 +18,7 @@ import Navbar from "../Navbar";
 import { prodM, prodW } from "../ProductList";
 import ".././OrderConfirmation.css";
 import "../Modal";
-const OrderConfirmation = (props) => {
+const OrderConfirmation = () => {
     const shipping = "src/assets/location_icon.png";
     const creditCard = "src/assets/cc_icon.png";
     const delivery = "/Users/kevinchau/Team-1/src/assets/delivery_icon.png";
@@ -41,8 +41,8 @@ const OrderConfirmation = (props) => {
                 </Center>
                 <Center>
                     <Text>
-                        We sent an email to <b>{props.email}</b> with your order
-                        confirmation and receipt.
+                        We sent an email to <b></b> with your order confirmation
+                        and receipt.
                     </Text>
                 </Center>
                 <Center>

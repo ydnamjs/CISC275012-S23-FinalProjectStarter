@@ -29,7 +29,7 @@ const PaymentInformation = () => {
             <div className="py-4">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-6">
+                        <div className="col-md-7">
                             <div className="card">
                                 <div className="card-header">
                                     <h4>Payment Details</h4>
@@ -38,7 +38,7 @@ const PaymentInformation = () => {
                                     <div className="row">
                                         <div className="col-md-6"></div>
                                     </div>
-                                    <div className="col-md-12">
+                                    <div className="col-md-14">
                                         <div className="form-group mb-3">
                                             <Form.Group>
                                                 <Form.Label>
