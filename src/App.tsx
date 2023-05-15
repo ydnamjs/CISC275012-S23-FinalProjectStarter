@@ -1,17 +1,45 @@
 import React from "react";
+import FrontPage from "./components/Main";
 import "./App.css";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import Shop from "./components/pages/Shop";
+import Admin from "./components/pages/Admin";
+import Registration from "./components/pages/Registration";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import CheckoutModal from "./components/Modal";
+import Logout from "./components/Logout";
+import Login from "./components/pages/Login";
+import OrderConfirmation from "./components/pages/OrderConfirmation";
 
 function App(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript
-            </header>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
-        </div>
+        <ShoppingCartProvider>
+            <div>
+                <React.StrictMode>
+                    <Router>
+                        <Routes>
+                            <Route path="/" element={<FrontPage />} />
+                            <Route path="/shop" element={<Shop />} />
+                            <Route path="/admin" element={<Admin />} />
+                            <Route
+                                path="/register"
+                                element={<Registration />}
+                            />
+                            <Route path="/login" element={<Login />} />
+                            <Route
+                                path="/checkout"
+                                element={<CheckoutModal />}
+                            />
+                            <Route path="/logout" element={<Logout />} />
+                            <Route
+                                path="/confirmation"
+                                element={<OrderConfirmation />}
+                            />
+                        </Routes>
+                    </Router>
+                </React.StrictMode>
+            </div>
+        </ShoppingCartProvider>
     );
 }
 

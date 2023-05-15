@@ -1,0 +1,10 @@
+.bg-dark {
+    padding-left: 10px;
+}
+.title {
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.role-select {
+    color: white;
+}
