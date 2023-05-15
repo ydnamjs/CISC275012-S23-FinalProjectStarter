@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../Navbar";
+import "../RemoveProduct";
 import {
     Center,
     Tab,
@@ -9,6 +10,8 @@ import {
     Tabs,
     Text
 } from "@chakra-ui/react";
+import RemoveMensProduct, { RemoveWomensProduct } from "../RemoveProduct";
+import AddMensProduct, { AddWomensProduct } from "../AddProduct";
 
 const Admin = () => {
     return (
@@ -34,12 +37,48 @@ const Admin = () => {
                                 Products
                             </Text>
                         </Center>
+                        <div>
+                            <Text as="b" fontSize="4xl">
+                                Add Product Form
+                            </Text>
+                            <br></br>
+                            <span>
+                                <Text as="b" fontSize="2xl">
+                                    Add to Mens List
+                                </Text>
+                                <AddMensProduct />
+                                <br></br>
+                                <Text as="b" fontSize="2xl">
+                                    Add to Womens List
+                                </Text>
+                                <AddWomensProduct />
+                            </span>
+                        </div>
+                        <br></br>
+                        <div>
+                            <Text as="b" fontSize="4xl">
+                                Remove Product
+                            </Text>
+                            <br></br>
+                            <span>
+                                <Text as="b" fontSize="2xl">
+                                    Mens
+                                </Text>
+                                <RemoveMensProduct />
+                                <Text as="b" fontSize="2xl">
+                                    Womens
+                                </Text>
+                                <RemoveWomensProduct />
+                            </span>
+                        </div>
                     </TabPanel>
                     <TabPanel>
                         <Center>
-                            <Text as="b" fontSize="6xl">
-                                Orders
-                            </Text>
+                            <div>
+                                <Text as="b" fontSize="6xl">
+                                    Orders
+                                </Text>
+                            </div>
                         </Center>
                     </TabPanel>
                 </TabPanels>

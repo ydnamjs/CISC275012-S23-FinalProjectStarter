@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 /* eslint-disable no-extra-parens */
 import React, { useState } from "react";
 import Product from "./Product";
@@ -13,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-export const prodM = [
+export const prodM: Product[] = [
     {
         name: "UD Football Shirt",
         price: 10,
@@ -69,7 +70,7 @@ export const prodM = [
         category: "Shirts"
     }
 ];
-export const prodW = [
+export let prodW: Product[] = [
     {
         name: "UD T-Shirt",
         price: 10,
@@ -127,6 +128,136 @@ export const prodW = [
 ];
 
 const filterOptions = ["All", "Shirts", "Pants", "Hoodies"];
+
+export const removeMProduct = () => {
+    const [selectedProduct, setSelectedProduct] = useState(prodM[0]);
+
+    function handleRemoveClick() {
+        if (selectedProduct) {
+            prodM.splice(prodM.indexOf(selectedProduct), 1);
+            setSelectedProduct(prodM[0]);
+        }
+    }
+
+    return (
+        <div>
+            <Menu>
+                <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                    {selectedProduct
+                        ? selectedProduct.name
+                        : "Select a product"}
+                </MenuButton>
+                <MenuList>
+                    {prodM.map((product) => (
+                        <MenuItem
+                            key={product.name}
+                            onClick={() => setSelectedProduct(product)}
+                        >
+                            {product.name}
+                        </MenuItem>
+                    ))}
+                </MenuList>
+            </Menu>
+            <Button
+                colorScheme="red"
+                disabled={!selectedProduct}
+                onClick={handleRemoveClick}
+            >
+                Remove
+            </Button>
+        </div>
+    );
+};
+export const addMProduct = (
+    name: string,
+    category: string,
+    price: number,
+    stock: number,
+    description: string,
+    sizes: string[],
+    picture: string
+) => {
+    const newProduct: Product = {
+        name: name,
+        price: price,
+        stock: stock,
+        description: description,
+        sizes: sizes,
+        picture: picture,
+        category: category
+    };
+
+    prodM.push(newProduct);
+    console.log(prodM); // for testing purposes
+
+    // Return a success message as a JSX element
+    return <p>Successfully added {name} to the product list!</p>;
+};
+
+export const addWProduct = (
+    name: string,
+    category: string,
+    price: number,
+    stock: number,
+    description: string,
+    sizes: string[],
+    picture: string
+) => {
+    const newProduct: Product = {
+        name: name,
+        price: price,
+        stock: stock,
+        description: description,
+        sizes: sizes,
+        picture: picture,
+        category: category
+    };
+
+    prodW.push(newProduct);
+    console.log(prodW); // for testing purposes
+
+    // Return a success message as a JSX element
+    return <p>Successfully added {name} to the product list!</p>;
+};
+
+export const removeWProduct = () => {
+    const [selectedProduct, setSelectedProduct] = useState(prodW[0]);
+
+    function handleRemoveClick() {
+        if (selectedProduct) {
+            prodW.splice(prodW.indexOf(selectedProduct), 1);
+            setSelectedProduct(prodW[0]);
+        }
+    }
+    return (
+        <div>
+            <Menu>
+                <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                    {selectedProduct
+                        ? selectedProduct.name
+                        : "Select a product"}
+                </MenuButton>
+                <MenuList>
+                    {prodW.map((product) => (
+                        <MenuItem
+                            key={product.name}
+                            onClick={() => setSelectedProduct(product)}
+                        >
+                            {product.name}
+                        </MenuItem>
+                    ))}
+                </MenuList>
+            </Menu>
+            <Button
+                colorScheme="red"
+                disabled={!selectedProduct}
+                onClick={handleRemoveClick}
+            >
+                Remove
+            </Button>
+        </div>
+    );
+};
 
 export const ProductListMen = () => {
     const [selectedFilter, setSelectedFilter] = useState("All");
