@@ -11,22 +11,83 @@ import {
     Text,
     VStack,
     Stack,
-    Divider
+    Divider,
+    Image
 } from "@chakra-ui/react";
 import Navbar from "../Navbar";
 import { prodM, prodW } from "../ProductList";
-
-const OrderConfirmation = () => {
+import ".././OrderConfirmation.css";
+import "../Modal";
+const OrderConfirmation = (props) => {
+    const shipping = "src/assets/location_icon.png";
+    const creditCard = "src/assets/cc_icon.png";
+    const delivery = "/Users/kevinchau/Team-1/src/assets/delivery_icon.png";
+    const date = new Date();
+    const showTime = date.getHours() + ":" + date.getMinutes();
+    const currDate = date.toLocaleDateString();
     const { cartItems } = useShoppingCart();
+
     return (
         <div>
             <Navbar></Navbar>
             <Stack gap={3}>
                 <Center>
-                    <Text as="b" fontSize="6xl">
-                        Checkout
+                    <Text as="b" className="TYtext">
+                        Thank You!
                     </Text>
                 </Center>
+                <Center>
+                    <Text as="b">Your order has been placed!</Text>
+                </Center>
+                <Center>
+                    <Text>
+                        We sent an email to <b>{props.email}</b> with your order
+                        confirmation and receipt.
+                    </Text>
+                </Center>
+                <Center>
+                    <Text>
+                        If the email has not arrived in two minutes, please
+                        check your spam folder to see if the email was routed
+                        here.
+                    </Text>
+                </Center>
+                <div>
+                    <Center>
+                        <p>
+                            <b>Time placed:</b> {currDate} {showTime} EST
+                        </p>
+                    </Center>
+                </div>
+                <div className="container">
+                    <div className="box">
+                        <Image
+                            src={shipping}
+                            boxSize={5}
+                            alt="Shopping Cart"
+                            objectFit="cover"
+                        ></Image>
+                        <b>Shipping</b>
+                    </div>
+                    <div className="box">
+                        <Image
+                            src={creditCard}
+                            boxSize={5}
+                            alt="Shopping Cart"
+                            objectFit="cover"
+                        ></Image>
+                        <b>Billing Details</b>
+                    </div>
+                    <div className="box">
+                        <Image
+                            src={delivery}
+                            boxSize={5}
+                            alt="Shopping Cart"
+                            objectFit="cover"
+                        ></Image>
+                        <b>Shipping Method</b>
+                    </div>
+                </div>
                 <Card>
                     <CardHeader>
                         <Heading size="md">Order Overview</Heading>
