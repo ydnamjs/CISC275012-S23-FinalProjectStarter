@@ -177,7 +177,7 @@ function NavBar() {
                                     Hello {localStorage.getItem("username")}
                                 </MenuButton>
                                 <MenuList>
-                                    <Link to="#/logout">
+                                    <Link to="/logout">
                                         <MenuItem
                                             onClick={() => {
                                                 onOpen();
@@ -209,6 +209,25 @@ function NavBar() {
                         )}
                     </Stack>
                     <Spacer />
+                    <Stack>
+                        <Link to="/checkout">
+                            <Button
+                                as="span"
+                                fontWeight="bold"
+                                color="black"
+                                variant="ghost"
+                                fontSize={{ base: "md", md: "lg" }}
+                                transition="background-color 0.3s ease"
+                                _hover={{
+                                    bgGradient:
+                                        "linear(to-b, gray.800, gray.300)",
+                                    color: "black"
+                                }}
+                            >
+                                Checkout
+                            </Button>
+                        </Link>
+                    </Stack>
                     <Stack spacing={3}>
                         <Button onClick={openCart}>
                             <Image
