@@ -81,13 +81,14 @@ const OrderConfirmation = () => {
                 <Center>
                     <div className="container">
                         <div className="box">
-                            <Image
-                                src={Shipping}
-                                boxSize={10}
-                                alt="Shopping Cart"
-                                objectFit="cover"
-                            ></Image>
-
+                            <Center>
+                                <Image
+                                    src={Shipping}
+                                    boxSize={10}
+                                    alt="Shopping Cart"
+                                    objectFit="cover"
+                                ></Image>
+                            </Center>
                             <b>Shipping</b>
                             <div>
                                 <p>
@@ -111,12 +112,14 @@ const OrderConfirmation = () => {
                             </p>
                         </div>
                         <div className="box">
-                            <Image
-                                src={creditCard}
-                                boxSize={10}
-                                alt="Shopping Cart"
-                                objectFit="cover"
-                            ></Image>
+                            <Center>
+                                <Image
+                                    src={creditCard}
+                                    boxSize={10}
+                                    alt="Shopping Cart"
+                                    objectFit="cover"
+                                ></Image>
+                            </Center>
                             <b>Billing Details</b>
                             <p>
                                 <p>
@@ -130,12 +133,14 @@ const OrderConfirmation = () => {
                             </p>
                         </div>
                         <div className="box">
-                            <Image
-                                src={Delivery}
-                                boxSize={10}
-                                alt="Shopping Cart"
-                                objectFit="cover"
-                            ></Image>
+                            <Center>
+                                <Image
+                                    src={Delivery}
+                                    boxSize={10}
+                                    alt="Shopping Cart"
+                                    objectFit="cover"
+                                ></Image>
+                            </Center>
                             <b>Shipping Method</b>
                             <p>Preferred Method:</p>
                             <p>{shippingMethod}</p>
