@@ -685,6 +685,18 @@ function CartDisplay({
                 setAddressOrder={setAddressOrder}
                 //  submitOrder={submitOrder}
                 setSubmitOrder={setSubmitOrder}
+                setShirtCart1={setShirtCart1}
+                setShirtCart2={setShirtCart2}
+                setShirtCart3={setShirtCart3}
+                setShirtCart4={setShirtCart4}
+                setShirtCart5={setShirtCart5}
+                setShirtCart6={setShirtCart6}
+                sweatSetCart1={sweatSetCart1}
+                sweatSetCart2={sweatSetCart2}
+                sweatSetCart3={sweatSetCart3}
+                sweatSetCart4={sweatSetCart4}
+                sweatSetCart5={sweatSetCart5}
+                sweatSetCart6={sweatSetCart6}
             ></CheckoutPopup>
         </div>
     );
