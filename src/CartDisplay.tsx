@@ -685,7 +685,6 @@ function CartDisplay({
                 addressOrder={addressOrder}
                 orderArray={orderArray}
                 setOrderArray={setOrderArray}
-                setSubmitOrder={setSubmitOrder}
                 setShirtCart1={setShirtCart1}
                 setShirtCart2={setShirtCart2}
                 setShirtCart3={setShirtCart3}

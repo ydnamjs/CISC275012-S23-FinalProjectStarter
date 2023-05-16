@@ -12,7 +12,7 @@ function CheckoutPopup({
     lastNameOrder,
     addressOrder,
     orderArray,
-    setOrderArray
+    setOrderArray,
     setShirtCart1,
     setShirtCart2,
     setShirtCart3,
@@ -97,7 +97,7 @@ function CheckoutPopup({
                     </div>
                     <Button
                         onClick={() => {
-                            OrderCreated()
+                            OrderCreated();
                             setShirtCart1(0);
                             setShirtCart2(0);
                             setShirtCart3(0);
