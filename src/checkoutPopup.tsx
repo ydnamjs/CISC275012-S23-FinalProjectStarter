@@ -1,6 +1,8 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import CheckoutForm from "./Components/Common/CheckoutForm";
 import { Button } from "react-bootstrap";
+import Popup from "reactjs-popup";
+import "./index.css";
 
 function CheckoutPopup({
     setEmailOrder,
@@ -95,25 +97,32 @@ function CheckoutPopup({
                             setAddress={setAddressOrder}
                         ></CheckoutForm>
                     </div>
-                    <Button
-                        onClick={() => {
-                            OrderCreated();
-                            setShirtCart1(0);
-                            setShirtCart2(0);
-                            setShirtCart3(0);
-                            setShirtCart4(0);
-                            setShirtCart5(0);
-                            setShirtCart6(0);
-                            sweatSetCart1(0);
-                            sweatSetCart2(0);
-                            sweatSetCart3(0);
-                            sweatSetCart4(0);
-                            sweatSetCart5(0);
-                            sweatSetCart6(0);
-                        }}
+                    <Popup
+                        trigger={
+                            <Button
+                                onClick={() => {
+                                    OrderCreated();
+                                    setShirtCart1(0);
+                                    setShirtCart2(0);
+                                    setShirtCart3(0);
+                                    setShirtCart4(0);
+                                    setShirtCart5(0);
+                                    setShirtCart6(0);
+                                    sweatSetCart1(0);
+                                    sweatSetCart2(0);
+                                    sweatSetCart3(0);
+                                    sweatSetCart4(0);
+                                    sweatSetCart5(0);
+                                    sweatSetCart6(0);
+                                }}
+                            >
+                                Submit Order
+                            </Button>
+                        }
+                        position="right center"
                     >
-                        Submit Order
-                    </Button>
+                        <div>Thank you for your order!</div>
+                    </Popup>
                 </div>
             )}
         </div>
