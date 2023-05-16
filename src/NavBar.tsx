@@ -74,7 +74,8 @@ function NavBar(): JSX.Element {
         "skraus@udel.edu",
         "gmelton@udel.edu",
         "rjsexton@udel.edu",
-        "giadiaz@udel.edu"
+        "giadiaz@udel.edu",
+        "rsison@udel.edu"
     ];
     const database = getDatabase();
     function writeUserData(
