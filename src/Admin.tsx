@@ -27,16 +27,8 @@ function Admin({
     sweatSetStockFive,
     sweatStockSix,
     sweatSetStockSix,
-    emailOrder,
-    setEmailOrder,
-    firstNameOrder,
-    setFirstNameOrder,
-    lastNameOrder,
-    setLastNameOrder,
-    addressOrder,
-    setAddressOrder,
-    submitOrder,
-    setSubmitOrder
+    orderArray,
+    setOrderArray
 }: {
     stockOne: number;
     setStockOne: Dispatch<SetStateAction<number>>;
@@ -62,35 +54,17 @@ function Admin({
     sweatSetStockFive: Dispatch<SetStateAction<number>>;
     sweatStockSix: number;
     sweatSetStockSix: Dispatch<SetStateAction<number>>;
-    emailOrder: string;
-    setEmailOrder: Dispatch<SetStateAction<string>>;
-    firstNameOrder: string;
-    setFirstNameOrder: Dispatch<SetStateAction<string>>;
-    lastNameOrder: string;
-    setLastNameOrder: Dispatch<SetStateAction<string>>;
-    addressOrder: string;
-    setAddressOrder: Dispatch<SetStateAction<string>>;
-    submitOrder: number;
-    setSubmitOrder: Dispatch<SetStateAction<number>>;
+    orderArray: JSX.Element[];
+    setOrderArray: Dispatch<SetStateAction<JSX.Element[]>>;
 }): JSX.Element {
     return (
         <div>
             <div>
                 <header>Orders</header>
-                {
-                    <OrderViewer
-                        emailOrder={emailOrder}
-                        setEmailOrder={setEmailOrder}
-                        firstNameOrder={firstNameOrder}
-                        setFirstNameOrder={setFirstNameOrder}
-                        lastNameOrder={lastNameOrder}
-                        setLastNameOrder={setLastNameOrder}
-                        addressOrder={addressOrder}
-                        setAddressOrder={setAddressOrder}
-                        submitOrder={submitOrder}
-                        setSubmitOrder={setSubmitOrder}
-                    />
-                }
+                <OrderViewer
+                    orderArray={orderArray}
+                    setOrderArray={setOrderArray}
+                />
             </div>
             <div>
                 <header>Stock</header>
