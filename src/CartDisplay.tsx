@@ -66,16 +66,16 @@ function CartDisplay({
     sweatSetStock5,
     sweatStock6,
     sweatSetStock6,
-    // emailOrder,
     setEmailOrder,
-    //firstNameOrder,
     setFirstNameOrder,
-    //lastNameOrder,
     setLastNameOrder,
-    // addressOrder,
     setAddressOrder,
-    //submitOrder,
-    setSubmitOrder
+    emailOrder,
+    firstNameOrder,
+    lastNameOrder,
+    addressOrder,
+    orderArray,
+    setOrderArray
 }: {
     shirtCart1: number;
     setShirtCart1: Dispatch<SetStateAction<number>>;
@@ -125,16 +125,16 @@ function CartDisplay({
     sweatSetStock5: Dispatch<SetStateAction<number>>;
     sweatStock6: number;
     sweatSetStock6: Dispatch<SetStateAction<number>>;
-    emailOrder: string;
     setEmailOrder: Dispatch<SetStateAction<string>>;
-    firstNameOrder: string;
     setFirstNameOrder: Dispatch<SetStateAction<string>>;
-    lastNameOrder: string;
     setLastNameOrder: Dispatch<SetStateAction<string>>;
-    addressOrder: string;
     setAddressOrder: Dispatch<SetStateAction<string>>;
-    submitOrder: number;
-    setSubmitOrder: Dispatch<SetStateAction<number>>;
+    emailOrder: string;
+    firstNameOrder: string;
+    lastNameOrder: string;
+    addressOrder: string;
+    orderArray: JSX.Element[];
+    setOrderArray: Dispatch<SetStateAction<JSX.Element[]>>;
 }): JSX.Element {
     return (
         <div className="CartDisplay">
@@ -675,15 +675,16 @@ function CartDisplay({
                 </Container>
             </div>
             <CheckoutPopup
-                //  emailOrder={emailOrder}
                 setEmailOrder={setEmailOrder}
-                //  firstNameOrder={firstNameOrder}
                 setFirstNameOrder={setFirstNameOrder}
-                //  lastNameOrder={lastNameOrder}
                 setLastNameOrder={setLastNameOrder}
-                //  addressOrder={addressOrder}
                 setAddressOrder={setAddressOrder}
-                //  submitOrder={submitOrder}
+                emailOrder={emailOrder}
+                firstNameOrder={firstNameOrder}
+                lastNameOrder={lastNameOrder}
+                addressOrder={addressOrder}
+                orderArray={orderArray}
+                setOrderArray={setOrderArray}
                 setSubmitOrder={setSubmitOrder}
                 setShirtCart1={setShirtCart1}
                 setShirtCart2={setShirtCart2}

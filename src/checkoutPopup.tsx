@@ -7,7 +7,12 @@ function CheckoutPopup({
     setFirstNameOrder,
     setLastNameOrder,
     setAddressOrder,
-    setSubmitOrder,
+    emailOrder,
+    firstNameOrder,
+    lastNameOrder,
+    addressOrder,
+    orderArray,
+    setOrderArray
     setShirtCart1,
     setShirtCart2,
     setShirtCart3,
@@ -21,24 +26,22 @@ function CheckoutPopup({
     sweatSetCart5,
     sweatSetCart6
 }: {
-    // emailOrder: string;
     setEmailOrder: Dispatch<SetStateAction<string>>;
-    //  firstNameOrder: string;
     setFirstNameOrder: Dispatch<SetStateAction<string>>;
-    //  lastNameOrder: string;
     setLastNameOrder: Dispatch<SetStateAction<string>>;
-    // addressOrder: string;
     setAddressOrder: Dispatch<SetStateAction<string>>;
-    //  submitOrder: number;
-    setSubmitOrder: Dispatch<SetStateAction<number>>;
-
+    emailOrder: string;
+    firstNameOrder: string;
+    lastNameOrder: string;
+    addressOrder: string;
+    orderArray: JSX.Element[];
+    setOrderArray: Dispatch<SetStateAction<JSX.Element[]>>;
     setShirtCart1: Dispatch<SetStateAction<number>>;
     setShirtCart2: Dispatch<SetStateAction<number>>;
     setShirtCart3: Dispatch<SetStateAction<number>>;
     setShirtCart4: Dispatch<SetStateAction<number>>;
     setShirtCart5: Dispatch<SetStateAction<number>>;
     setShirtCart6: Dispatch<SetStateAction<number>>;
-
     sweatSetCart1: Dispatch<SetStateAction<number>>;
     sweatSetCart2: Dispatch<SetStateAction<number>>;
     sweatSetCart3: Dispatch<SetStateAction<number>>;
@@ -48,8 +51,27 @@ function CheckoutPopup({
 }): JSX.Element {
     const [isOpen, setIsOpen] = useState(false);
 
-    function sendOrder(): void {
-        setSubmitOrder(1);
+    function OrderForm(): JSX.Element {
+        const first = firstNameOrder;
+        const last = lastNameOrder;
+        const address = addressOrder;
+        const email = emailOrder;
+        return (
+            <div key={first} style={{ border: "1px solid black" }}>
+                <p>
+                    Name: {first} {last}
+                </p>
+                <p>Address: {address}</p>
+                <p>Email: {email}</p>
+            </div>
+        );
+    }
+
+    function OrderCreated(): void {
+        setOrderArray([
+            ...orderArray,
+            <OrderForm key={firstNameOrder}></OrderForm>
+        ]);
         setIsOpen(false);
     }
 
@@ -71,12 +93,11 @@ function CheckoutPopup({
                             setFirstName={setFirstNameOrder}
                             setLastName={setLastNameOrder}
                             setAddress={setAddressOrder}
-                            // handleAction={() => handleAction(3)}
                         ></CheckoutForm>
                     </div>
                     <Button
                         onClick={() => {
-                            sendOrder();
+                            OrderCreated()
                             setShirtCart1(0);
                             setShirtCart2(0);
                             setShirtCart3(0);
