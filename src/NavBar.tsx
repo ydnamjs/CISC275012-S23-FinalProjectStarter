@@ -66,8 +66,8 @@ function NavBar(): JSX.Element {
     const [sweatCart5, sweatSetCart5] = useState(0);
     const [sweatCart6, sweatSetCart6] = useState(0);
     const [emailOrder, setEmailOrder] = useState("");
-    const [firstNameOrder, setFirstNameOrder] = useState("");
-    const [lastNameOrder, setLastNameOrder] = useState("");
+    const [nameOrder, setNameOrder] = useState("");
+    const [paymentInfo, setPaymentInfo] = useState("");
     const [addressOrder, setAddressOrder] = useState("");
     const [orderArray, setOrderArray] = useState<JSX.Element[]>([]);
     const [orderKey, setOrderKey] = useState(0);
@@ -370,12 +370,12 @@ function NavBar(): JSX.Element {
                                 sweatStock6={sweatshirtSixStock}
                                 sweatSetStock6={setSweatshirtSixStock}
                                 setEmailOrder={setEmailOrder}
-                                setFirstNameOrder={setFirstNameOrder}
-                                setLastNameOrder={setLastNameOrder}
+                                setNameOrder={setNameOrder}
+                                setPaymentInfo={setPaymentInfo}
                                 setAddressOrder={setAddressOrder}
                                 emailOrder={emailOrder}
-                                firstNameOrder={firstNameOrder}
-                                lastNameOrder={lastNameOrder}
+                                nameOrder={nameOrder}
+                                paymentInfo={paymentInfo}
                                 addressOrder={addressOrder}
                                 orderArray={orderArray}
                                 setOrderArray={setOrderArray}

@@ -67,12 +67,12 @@ function CartDisplay({
     sweatStock6,
     sweatSetStock6,
     setEmailOrder,
-    setFirstNameOrder,
-    setLastNameOrder,
+    setNameOrder,
+    setPaymentInfo,
     setAddressOrder,
     emailOrder,
-    firstNameOrder,
-    lastNameOrder,
+    nameOrder,
+    paymentInfo,
     addressOrder,
     orderArray,
     setOrderArray,
@@ -128,12 +128,12 @@ function CartDisplay({
     sweatStock6: number;
     sweatSetStock6: Dispatch<SetStateAction<number>>;
     setEmailOrder: Dispatch<SetStateAction<string>>;
-    setFirstNameOrder: Dispatch<SetStateAction<string>>;
-    setLastNameOrder: Dispatch<SetStateAction<string>>;
+    setNameOrder: Dispatch<SetStateAction<string>>;
+    setPaymentInfo: Dispatch<SetStateAction<string>>;
     setAddressOrder: Dispatch<SetStateAction<string>>;
     emailOrder: string;
-    firstNameOrder: string;
-    lastNameOrder: string;
+    nameOrder: string;
+    paymentInfo: string;
     addressOrder: string;
     orderArray: JSX.Element[];
     setOrderArray: Dispatch<SetStateAction<JSX.Element[]>>;
@@ -680,26 +680,38 @@ function CartDisplay({
             </div>
             <CheckoutPopup
                 setEmailOrder={setEmailOrder}
-                setFirstNameOrder={setFirstNameOrder}
-                setLastNameOrder={setLastNameOrder}
+                setNameOrder={setNameOrder}
+                setPaymentInfo={setPaymentInfo}
                 setAddressOrder={setAddressOrder}
                 emailOrder={emailOrder}
-                firstNameOrder={firstNameOrder}
-                lastNameOrder={lastNameOrder}
+                nameOrder={nameOrder}
+                paymentInfo={paymentInfo}
                 addressOrder={addressOrder}
                 orderArray={orderArray}
                 setOrderArray={setOrderArray}
+                shirtCart1={shirtCart1}
                 setShirtCart1={setShirtCart1}
+                shirtCart2={shirtCart2}
                 setShirtCart2={setShirtCart2}
+                shirtCart3={shirtCart3}
                 setShirtCart3={setShirtCart3}
+                shirtCart4={shirtCart4}
                 setShirtCart4={setShirtCart4}
+                shirtCart5={shirtCart5}
                 setShirtCart5={setShirtCart5}
+                shirtCart6={shirtCart6}
                 setShirtCart6={setShirtCart6}
+                sweatCart1={sweatCart1}
                 sweatSetCart1={sweatSetCart1}
+                sweatCart2={sweatCart2}
                 sweatSetCart2={sweatSetCart2}
+                sweatCart3={sweatCart3}
                 sweatSetCart3={sweatSetCart3}
+                sweatCart4={sweatCart4}
                 sweatSetCart4={sweatSetCart4}
+                sweatCart5={sweatCart5}
                 sweatSetCart5={sweatSetCart5}
+                sweatCart6={sweatCart6}
                 sweatSetCart6={sweatSetCart6}
                 orderKey={orderKey}
                 setOrderKey={setOrderKey}
