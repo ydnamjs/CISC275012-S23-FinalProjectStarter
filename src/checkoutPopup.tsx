@@ -1,7 +1,6 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import CheckoutForm from "./Components/Common/CheckoutForm";
 import { Button } from "react-bootstrap";
-import Popup from "reactjs-popup";
 import "./index.css";
 
 function CheckoutPopup({
@@ -26,7 +25,9 @@ function CheckoutPopup({
     sweatSetCart3,
     sweatSetCart4,
     sweatSetCart5,
-    sweatSetCart6
+    sweatSetCart6,
+    orderKey,
+    setOrderKey
 }: {
     setEmailOrder: Dispatch<SetStateAction<string>>;
     setFirstNameOrder: Dispatch<SetStateAction<string>>;
@@ -50,16 +51,20 @@ function CheckoutPopup({
     sweatSetCart4: Dispatch<SetStateAction<number>>;
     sweatSetCart5: Dispatch<SetStateAction<number>>;
     sweatSetCart6: Dispatch<SetStateAction<number>>;
+    orderKey: number;
+    setOrderKey: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     const [isOpen, setIsOpen] = useState(false);
+    const [isHidden, setIsHidden] = useState(true);
 
     function OrderForm(): JSX.Element {
         const first = firstNameOrder;
         const last = lastNameOrder;
         const address = addressOrder;
         const email = emailOrder;
+        const key = orderKey;
         return (
-            <div key={first} style={{ border: "1px solid black" }}>
+            <div key={key} style={{ border: "1px solid black" }}>
                 <p>
                     Name: {first} {last}
                 </p>
@@ -70,10 +75,8 @@ function CheckoutPopup({
     }
 
     function OrderCreated(): void {
-        setOrderArray([
-            ...orderArray,
-            <OrderForm key={firstNameOrder}></OrderForm>
-        ]);
+        setOrderArray([...orderArray, <OrderForm key={orderKey}></OrderForm>]);
+        setOrderKey(orderKey + 1);
         setIsOpen(false);
     }
 
@@ -82,10 +85,14 @@ function CheckoutPopup({
             <Button
                 onClick={() => {
                     setIsOpen(true);
+                    setIsHidden(true);
                 }}
             >
                 Checkout
             </Button>
+            <div hidden={isHidden} style={{ fontSize: "20px" }}>
+                Thank you for your order!
+            </div>
             {isOpen && (
                 <div>
                     <div>
@@ -97,32 +104,26 @@ function CheckoutPopup({
                             setAddress={setAddressOrder}
                         ></CheckoutForm>
                     </div>
-                    <Popup
-                        trigger={
-                            <Button
-                                onClick={() => {
-                                    OrderCreated();
-                                    setShirtCart1(0);
-                                    setShirtCart2(0);
-                                    setShirtCart3(0);
-                                    setShirtCart4(0);
-                                    setShirtCart5(0);
-                                    setShirtCart6(0);
-                                    sweatSetCart1(0);
-                                    sweatSetCart2(0);
-                                    sweatSetCart3(0);
-                                    sweatSetCart4(0);
-                                    sweatSetCart5(0);
-                                    sweatSetCart6(0);
-                                }}
-                            >
-                                Submit Order
-                            </Button>
-                        }
-                        position="right center"
+                    <Button
+                        onClick={() => {
+                            OrderCreated();
+                            setShirtCart1(0);
+                            setShirtCart2(0);
+                            setShirtCart3(0);
+                            setShirtCart4(0);
+                            setShirtCart5(0);
+                            setShirtCart6(0);
+                            sweatSetCart1(0);
+                            sweatSetCart2(0);
+                            sweatSetCart3(0);
+                            sweatSetCart4(0);
+                            sweatSetCart5(0);
+                            sweatSetCart6(0);
+                            setIsHidden(false);
+                        }}
                     >
-                        <div>Thank you for your order!</div>
-                    </Popup>
+                        Submit Order
+                    </Button>
                 </div>
             )}
         </div>

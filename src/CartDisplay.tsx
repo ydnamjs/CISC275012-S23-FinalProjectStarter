@@ -75,7 +75,9 @@ function CartDisplay({
     lastNameOrder,
     addressOrder,
     orderArray,
-    setOrderArray
+    setOrderArray,
+    orderKey,
+    setOrderKey
 }: {
     shirtCart1: number;
     setShirtCart1: Dispatch<SetStateAction<number>>;
@@ -135,6 +137,8 @@ function CartDisplay({
     addressOrder: string;
     orderArray: JSX.Element[];
     setOrderArray: Dispatch<SetStateAction<JSX.Element[]>>;
+    orderKey: number;
+    setOrderKey: Dispatch<SetStateAction<number>>;
 }): JSX.Element {
     return (
         <div className="CartDisplay">
@@ -697,6 +701,8 @@ function CartDisplay({
                 sweatSetCart4={sweatSetCart4}
                 sweatSetCart5={sweatSetCart5}
                 sweatSetCart6={sweatSetCart6}
+                orderKey={orderKey}
+                setOrderKey={setOrderKey}
             ></CheckoutPopup>
         </div>
     );

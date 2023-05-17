@@ -70,6 +70,7 @@ function NavBar(): JSX.Element {
     const [lastNameOrder, setLastNameOrder] = useState("");
     const [addressOrder, setAddressOrder] = useState("");
     const [orderArray, setOrderArray] = useState<JSX.Element[]>([]);
+    const [orderKey, setOrderKey] = useState(0);
     const adminList = [
         "skraus@udel.edu",
         "gmelton@udel.edu",
@@ -378,6 +379,8 @@ function NavBar(): JSX.Element {
                                 addressOrder={addressOrder}
                                 orderArray={orderArray}
                                 setOrderArray={setOrderArray}
+                                orderKey={orderKey}
+                                setOrderKey={setOrderKey}
                             />
                         }
                     ></Route>
