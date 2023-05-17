@@ -5,10 +5,9 @@ import TextField from "@mui/material/TextField";
 export default function BasicTextFields({
     title,
     setEmail,
-    setFirstName,
-    setLastName,
+    setNameOrder,
+    setPaymentInfo,
     setAddress
-    //handleAction
 }) {
     return (
         <div>
@@ -25,10 +24,10 @@ export default function BasicTextFields({
                 autoComplete="off"
             >
                 <TextField
-                    id="first name"
-                    label="Enter your first name"
+                    id="Name"
+                    label="Enter your name"
                     variant="outlined"
-                    onChange={(e) => setFirstName(e.target.value)}
+                    onChange={(e) => setNameOrder(e.target.value)}
                 />
                 <TextField
                     id="email"
@@ -37,16 +36,16 @@ export default function BasicTextFields({
                     onChange={(e) => setEmail(e.target.value)}
                 />
                 <TextField
-                    id="last name"
-                    label="Enter your last name"
-                    variant="outlined"
-                    onChange={(e) => setLastName(e.target.value)}
-                />
-                <TextField
                     id="address"
                     label="Enter your Address"
                     variant="outlined"
                     onChange={(e) => setAddress(e.target.value)}
+                />
+                <TextField
+                    id="payment info"
+                    label="Enter your payment info"
+                    variant="outlined"
+                    onChange={(e) => setPaymentInfo(e.target.value)}
                 />
             </Box>
         </div>
