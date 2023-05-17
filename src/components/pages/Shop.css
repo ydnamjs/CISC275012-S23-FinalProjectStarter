@@ -1,0 +1,8 @@
+.background {
+    background-color: red;
+}
+.product-image {
+    width: 25vw;
+    height: auto;
+    max-width: 100%;
+}
