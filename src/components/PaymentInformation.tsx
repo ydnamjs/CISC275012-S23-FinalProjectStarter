@@ -5,7 +5,12 @@ import {
     Input,
     Select,
     FormLabel,
-    Button
+    Button,
+    Text,
+    SimpleGrid,
+    Card,
+    CardBody,
+    Center
 } from "@chakra-ui/react";
 
 const expYears: number[] = [
@@ -45,71 +50,111 @@ const PaymentInformation = () => {
     };
     return (
         <div>
-            <h4>Payment Details</h4>
-
+            <Center>
+                <Text as="b" fontSize="4xl">
+                    Payment Details
+                </Text>
+            </Center>
             <form onSubmit={handleSubmit}>
                 <FormControl>
-                    <FormLabel>Cardholder Name</FormLabel>
-                    <Input
-                        type="text"
-                        id="Name"
-                        ref={userRef}
-                        required
-                        aria-describedby="Namenote"
-                        onChange={(e) => setName(e.target.value)}
-                    ></Input>
-                    <FormLabel>Card Number</FormLabel>
-                    <Input
-                        type="text"
-                        id="CardNum"
-                        ref={userRef}
-                        required
-                        aria-describedby="CardNumnote"
-                        onChange={(e) => setCardNum(e.target.value)}
-                    ></Input>
-                    <FormLabel>Security Code</FormLabel>
-                    <Input
-                        type="text"
-                        id="Security"
-                        ref={userRef}
-                        required
-                        aria-describedby="Securitynote"
-                        onChange={(e) => setSecurity(e.target.value)}
-                    ></Input>
-                    <FormLabel>Expiration Month</FormLabel>
-                    <Select
-                        id="ExpirationMonth"
-                        required
-                        aria-describedby="ExpMonthnote"
-                        onChange={(e) => setExpMonth(e.target.value)}
-                    >
-                        {expMonths.map((month) => (
-                            <option key={month} value={month}>
-                                {month}
-                            </option>
-                        ))}
-                    </Select>
-                    <FormLabel>Expiration Year</FormLabel>
-                    <Select
-                        id="ExpirationYear"
-                        required
-                        aria-describedby="ExpYearnote"
-                        onChange={(e) => setExpYear(e.target.value)}
-                    >
-                        {expYears.map((year) => (
-                            <option key={year} value={year}>
-                                {year}
-                            </option>
-                        ))}
-                    </Select>
+                    <SimpleGrid columns={2} spacing={30} padding={5}>
+                        <Card>
+                            <CardBody>
+                                <FormLabel>Cardholder Name</FormLabel>
+                                <Input
+                                    type="text"
+                                    id="Name"
+                                    ref={userRef}
+                                    required
+                                    aria-describedby="Namenote"
+                                    onChange={(e) => setName(e.target.value)}
+                                ></Input>
+                            </CardBody>
+                        </Card>
+                        <Card>
+                            <CardBody>
+                                <FormLabel>Card Number</FormLabel>
+                                <Input
+                                    type="text"
+                                    id="CardNum"
+                                    ref={userRef}
+                                    required
+                                    aria-describedby="CardNumnote"
+                                    onChange={(e) => setCardNum(e.target.value)}
+                                ></Input>
+                            </CardBody>
+                        </Card>
+                    </SimpleGrid>
+                    <Center>
+                        <SimpleGrid columns={3} spacing={5} padding={5}>
+                            <Card>
+                                <CardBody>
+                                    <FormLabel>Security Code</FormLabel>
+                                    <Input
+                                        type="text"
+                                        id="Security"
+                                        ref={userRef}
+                                        required
+                                        aria-describedby="Securitynote"
+                                        onChange={(e) =>
+                                            setSecurity(e.target.value)
+                                        }
+                                    ></Input>
+                                </CardBody>
+                            </Card>
+                            <Card width={300}>
+                                <CardBody>
+                                    <FormLabel>Expiration Month</FormLabel>
+                                    <Select
+                                        id="ExpirationMonth"
+                                        required
+                                        aria-describedby="ExpMonthnote"
+                                        onChange={(e) =>
+                                            setExpMonth(e.target.value)
+                                        }
+                                    >
+                                        {expMonths.map((month) => (
+                                            <option key={month} value={month}>
+                                                {month}
+                                            </option>
+                                        ))}
+                                    </Select>
+                                </CardBody>
+                            </Card>
+                            <Card width={300}>
+                                <CardBody>
+                                    <FormLabel>Expiration Year</FormLabel>
+                                    <Select
+                                        id="ExpirationYear"
+                                        required
+                                        aria-describedby="ExpYearnote"
+                                        onChange={(e) =>
+                                            setExpYear(e.target.value)
+                                        }
+                                    >
+                                        {expYears.map((year) => (
+                                            <option key={year} value={year}>
+                                                {year}
+                                            </option>
+                                        ))}
+                                    </Select>
+                                </CardBody>
+                            </Card>
+                        </SimpleGrid>
+                    </Center>
                 </FormControl>
-                <Button type="submit" onClick={() => setConfirmation(!confirm)}>
-                    {confirm ? (
-                        <div>Confirmed!</div>
-                    ) : (
-                        <div>Confirm details!</div>
-                    )}
-                </Button>
+                <Center>
+                    <Button
+                        type="submit"
+                        onClick={() => setConfirmation(!confirm)}
+                    >
+                        {confirm ? (
+                            <div>Confirmed!</div>
+                        ) : (
+                            <div>Confirm details!</div>
+                        )}
+                    </Button>
+                </Center>
             </form>
         </div>
     );
