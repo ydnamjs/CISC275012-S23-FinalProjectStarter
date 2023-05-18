@@ -14,7 +14,7 @@ describe("ShoppingCart", () => {
             </React.StrictMode>
         );
     });*/
-    test("Testing to see if In Cart: text exists", () => {
+    it("Testing to see if In Cart: text exists", () => {
         render(
             <React.StrictMode>
                 <ChakraProvider>
