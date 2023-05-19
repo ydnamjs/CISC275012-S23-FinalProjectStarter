@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import Modal from "./Modal";
 import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter, Link } from "react-router-dom";
+
 import "@testing-library/jest-dom";
 
 describe("Modal testing", () => {
@@ -9,7 +11,9 @@ describe("Modal testing", () => {
         render(
             <React.StrictMode>
                 <ChakraProvider>
-                    <Modal />
+                    <BrowserRouter>
+                        <Modal />
+                    </BrowserRouter>
                 </ChakraProvider>
             </React.StrictMode>
         );

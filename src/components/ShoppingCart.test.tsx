@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import { ShoppingCart } from "./ShoppingCart";
+import { ShoppingCartProvider } from "../context/ShoppingCartContext";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom";
 
@@ -14,11 +15,13 @@ describe("ShoppingCart", () => {
             </React.StrictMode>
         );
     });*/
-    it("Testing to see if In Cart: text exists", () => {
+    test("Testing to see if In Cart: text exists", () => {
         render(
             <React.StrictMode>
                 <ChakraProvider>
-                    <ShoppingCart isOpen={true} />
+                    <ShoppingCartProvider>
+                        <ShoppingCart isOpen={true} />
+                    </ShoppingCartProvider>
                 </ChakraProvider>
             </React.StrictMode>
         );

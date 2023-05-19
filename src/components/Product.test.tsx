@@ -1,24 +1,27 @@
 import React, { useState } from "react";
 import { render, screen } from "@testing-library/react";
+import { ShoppingCartProvider } from "../context/ShoppingCartContext";
 import Product from "./Product";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom";
 
 describe("Testing Product Component", () => {
     const mockProduct = {
-        name: "Example Product",
-        price: 9.99,
+        name: "UD Football Shirt",
+        price: 10,
         stock: 10,
-        description: "Example description",
-        picture: "example-picture",
+        description: "Support UD Football in this grey t-shirt!",
+        picture: "ud_shirt",
         sizes: ["S", "M", "L"],
-        category: "Shirt"
+        category: "Shirts"
     };
     test("testing Product render", () => {
         render(
             <React.StrictMode>
                 <ChakraProvider>
-                    <Product {...mockProduct} />
+                    <ShoppingCartProvider>
+                        <Product {...mockProduct} />
+                    </ShoppingCartProvider>
                 </ChakraProvider>
             </React.StrictMode>
         );

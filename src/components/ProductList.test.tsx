@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import ProductList from "./ProductList";
 import { ChakraProvider } from "@chakra-ui/react";
+import { ShoppingCartProvider } from "../context/ShoppingCartContext";
 import "@testing-library/jest-dom";
 
 describe("Testing ProductList Component", () => {
@@ -9,7 +10,9 @@ describe("Testing ProductList Component", () => {
         render(
             <React.StrictMode>
                 <ChakraProvider>
-                    <ProductList />
+                    <ShoppingCartProvider>
+                        <ProductList />
+                    </ShoppingCartProvider>
                 </ChakraProvider>
             </React.StrictMode>
         );
