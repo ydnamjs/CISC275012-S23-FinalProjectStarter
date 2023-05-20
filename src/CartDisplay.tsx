@@ -168,6 +168,7 @@ function CartDisplay({
                                               }
                                             : () => setShirtCart1(shirtCart1)
                                     }
+                                    data-testid="addshirtCart1"
                                 >
                                     Add one to Cart
                                 </Button>
@@ -180,6 +181,7 @@ function CartDisplay({
                                                   setStock1(stock1 + 1);
                                               }
                                     }
+                                    data-testid="removeshirtCart1"
                                 >
                                     Remove one from Cart
                                 </Button>
