@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import Main from "./Main";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
@@ -35,5 +35,9 @@ describe("testing Main", () => {
     test("Redefining Athletic Wear exists", () => {
         const name = screen.getAllByText(/Redefining Athletic Wear/i);
         expect(name[0]).toBeInTheDocument();
+    });
+    test("NavBar works properly", () => {
+        const nav = screen.getByRole("navigation");
+        expect(nav).toBeInTheDocument();
     });
 });
