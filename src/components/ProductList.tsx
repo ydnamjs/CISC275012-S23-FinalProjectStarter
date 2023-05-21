@@ -162,7 +162,6 @@ export const removeMProduct = () => {
                 colorScheme="red"
                 disabled={!selectedProduct}
                 onClick={handleRemoveClick}
-                data-testid="remove-button"
             >
                 Remove
             </Button>

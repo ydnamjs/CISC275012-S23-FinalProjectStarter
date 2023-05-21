@@ -33,7 +33,6 @@ export function CheckoutItem({ name, quantity }: CheckoutItemProps) {
             direction="horizontal"
             gap={2}
             className="d-flex align-items-center"
-            data-testid="help"
         >
             <Image
                 src={require(`../assets/${item.picture}.png`)}

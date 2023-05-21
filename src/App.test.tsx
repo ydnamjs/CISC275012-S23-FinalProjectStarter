@@ -4,8 +4,6 @@ import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom/extend-expect";
 
-import { MemoryRouter, Route } from "react-router-dom";
-
 describe("App", () => {
     beforeEach(() => {
         render(
@@ -16,15 +14,15 @@ describe("App", () => {
             </React.StrictMode>
         );
     });
-    test("Checks if Routing to Shop Page works", () => {
+    test("Checks if Shop Page appears", () => {
         const shopPageHeader = screen.getByText(/Shop/i);
         expect(shopPageHeader).toBeInTheDocument();
     });
-    test("Checks if Routing to Login works", () => {
+    test("Checks if Login Page appears", () => {
         const loginPageHeader = screen.getByText(/Login/i);
         expect(loginPageHeader).toBeInTheDocument();
     });
-    test("Checks if Routing to Admin works", () => {
+    test("Checks Admin Page appears", () => {
         const adminPageHeader = screen.getByText(/Admin/i);
         expect(adminPageHeader).toBeInTheDocument();
     });

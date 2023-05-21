@@ -27,7 +27,7 @@ describe("CheckoutItem testing", () => {
         const itemName = "Non-existing Product";
         expect(screen.queryByText(itemName)).toBeNull();
     });
-    test("styling test", () => {
+    test("quantity text is not in component", () => {
         expect(screen.queryByText("quantity")).not.toBeInTheDocument();
     });
 });
