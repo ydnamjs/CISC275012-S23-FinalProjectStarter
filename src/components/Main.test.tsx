@@ -1,15 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import { render, screen } from "@testing-library/react";
 import Main from "./Main";
 import { ChakraProvider } from "@chakra-ui/react";
+import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 
 describe("testing Main", () => {
     test("testing Main rendering", () => {
-        <React.StrictMode>
-            <ChakraProvider>
-                <Main />
-            </ChakraProvider>
-        </React.StrictMode>;
+        render(
+            <React.StrictMode>
+                <ChakraProvider>
+                    <BrowserRouter>
+                        <Main />
+                    </BrowserRouter>
+                </ChakraProvider>
+            </React.StrictMode>
+        );
+    });
+    beforeEach(() => {
+        render(
+            <React.StrictMode>
+                <ChakraProvider>
+                    <BrowserRouter>
+                        <Main />
+                    </BrowserRouter>
+                </ChakraProvider>
+            </React.StrictMode>
+        );
+    });
+    test("E F F O R T L E S S exists", () => {
+        const name = screen.getAllByText(/E F F O R T L E S S/i);
+        expect(name[0]).toBeInTheDocument();
+    });
+    test("Redefining Athletic Wear exists", () => {
+        const name = screen.getAllByText(/Redefining Athletic Wear/i);
+        expect(name[0]).toBeInTheDocument();
     });
 });
