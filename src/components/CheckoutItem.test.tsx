@@ -25,7 +25,9 @@ describe("CheckoutItem testing", () => {
     });
     test("renders nothing if item name is not found", () => {
         const itemName = "Non-existing Product";
-        // Verify that the component renders nothing
         expect(screen.queryByText(itemName)).toBeNull();
+    });
+    test("styling test", () => {
+        expect(screen.queryByText("quantity")).not.toBeInTheDocument();
     });
 });

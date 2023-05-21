@@ -1,15 +1,8 @@
-import React, { useState } from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import React from "react";
+import { render, screen } from "@testing-library/react";
 import AddProduct from "./AddProduct";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom";
-
-import { addWProduct } from "./ProductList";
-import { AddWomensProduct } from "./AddProduct";
-
-jest.mock("./ProductList", () => ({
-    addWProduct: jest.fn()
-}));
 
 describe("AddProduct testing", () => {
     test("Testing AddProduct rendering", () => {
@@ -37,5 +30,9 @@ describe("AddProduct testing", () => {
     test("Material Type is not present", () => {
         const mat = screen.queryByText(/Material/i);
         expect(mat).toBeNull();
+    });
+    test("Categories show up", () => {
+        const mat = screen.queryAllByText(/Category/i);
+        expect(mat[0]).toBeInTheDocument();
     });
 });
