@@ -27,15 +27,15 @@ describe("PaymentInformation", () => {
         expect(screen.getByText("Expiration Month")).toBeInTheDocument();
         expect(screen.getByText("Expiration Year")).toBeInTheDocument();
     });
-    test("Confirmation messages exist", () => {
+    test("Confirmation messages work properly", () => {
         expect(screen.getByText("Confirm details!")).toBeInTheDocument();
-
-        // Simulate a click event to toggle the state value
         fireEvent.click(screen.getByRole("button"));
-
-        // Check that the text content has changed to "Confirmed!"
         expect(screen.getByText("Confirmed!")).toBeInTheDocument();
     });
-
-    // Add more tests as needed
+    test("Additional Fields exist on site", () => {
+        expect(screen.getByText("Payment Details")).toBeInTheDocument();
+        expect(screen.getByText("Cardholder Name")).toBeInTheDocument();
+        expect(screen.getByText("Card Number")).toBeInTheDocument();
+        expect(screen.getByText("Security Code")).toBeInTheDocument();
+    });
 });
