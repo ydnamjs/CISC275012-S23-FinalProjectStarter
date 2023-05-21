@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import ProductList, { prodM } from "./ProductList";
 import { ChakraProvider } from "@chakra-ui/react";
 import { ShoppingCartProvider } from "../context/ShoppingCartContext";
@@ -36,7 +36,7 @@ describe("Testing ProductList Component", () => {
         const selectedFilter = screen.getByRole("button", { name: "All" });
         expect(selectedFilter).toBeInTheDocument();
     });
-    test("Testing to see if a product is recognized", () => {
+    test("Testing to see if an added product is recognized", () => {
         const expectedProduct = {
             name: "UD Football Shirt",
             price: 10,

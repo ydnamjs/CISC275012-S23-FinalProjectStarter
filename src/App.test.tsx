@@ -4,6 +4,8 @@ import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom/extend-expect";
 
+import { MemoryRouter, Route } from "react-router-dom";
+
 describe("App", () => {
     beforeEach(() => {
         render(
