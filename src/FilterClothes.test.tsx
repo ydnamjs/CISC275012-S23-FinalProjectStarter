@@ -4,60 +4,63 @@ import { FilterClothes } from "./FilterClothes";
 //import { ColorFilter } from "./ColorFilter";
 //import { ClothingDisplay } from "./ClothingDisplay";
 import userEvent from "@testing-library/user-event";
+import { BrowserRouter } from "react-router-dom";
 
 describe("FilterClothes Component tests, covering Inventory MVP element", () => {
     beforeEach(() => {
         render(
-            <FilterClothes
-                stockOne={0}
-                stockTwo={0}
-                stockThree={0}
-                stockFour={0}
-                stockFive={0}
-                stockSix={0}
-                sweatStockOne={0}
-                sweatStockTwo={0}
-                sweatStockThree={0}
-                sweatStockFour={0}
-                sweatStockFive={0}
-                sweatStockSix={0}
-                shirtCart1={0}
-                shirtCart2={0}
-                shirtCart3={0}
-                shirtCart4={0}
-                shirtCart5={0}
-                shirtCart6={0}
-                setShirtCart1={jest.fn()}
-                setShirtCart2={jest.fn()}
-                setShirtCart3={jest.fn()}
-                setShirtCart4={jest.fn()}
-                setShirtCart5={jest.fn()}
-                setShirtCart6={jest.fn()}
-                setStock1={jest.fn()}
-                setStock2={jest.fn()}
-                setStock3={jest.fn()}
-                setStock4={jest.fn()}
-                setStock5={jest.fn()}
-                setStock6={jest.fn()}
-                sweatCart1={0}
-                sweatCart2={0}
-                sweatCart3={0}
-                sweatCart4={0}
-                sweatCart5={0}
-                sweatCart6={0}
-                sweatSetCart1={jest.fn()}
-                sweatSetCart2={jest.fn()}
-                sweatSetCart3={jest.fn()}
-                sweatSetCart4={jest.fn()}
-                sweatSetCart5={jest.fn()}
-                sweatSetCart6={jest.fn()}
-                sweatSetStock1={jest.fn()}
-                sweatSetStock2={jest.fn()}
-                sweatSetStock3={jest.fn()}
-                sweatSetStock4={jest.fn()}
-                sweatSetStock5={jest.fn()}
-                sweatSetStock6={jest.fn()}
-            />
+            <BrowserRouter>
+                <FilterClothes
+                    stockOne={0}
+                    stockTwo={0}
+                    stockThree={0}
+                    stockFour={0}
+                    stockFive={0}
+                    stockSix={0}
+                    sweatStockOne={0}
+                    sweatStockTwo={0}
+                    sweatStockThree={0}
+                    sweatStockFour={0}
+                    sweatStockFive={0}
+                    sweatStockSix={0}
+                    shirtCart1={0}
+                    shirtCart2={0}
+                    shirtCart3={0}
+                    shirtCart4={0}
+                    shirtCart5={0}
+                    shirtCart6={0}
+                    setShirtCart1={jest.fn()}
+                    setShirtCart2={jest.fn()}
+                    setShirtCart3={jest.fn()}
+                    setShirtCart4={jest.fn()}
+                    setShirtCart5={jest.fn()}
+                    setShirtCart6={jest.fn()}
+                    setStock1={jest.fn()}
+                    setStock2={jest.fn()}
+                    setStock3={jest.fn()}
+                    setStock4={jest.fn()}
+                    setStock5={jest.fn()}
+                    setStock6={jest.fn()}
+                    sweatCart1={0}
+                    sweatCart2={0}
+                    sweatCart3={0}
+                    sweatCart4={0}
+                    sweatCart5={0}
+                    sweatCart6={0}
+                    sweatSetCart1={jest.fn()}
+                    sweatSetCart2={jest.fn()}
+                    sweatSetCart3={jest.fn()}
+                    sweatSetCart4={jest.fn()}
+                    sweatSetCart5={jest.fn()}
+                    sweatSetCart6={jest.fn()}
+                    sweatSetStock1={jest.fn()}
+                    sweatSetStock2={jest.fn()}
+                    sweatSetStock3={jest.fn()}
+                    sweatSetStock4={jest.fn()}
+                    sweatSetStock5={jest.fn()}
+                    sweatSetStock6={jest.fn()}
+                />
+            </BrowserRouter>
         );
     });
     test("When sweatshirt button is clicked, only sweatshirts are displayed", () => {
