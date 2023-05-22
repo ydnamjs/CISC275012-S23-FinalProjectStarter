@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import AddProduct from "./AddProduct";
+import AddProduct from "../components/AddProduct";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { ShoppingCart } from "./ShoppingCart";
+import { ShoppingCart } from "../components/ShoppingCart";
 import { ShoppingCartProvider } from "../context/ShoppingCartContext";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom";

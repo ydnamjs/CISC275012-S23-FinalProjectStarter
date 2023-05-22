@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { ShoppingCartProvider } from "../context/ShoppingCartContext";
-import Product from "./Product";
+import Product from "../components/Product";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import PaymentInformation from "./PaymentInformation";
+import PaymentInformation from "../components/PaymentInformation";
 import { ChakraProvider } from "@chakra-ui/react";
 
 describe("PaymentInformation", () => {

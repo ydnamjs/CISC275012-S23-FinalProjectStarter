@@ -2,7 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { ChakraProvider } from "@chakra-ui/react";
 import "@testing-library/jest-dom";
-import { CheckoutItem } from "./CheckoutItem";
+import { CheckoutItem } from "../components/CheckoutItem";
 
 describe("CheckoutItem testing", () => {
     test("Testing CheckoutItem rendering", () => {
