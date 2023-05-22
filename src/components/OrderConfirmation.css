@@ -1,0 +1,15 @@
+.TYtext {
+    margin-top: 45px;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+.container {
+    display: flex;
+}
+
+.box {
+    padding-left: 20px;
+    padding-top: 5px;
+    width: 33.33%;
+    border: 1px solid black;
+}
