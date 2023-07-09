@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Button, Card } from "react-bootstrap";
+//import { Button, Card } from "react-bootstrap";
 
 function App(): JSX.Element {
     return (
