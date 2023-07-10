@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import "../src/components/LightMode";
+import { LightMode } from "../src/components/LightMode";
 //import { Button, Card } from "react-bootstrap";
 
 function App(): JSX.Element {
@@ -63,8 +65,8 @@ function App(): JSX.Element {
                     className="dark-violet"
                     style={{
                         position: "relative",
-                        top: "16em",
-                        left: "240px"
+                        top: "40px",
+                        left: "40px"
                     }}
                 >
                     <div
@@ -76,9 +78,15 @@ function App(): JSX.Element {
                             color: "white"
                         }}
                     >
-                        <h3>Why You Should Hire Me</h3>WIP
+                        <h3>Why You Should Hire Me</h3>Lorem ipsum dolor, sit
+                        amet consectetur adipisicing elit. Doloremque saepe
+                        dolor qui molestias! Similique in eius praesentium minus
+                        quo suscipit dolor ad, recusandae iusto quas officia
+                        saepe magnam quis ex.
                     </div>
                 </div>
+                <hr></hr>
+                <LightMode></LightMode>
                 {/*<div className="App">
                     <header
                         style={{
